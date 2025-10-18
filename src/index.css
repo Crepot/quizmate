@@ -29,6 +29,17 @@ body {
   min-width: 320px;
   min-height: 100vh;
 }
+/* Global box-sizing and centering wrapper to ensure consistent layout */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Ensure the app root can stretch and be centered by body flexbox */
+#root {
+  width: 100%;
+  max-width: 1280px; /* keep previous max width from App.css */
+  margin: 0 auto;
+}
 
 h1 {
   font-size: 3.2em;

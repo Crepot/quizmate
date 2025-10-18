@@ -5,3 +5,6 @@ export function saveProgress(quizId, answers){
 export function loadProgress(quizId){
   try { const raw = localStorage.getItem(PREFIX + quizId); return raw ? JSON.parse(raw) : null; } catch { return null; }
 }
+export function clearProgress(quizId){
+  try { localStorage.removeItem(PREFIX + quizId); } catch {}
+}
