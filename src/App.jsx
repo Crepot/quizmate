@@ -73,9 +73,32 @@ export default function App(){
   const ffItem = useMemo(() => ffItems[index] || null, [ffItems, index]);
   const mcqItem = useMemo(() => mcqItems[index] || null, [mcqItems, index]);
   const imItem = useMemo(() => imItems[index] || null, [imItems, index]);
+  // Respuestas actuales (usar antes de efectos que dependen de ellas)
+  const ansFF = ffItem ? (state.answers.freeform[ffItem.id] || '') : '';
+  const ansMCQ = mcqItem ? (state.answers.mcq[mcqItem.id] || []) : [];
+  const ansIM = imItem ? (state.answers.imageMap[imItem.id] || '') : '';
 
   // Mantener foco en el textarea de Freeform
   const taRef = useRef(null);
+  // Local state for textarea to avoid dispatch on every keystroke (prevents focus loss)
+  const [inputFF, setInputFF] = useState('');
+  // Sync local input when the current ffItem or stored answer changes
+  useEffect(() => {
+    setInputFF(ansFF || '');
+  }, [ansFF, ffItem?.id]);
+  
+  // Debounce local input to dispatch ANSWER_FREEFORM
+  useEffect(() => {
+    if (!ffItem) return;
+    const id = ffItem.id;
+    const t = setTimeout(() => {
+      // only dispatch if different from stored answer
+      if ((state.answers.freeform[id] || '') !== inputFF) {
+        dispatch({ type: 'ANSWER_FREEFORM', id, text: inputFF });
+      }
+    }, 300);
+    return () => clearTimeout(t);
+  }, [inputFF, ffItem, dispatch, state.answers.freeform]);
   useEffect(() => {
     if (mode === 'freeform' && taRef.current) {
       if (document.activeElement !== taRef.current) {
@@ -87,9 +110,6 @@ export default function App(){
   if (err) return <div style={{padding:16,color:'#c33'}}>Error: {err}</div>;
   if (!data) return <div style={{padding:16,opacity:.7}}>Cargando…</div>;
 
-  const ansFF = ffItem ? (state.answers.freeform[ffItem.id] || '') : '';
-  const ansMCQ = mcqItem ? (state.answers.mcq[mcqItem.id] || []) : [];
-  const ansIM = imItem ? (state.answers.imageMap[imItem.id] || '') : '';
 
   // Cambio de modo: reset índice y finalizado
   const changeMode = (m) => { setMode(m); setIndex(0); setFinished(false); };
@@ -152,6 +172,13 @@ export default function App(){
       <div style={{ width: 'min(100%, 960px)', margin: '0 auto' }}>
         <header style={{ display: 'grid', gap: 12, justifyItems: 'center', textAlign: 'center' }}>
           <h1 style={{ margin: 0, fontSize: 28 }}>{metadata.title}</h1>
+          {/* Progress bar for current section */}
+          <div style={{ width: '100%', maxWidth: 960 }}>
+            <div style={{ height: 8, background: '#1a1a1a', borderRadius: 999, overflow: 'hidden' }}>
+              <div style={{ height: '100%', width: `${countForMode ? Math.round((index + 1) / countForMode * 100) : 0}%`, background: 'linear-gradient(90deg,#646cff,#3b82f6)' }} />
+            </div>
+            <div style={{ fontSize: 12, marginTop: 6, opacity: .85 }}>{index + 1}/{countForMode} en sección</div>
+          </div>
           <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', justifyContent: 'center' }}>
             <ModeButton id="freeform" label="Preguntas y respuestas" />
             <ModeButton id="mcq" label="Múltiple opción" />
@@ -174,8 +201,14 @@ export default function App(){
           <h2 style={{ margin: '4px 0 12px', fontSize: 18 }}>{ffItem.prompt}</h2>
           <textarea
             ref={taRef}
-            value={ansFF}
-            onChange={(e) => dispatch({ type: 'ANSWER_FREEFORM', id: ffItem.id, text: e.target.value })}
+            value={inputFF}
+            onChange={(e) => setInputFF(e.target.value)}
+            onBlur={() => {
+              // dispatch immediately on blur to persist
+              if (ffItem && (state.answers.freeform[ffItem.id] || '') !== inputFF) {
+                dispatch({ type: 'ANSWER_FREEFORM', id: ffItem.id, text: inputFF });
+              }
+            }}
             placeholder="Escribe tu respuesta…"
             maxLength={ffItem.maxLength || 1000}
             rows={8}
@@ -192,7 +225,14 @@ export default function App(){
           </div>
           {finished && (
             <div style={{ marginTop: 16, fontSize: 14, opacity: .9 }}>
-              Revisión manual sugerida. Palabras clave esperadas: {(ffItem.keywords || []).join(', ') || '—'}
+              <div>Revisión manual sugerida.</div>
+              <div style={{ marginTop: 8 }}>Palabras clave esperadas: {(ffItem.keywords || []).join(', ') || '—'}</div>
+              {ffItem.correct && (
+                <div style={{ marginTop: 12, padding: 12, background: 'rgba(64,64,64,0.35)', borderRadius: 8, fontSize: 13 }}>
+                  <strong>Respuesta esperada:</strong>
+                  <div style={{ marginTop: 6 }}>{ffItem.correct}</div>
+                </div>
+              )}
             </div>
           )}
         </Section>
@@ -206,7 +246,9 @@ export default function App(){
             {(mcqItem.options || []).map((opt) => {
               const isMultiple = mcqItem.type === 'multiple';
               const checked = Array.isArray(ansMCQ) && ansMCQ.includes(opt.id);
+              const isCorrect = Array.isArray(mcqItem.correct) && mcqItem.correct.includes(opt.id);
               const toggle = () => {
+                if (finished) return; // no changes after finish
                 if (isMultiple) {
                   const next = checked ? ansMCQ.filter(v => v !== opt.id) : [...ansMCQ, opt.id];
                   dispatch({ type: 'ANSWER_MCQ', id: mcqItem.id, value: next });
@@ -214,15 +256,27 @@ export default function App(){
                   dispatch({ type: 'ANSWER_MCQ', id: mcqItem.id, value: [opt.id] });
                 }
               };
+
+              // styling: green for correct options after finish, red for selected incorrect ones
+              let background = '#111';
+              if (finished && isCorrect) background = 'rgba(76,195,138,.12)';
+              else if (finished && checked && !isCorrect) background = 'rgba(220,38,38,.12)';
+
               return (
-                <label key={opt.id} style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '8px 10px', borderRadius: 8, border: '1px solid #3a3a3a', background: checked ? 'rgba(100,108,255,.12)' : '#111' }}>
+                <label key={opt.id} style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '8px 10px', borderRadius: 8, border: '1px solid #3a3a3a', background }}>
                   <input
                     type={mcqItem.type === 'multiple' ? 'checkbox' : 'radio'}
                     name={mcqItem.id}
                     checked={checked}
                     onChange={toggle}
+                    disabled={finished}
                   />
-                  <span>{opt.text}</span>
+                  <span style={{ flex: 1 }}>{opt.text}</span>
+                  {finished && (
+                    <span style={{ marginLeft: 8, fontWeight: 700 }}>
+                      {isCorrect ? '✔️' : (checked && !isCorrect ? '❌' : null)}
+                    </span>
+                  )}
                 </label>
               );
             })}

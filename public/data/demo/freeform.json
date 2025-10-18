@@ -3,9 +3,122 @@
     {
       "id": "ff-001",
       "prompt": "Explique la diferencia entre biochar y carbón activado.",
-      "maxLength": 500,
+      "maxLength": 120000,
       "required": true,
-      "keywords": ["porosidad", "activación"]
+      "keywords": ["porosidad", "activación"],
+      "correct": "Biochar es un residuo carbonoso creado por pirólisis de biomasa y se usa para mejorar suelos; el carbón activado es un material procesado para tener alta porosidad y capacidad de adsorción, utilizado en filtración y purificación."
+    },
+    {
+      "id": "ff-002",
+      "prompt": "Describa el proceso de pirólisis y sus principales productos.",
+      "maxLength": 120000,
+      "required": true,
+      "keywords": ["pirólisis", "biomasa", "biochar", "gases", "líquidos"],
+      "correct": "La pirólisis es la descomposición térmica de la biomasa en ausencia de oxígeno, generando tres productos principales: biochar (sólido carbonoso), bio-oil (líquido condensado) y gases no condensables. La proporción de cada uno depende de la temperatura y la velocidad de calentamiento."
+    },
+    {
+      "id": "ff-003",
+      "prompt": "Explique la diferencia entre combustión y gasificación.",
+      "maxLength": 120000,
+      "required": true,
+      "keywords": ["oxidación", "temperatura", "gases", "combustión parcial"],
+      "correct": "La combustión ocurre con exceso de oxígeno y convierte la biomasa en CO₂ y H₂O, liberando calor. La gasificación se realiza con un suministro limitado de oxígeno o vapor, produciendo un gas combustible rico en CO y H₂ (gas de síntesis)."
+    },
+    {
+      "id": "ff-004",
+      "prompt": "Defina el concepto de área superficial específica y su importancia en adsorción.",
+      "maxLength": 120000,
+      "required": true,
+      "keywords": ["BET", "porosidad", "adsorción"],
+      "correct": "El área superficial específica mide la superficie total disponible por unidad de masa de un material (m²/g). Es clave en procesos de adsorción porque determina la cantidad de sitios activos disponibles para retener moléculas en la superficie del material."
+    },
+    {
+      "id": "ff-005",
+      "prompt": "Mencione las principales diferencias entre materiales microporosos, mesoporosos y macroporosos.",
+      "maxLength": 120000,
+      "required": true,
+      "keywords": ["microporos", "mesoporos", "macroporos", "tamaño"],
+      "correct": "Los materiales microporosos tienen poros menores a 2 nm, los mesoporosos entre 2 y 50 nm, y los macroporosos mayores a 50 nm. Esta clasificación afecta la difusión y la capacidad de adsorción del material."
+    },
+    {
+      "id": "ff-006",
+      "prompt": "Explique cómo el biochar puede contribuir a la mitigación del cambio climático.",
+      "maxLength": 120000,
+      "required": true,
+      "keywords": ["secuestro de carbono", "biomasa", "emisiones"],
+      "correct": "El biochar inmoviliza carbono de la biomasa en forma estable, evitando su emisión como CO₂ o CH₄. Además, mejora los suelos y reduce el uso de fertilizantes, contribuyendo indirectamente a la mitigación de emisiones."
+    },
+    {
+      "id": "ff-007",
+      "prompt": "Describa cómo el carbón activado se utiliza en el tratamiento de aguas residuales.",
+      "maxLength": 120000,
+      "required": true,
+      "keywords": ["adsorción", "contaminantes", "porosidad"],
+      "correct": "El carbón activado se utiliza para adsorber contaminantes orgánicos, colorantes y metales pesados del agua. Su alta porosidad y área superficial permiten retener moléculas en su superficie, purificando el efluente."
+    },
+    {
+      "id": "ff-008",
+      "prompt": "¿Qué relación existe entre la temperatura de pirólisis y el rendimiento de biochar?",
+      "maxLength": 120000,
+      "required": true,
+      "keywords": ["temperatura", "rendimiento", "biochar"],
+      "correct": "A medida que aumenta la temperatura de pirólisis, el rendimiento en biochar disminuye y aumenta la fracción gaseosa, porque se favorece la desvolatilización y la formación de productos gaseosos."
+    },
+    {
+      "id": "ff-009",
+      "prompt": "Mencione dos parámetros que determinan la calidad de un carbón activado.",
+      "maxLength": 120000,
+      "required": true,
+      "keywords": ["porosidad", "área superficial", "capacidad de adsorción"],
+      "correct": "Los principales parámetros son el área superficial específica (BET) y la distribución del tamaño de poros, ya que ambos determinan la capacidad de adsorción del material."
+    },
+    {
+      "id": "ff-010",
+      "prompt": "Compare las propiedades del biochar obtenido de cáscara de maní y del rastrojo de maíz.",
+      "maxLength": 120000,
+      "required": true,
+      "keywords": ["materia prima", "biomasa", "carbonización", "porosidad"],
+      "correct": "El biochar de cáscara de maní suele presentar mayor contenido de carbono fijo y menor ceniza, mientras que el de rastrojo de maíz posee mayor volumen de poros y reactividad debido a su composición lignocelulósica."
+    },
+    {
+      "id": "ff-011",
+      "prompt": "Explique la importancia del control de temperatura y atmósfera en la activación del carbón.",
+      "maxLength": 120000,
+      "required": true,
+      "keywords": ["activación", "CO₂", "vapor de agua", "porosidad"],
+      "correct": "La activación térmica controlada, usando CO₂ o vapor de agua, permite desarrollar la porosidad sin destruir la estructura del carbón. La temperatura y la atmósfera determinan el tipo y tamaño de poros generados."
+    },
+    {
+      "id": "ff-012",
+      "prompt": "Describa los beneficios del uso de biochar en suelos agrícolas.",
+      "maxLength": 120000,
+      "required": true,
+      "keywords": ["fertilidad", "retención de agua", "nutrientes"],
+      "correct": "El biochar mejora la retención de agua y nutrientes, reduce la lixiviación y aumenta la actividad microbiana. Esto incrementa la productividad y estabilidad del suelo a largo plazo."
+    },
+    {
+      "id": "ff-013",
+      "prompt": "¿Por qué la materia prima influye en la estructura del biochar producido?",
+      "maxLength": 120000,
+      "required": true,
+      "keywords": ["biomasa", "lignina", "celulosa", "hemicelulosa"],
+      "correct": "Cada biomasa tiene diferentes proporciones de lignina, celulosa y hemicelulosa, lo que afecta la estabilidad térmica y la estructura porosa del biochar resultante. Ligninas altas generan biochar más aromático y estable."
+    },
+    {
+      "id": "ff-014",
+      "prompt": "Describa cómo la velocidad de calentamiento afecta la pirólisis.",
+      "maxLength": 120000,
+      "required": true,
+      "keywords": ["pirólisis rápida", "pirólisis lenta", "tiempo de residencia"],
+      "correct": "En la pirólisis rápida, la biomasa se calienta muy rápido y produce más líquidos (bio-oil); en la pirólisis lenta, la tasa de calentamiento es baja, favoreciendo la formación de biochar sólido."
+    },
+    {
+      "id": "ff-015",
+      "prompt": "Explique la diferencia entre activación física y activación química del carbón.",
+      "maxLength": 120000,
+      "required": true,
+      "keywords": ["activación física", "activación química", "vapor", "agentes químicos"],
+      "correct": "La activación física usa gases oxidantes como vapor o CO₂ a alta temperatura. La activación química emplea agentes como KOH o H₃PO₄ antes de la carbonización para generar más microporos a menor temperatura."
     }
   ]
 }

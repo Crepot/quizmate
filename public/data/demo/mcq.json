@@ -6,10 +6,180 @@
       "stem": "¿Cuál es la característica clave del carbón activado?",
       "options": [
         { "id": "a", "text": "Alta porosidad" },
-        { "id": "b", "text": "Soluble en agua" }
+        { "id": "b", "text": "Soluble en agua" },
+        { "id": "c", "text": "Altamente combustible" }
       ],
       "correct": ["a"],
-      "explanation": "Se usa por su gran área superficial."
+      "explanation": "El carbón activado se caracteriza por su elevada porosidad y gran área superficial, que le confiere alta capacidad de adsorción."
+    },
+    {
+      "id": "mcq-002",
+      "type": "truefalse",
+      "stem": "El biochar y el carbón activado son el mismo material.",
+      "options": [
+        { "id": "true", "text": "Verdadero" },
+        { "id": "false", "text": "Falso" }
+      ],
+      "correct": ["false"],
+      "explanation": "Aunque ambos se obtienen por pirólisis, el biochar se destina a mejorar suelos y almacenar carbono, mientras que el carbón activado se usa para purificación por su estructura más porosa."
+    },
+    {
+      "id": "mcq-003",
+      "type": "multiple",
+      "stem": "Seleccione las aplicaciones típicas del carbón activado:",
+      "options": [
+        { "id": "a", "text": "Tratamiento de agua" },
+        { "id": "b", "text": "Purificación de gases" },
+        { "id": "c", "text": "Combustible directo" },
+        { "id": "d", "text": "Filtración de aire" }
+      ],
+      "correct": ["a", "b", "d"],
+      "explanation": "El carbón activado se usa en filtración de agua, aire y gases industriales debido a su alta capacidad de adsorción; no se emplea como combustible."
+    },
+    {
+      "id": "mcq-004",
+      "type": "single",
+      "stem": "¿Cuál es el principal parámetro que determina la calidad de un carbón activado?",
+      "options": [
+        { "id": "a", "text": "Color del material" },
+        { "id": "b", "text": "Área superficial específica" },
+        { "id": "c", "text": "Contenido de humedad" }
+      ],
+      "correct": ["b"],
+      "explanation": "El área superficial específica (medida BET) es el indicador más importante de la calidad de un carbón activado, ya que determina su capacidad de adsorción."
+    },
+    {
+      "id": "mcq-005",
+      "type": "multiple",
+      "stem": "¿Cuáles de los siguientes factores influyen en el rendimiento del biochar?",
+      "options": [
+        { "id": "a", "text": "Temperatura de pirólisis" },
+        { "id": "b", "text": "Tipo de biomasa" },
+        { "id": "c", "text": "Velocidad de calentamiento" },
+        { "id": "d", "text": "Humedad del gas de combustión" }
+      ],
+      "correct": ["a", "b", "c"],
+      "explanation": "La temperatura, el tipo de biomasa y la velocidad de calentamiento determinan la proporción de biochar, gases y líquidos obtenidos."
+    },
+    {
+      "id": "mcq-006",
+      "type": "single",
+      "stem": "¿Cuál es el principal beneficio ambiental del biochar?",
+      "options": [
+        { "id": "a", "text": "Aumenta la emisión de CO₂" },
+        { "id": "b", "text": "Permite el secuestro de carbono" },
+        { "id": "c", "text": "Reduce la capacidad del suelo de retener agua" }
+      ],
+      "correct": ["b"],
+      "explanation": "El biochar almacena carbono de forma estable en el suelo, contribuyendo a la mitigación del cambio climático."
+    },
+    {
+      "id": "mcq-007",
+      "type": "truefalse",
+      "stem": "La gasificación se realiza en ausencia total de oxígeno.",
+      "options": [
+        { "id": "true", "text": "Verdadero" },
+        { "id": "false", "text": "Falso" }
+      ],
+      "correct": ["false"],
+      "explanation": "La gasificación se realiza con una cantidad limitada de oxígeno o vapor, no en ausencia total como la pirólisis."
+    },
+    {
+      "id": "mcq-008",
+      "type": "multiple",
+      "stem": "Seleccione los métodos de activación del carbón:",
+      "options": [
+        { "id": "a", "text": "Activación térmica (física)" },
+        { "id": "b", "text": "Activación química" },
+        { "id": "c", "text": "Activación biológica" },
+        { "id": "d", "text": "Activación electroquímica" }
+      ],
+      "correct": ["a", "b"],
+      "explanation": "Los dos métodos principales son la activación térmica (usando CO₂ o vapor) y la activación química (usando agentes como KOH o H₃PO₄)."
+    },
+    {
+      "id": "mcq-009",
+      "type": "single",
+      "stem": "¿Qué propiedad del biochar mejora la retención de agua en el suelo?",
+      "options": [
+        { "id": "a", "text": "Su estructura porosa" },
+        { "id": "b", "text": "Su color negro" },
+        { "id": "c", "text": "Su composición aromática" }
+      ],
+      "correct": ["a"],
+      "explanation": "La estructura porosa del biochar incrementa la capacidad del suelo para retener agua y nutrientes."
+    },
+    {
+      "id": "mcq-010",
+      "type": "truefalse",
+      "stem": "El carbón activado se obtiene a partir de materiales no renovables.",
+      "options": [
+        { "id": "true", "text": "Verdadero" },
+        { "id": "false", "text": "Falso" }
+      ],
+      "correct": ["false"],
+      "explanation": "El carbón activado puede producirse a partir de biomasa renovable como cáscaras, residuos agrícolas o maderas."
+    },
+    {
+      "id": "mcq-011",
+      "type": "multiple",
+      "stem": "Seleccione las condiciones que favorecen la formación de gases durante la pirólisis:",
+      "options": [
+        { "id": "a", "text": "Altas temperaturas" },
+        { "id": "b", "text": "Pirólisis lenta" },
+        { "id": "c", "text": "Baja temperatura" },
+        { "id": "d", "text": "Pirólisis rápida" }
+      ],
+      "correct": ["a", "d"],
+      "explanation": "Las altas temperaturas y la pirólisis rápida favorecen la producción de gases y líquidos, reduciendo el rendimiento de biochar sólido."
+    },
+    {
+      "id": "mcq-012",
+      "type": "single",
+      "stem": "¿Qué gas se utiliza comúnmente en la activación física del carbón?",
+      "options": [
+        { "id": "a", "text": "CO₂" },
+        { "id": "b", "text": "N₂" },
+        { "id": "c", "text": "H₂" }
+      ],
+      "correct": ["a"],
+      "explanation": "El dióxido de carbono (CO₂) y el vapor de agua se usan como agentes oxidantes controlados en la activación física del carbón."
+    },
+    {
+      "id": "mcq-013",
+      "type": "multiple",
+      "stem": "¿Qué características son comunes entre biochar y carbón activado?",
+      "options": [
+        { "id": "a", "text": "Origen en biomasa" },
+        { "id": "b", "text": "Alta porosidad" },
+        { "id": "c", "text": "Mismo proceso de producción" },
+        { "id": "d", "text": "Capacidad de adsorción" }
+      ],
+      "correct": ["a", "b", "d"],
+      "explanation": "Ambos derivan de biomasa y poseen estructura porosa con capacidad de adsorción, aunque difieren en el grado de activación y el uso final."
+    },
+    {
+      "id": "mcq-014",
+      "type": "single",
+      "stem": "¿Qué parámetro se usa para medir el área superficial específica de un material poroso?",
+      "options": [
+        { "id": "a", "text": "Método BET" },
+        { "id": "b", "text": "Ensayo ASTM D" },
+        { "id": "c", "text": "Ensayo de humedad relativa" }
+      ],
+      "correct": ["a"],
+      "explanation": "El método BET (Brunauer–Emmett–Teller) se utiliza para determinar el área superficial específica de materiales porosos como el carbón activado."
+    },
+    {
+      "id": "mcq-015",
+      "type": "truefalse",
+      "stem": "El biochar puede emplearse como material precursor para producir carbón activado.",
+      "options": [
+        { "id": "true", "text": "Verdadero" },
+        { "id": "false", "text": "Falso" }
+      ],
+      "correct": ["true"],
+      "explanation": "El biochar puede someterse a un proceso posterior de activación térmica o química para transformarse en carbón activado con mayor porosidad."
     }
   ]
 }
