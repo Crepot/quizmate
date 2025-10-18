@@ -1,0 +1,17 @@
+[
+  {
+    "id": "ff1",
+    "question": "What is the capital of France?",
+    "answer": "Paris"
+  },
+  {
+    "id": "ff2",
+    "question": "Explain the concept of photosynthesis.",
+    "answer": "Photosynthesis is the process by which plants use sunlight, water, and carbon dioxide to produce oxygen and energy in the form of sugar."
+  },
+  {
+    "id": "ff3",
+    "question": "What is the Pythagorean theorem?",
+    "answer": "The Pythagorean theorem states that in a right triangle, the square of the hypotenuse equals the sum of squares of the other two sides (a² + b² = c²)."
+  }
+]

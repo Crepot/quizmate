@@ -1,0 +1,76 @@
+.app {
+  max-width: 800px;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  background: #2c3e50;
+  color: white;
+  padding: 1.5rem 1rem;
+  text-align: center;
+}
+
+.header h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.header p {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 1rem;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.nav button {
+  flex: 1;
+  min-width: 120px;
+  padding: 0.75rem 1rem;
+  border: 2px solid #3498db;
+  background: white;
+  color: #3498db;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.nav button:hover {
+  background: #e3f2fd;
+}
+
+.nav button.active {
+  background: #3498db;
+  color: white;
+}
+
+.main {
+  flex: 1;
+  padding: 1rem;
+}
+
+@media (max-width: 600px) {
+  .header h1 {
+    font-size: 1.5rem;
+  }
+  
+  .nav {
+    gap: 0.25rem;
+    padding: 0.5rem;
+  }
+  
+  .nav button {
+    min-width: 100px;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.9rem;
+  }
+}

@@ -1,0 +1,37 @@
+[
+  {
+    "id": "mc1",
+    "question": "What is 2 + 2?",
+    "options": ["3", "4", "5", "6"],
+    "correctAnswer": [1],
+    "type": "single"
+  },
+  {
+    "id": "mc2",
+    "question": "Which of the following are programming languages? (Select all that apply)",
+    "options": ["Python", "HTML", "JavaScript", "CSS"],
+    "correctAnswer": [0, 2],
+    "type": "multiple"
+  },
+  {
+    "id": "mc3",
+    "question": "The Earth is flat.",
+    "options": ["True", "False"],
+    "correctAnswer": [1],
+    "type": "truefalse"
+  },
+  {
+    "id": "mc4",
+    "question": "React is a JavaScript library for building user interfaces.",
+    "options": ["True", "False"],
+    "correctAnswer": [0],
+    "type": "truefalse"
+  },
+  {
+    "id": "mc5",
+    "question": "Which planet is closest to the Sun?",
+    "options": ["Venus", "Mercury", "Earth", "Mars"],
+    "correctAnswer": [1],
+    "type": "single"
+  }
+]

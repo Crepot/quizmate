@@ -1,0 +1,20 @@
+[
+  {
+    "id": "im1",
+    "image": "/images/apple.svg",
+    "correctWord": "Apple",
+    "options": ["Apple", "Banana", "Orange", "Grape"]
+  },
+  {
+    "id": "im2",
+    "image": "/images/book.svg",
+    "correctWord": "Book",
+    "options": ["Pencil", "Book", "Paper", "Desk"]
+  },
+  {
+    "id": "im3",
+    "image": "/images/sun.svg",
+    "correctWord": "Sun",
+    "options": ["Moon", "Star", "Sun", "Cloud"]
+  }
+]
