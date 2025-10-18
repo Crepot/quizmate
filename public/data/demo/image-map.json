@@ -1,0 +1,11 @@
+{
+  "items": [
+    {
+      "id": "im-001",
+      "image": "/images/demo/reactor.jpg",
+      "choices": ["Reactor", "Filtro prensa", "Torre"],
+      "correct": "Reactor",
+      "alt": "Equipo reactor"
+    }
+  ]
+}

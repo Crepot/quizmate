@@ -1,0 +1,15 @@
+{
+  "items": [
+    {
+      "id": "mcq-001",
+      "type": "single",
+      "stem": "¿Cuál es la característica clave del carbón activado?",
+      "options": [
+        { "id": "a", "text": "Alta porosidad" },
+        { "id": "b", "text": "Soluble en agua" }
+      ],
+      "correct": ["a"],
+      "explanation": "Se usa por su gran área superficial."
+    }
+  ]
+}

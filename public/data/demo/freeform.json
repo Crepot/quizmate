@@ -1,0 +1,11 @@
+{
+  "items": [
+    {
+      "id": "ff-001",
+      "prompt": "Explique la diferencia entre biochar y carbón activado.",
+      "maxLength": 500,
+      "required": true,
+      "keywords": ["porosidad", "activación"]
+    }
+  ]
+}

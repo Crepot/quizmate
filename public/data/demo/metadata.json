@@ -1,0 +1,7 @@
+{
+  "id": "demo",
+  "title": "Cuestionario Demo",
+  "locale": "es-AR",
+  "sections": ["freeform", "mcq", "image-map"],
+  "scoring": { "freeform": 0, "mcq": 1, "imageMap": 1 }
+}
