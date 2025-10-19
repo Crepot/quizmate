@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useReducer, useRef, useState } from 'react';
-import { loadQuiz, validateAll, loadProgress, saveProgress, clearProgress, scoreMcq } from './utils';
+import { loadQuiz, validateAll, loadProgress, saveProgress, clearProgress, scoreMcq, loadSession, saveSession } from './utils';
 
 const initial = {
   quizId: 'demo',
@@ -33,6 +33,7 @@ export default function App(){
   const [index, setIndex] = useState(0);
   const [finished, setFinished] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [session, setSession] = useState({ freeform: null, mcq: null, imageMap: null });
 
   useEffect(() => {
     const saved = loadProgress(state.quizId);
@@ -46,6 +47,17 @@ export default function App(){
         const v = validateAll(quiz);
         if (!v.ok) throw new Error(v.message);
         setData(quiz);
+        // Inicializar sesión aleatoria (por defecto: todos los índices)
+        const ffLen = Array.isArray(quiz?.freeform?.items) ? quiz.freeform.items.length : 0;
+        const mcqLen = Array.isArray(quiz?.mcq?.items) ? quiz.mcq.items.length : 0;
+        const imLen = Array.isArray(quiz?.imageMap?.items) ? quiz.imageMap.items.length : 0;
+        const savedSess = loadSession(state.quizId) || {};
+        const def = (n) => Array.from({ length: n }, (_, i) => i);
+        setSession({
+          freeform: Array.isArray(savedSess.freeform) && savedSess.freeform.length ? savedSess.freeform.filter(i => i>=0 && i<ffLen) : def(ffLen),
+          mcq: Array.isArray(savedSess.mcq) && savedSess.mcq.length ? savedSess.mcq.filter(i => i>=0 && i<mcqLen) : def(mcqLen),
+          imageMap: Array.isArray(savedSess.imageMap) && savedSess.imageMap.length ? savedSess.imageMap.filter(i => i>=0 && i<imLen) : def(imLen),
+        });
         if (Array.isArray(quiz?.metadata?.sections) && quiz.metadata.sections.length > 0) {
           setMode(quiz.metadata.sections[0]);
           setIndex(0);
@@ -67,9 +79,12 @@ export default function App(){
   const imageMap = data?.imageMap;
 
   // Items por sección y el item actual según índice
-  const ffItems = freeform?.items || [];
-  const mcqItems = mcq?.items || [];
-  const imItems = imageMap?.items || [];
+  const ffAll = freeform?.items || [];
+  const mcqAll = mcq?.items || [];
+  const imAll = imageMap?.items || [];
+  const ffItems = useMemo(() => (session.freeform ?? ffAll.map((_,i)=>i)).map(i => ffAll[i]).filter(Boolean), [ffAll, session.freeform]);
+  const mcqItems = useMemo(() => (session.mcq ?? mcqAll.map((_,i)=>i)).map(i => mcqAll[i]).filter(Boolean), [mcqAll, session.mcq]);
+  const imItems = useMemo(() => (session.imageMap ?? imAll.map((_,i)=>i)).map(i => imAll[i]).filter(Boolean), [imAll, session.imageMap]);
 
   const ffItem = useMemo(() => ffItems[index] || null, [ffItems, index]);
   const mcqItem = useMemo(() => mcqItems[index] || null, [mcqItems, index]);
@@ -135,8 +150,36 @@ export default function App(){
   const onNext = () => setIndex(i => Math.min(countForMode - 1, i + 1));
   const onFinish = () => setFinished(true);
   const onNew = () => {
-    clearProgress(state.quizId);
-    dispatch({ type: 'LOAD_PROGRESS', answers: initial.answers });
+    // Elegir cantidad y generar sesión aleatoria para la sección actual
+    const total = mode === 'freeform' ? ffAll.length : mode === 'mcq' ? mcqAll.length : imAll.length;
+    if (!total) return;
+    const suggested = Math.min(10, total);
+    const input = window.prompt(`¿Cuántas preguntas quieres para ${mode}? (1..${total})`, String(suggested));
+    if (input == null) return;
+    let n = parseInt(input, 10);
+    if (!Number.isFinite(n) || n <= 0) n = 1;
+    n = Math.min(Math.max(1, n), total);
+    const arr = Array.from({ length: total }, (_, i) => i);
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    const subset = arr.slice(0, n);
+    setSession(prev => {
+      const next = { ...prev };
+      const key = mode === 'image-map' ? 'imageMap' : mode;
+      next[key] = subset;
+      saveSession(state.quizId, next);
+      return next;
+    });
+    // Limpiar respuestas solo de la sección actual
+    if (mode === 'freeform') {
+      dispatch({ type: 'LOAD_PROGRESS', answers: { ...state.answers, freeform: {} } });
+    } else if (mode === 'mcq') {
+      dispatch({ type: 'LOAD_PROGRESS', answers: { ...state.answers, mcq: {} } });
+    } else {
+      dispatch({ type: 'LOAD_PROGRESS', answers: { ...state.answers, imageMap: {} } });
+    }
     setIndex(0);
     setFinished(false);
   };
@@ -196,7 +239,7 @@ export default function App(){
             <ModeButton id="mcq" label="Múltiple opción" />
             <ModeButton id="image-map" label="Imagen" />
           </div>
-          {mode === 'mcq' && (
+          {mode === 'mcq' && finished && (
             <div style={{ fontSize: 14, fontWeight: 600 }}>Puntaje: {mcqScore.correct} / {mcqScore.total}</div>
           )}
           <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', justifyContent: 'center' }}>
