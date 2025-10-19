@@ -1,185 +1,2951 @@
 {
+  "name": "Multiple opcion - Educacion Vial",
   "items": [
     {
       "id": "mcq-001",
       "type": "single",
-      "stem": "¿Cuál es la característica clave del carbón activado?",
+      "stem": "¿Qué se entiende por educación vial y cuál es su finalidad principal?",
       "options": [
-        { "id": "a", "text": "Alta porosidad" },
-        { "id": "b", "text": "Soluble en agua" },
-        { "id": "c", "text": "Altamente combustible" }
+        {
+          "id": "a",
+          "text": "Un conjunto de sanciones para los infractores del tránsito."
+        },
+        {
+          "id": "b",
+          "text": "Un proceso educativo que forma conductas responsables y seguras en el tránsito."
+        },
+        {
+          "id": "c",
+          "text": "Un examen teórico para obtener la licencia de conducir."
+        },
+        {
+          "id": "d",
+          "text": "Un conjunto de normas técnicas para diseñar calles y rutas."
+        }
       ],
-      "correct": ["a"],
-      "explanation": "El carbón activado se caracteriza por su elevada porosidad y gran área superficial, que le confiere alta capacidad de adsorción."
+      "correct": [
+        "b"
+      ],
+      "explanation": "La educación vial busca formar conductas seguras, responsables y solidarias para prevenir siniestros y mejorar la convivencia en el tránsito."
     },
     {
       "id": "mcq-002",
-      "type": "truefalse",
-      "stem": "El biochar y el carbón activado son el mismo material.",
+      "type": "single",
+      "stem": "¿Por qué el tránsito se considera una construcción social e histórica?",
       "options": [
-        { "id": "true", "text": "Verdadero" },
-        { "id": "false", "text": "Falso" }
+        {
+          "id": "a",
+          "text": "Porque depende únicamente del desarrollo tecnológico de los vehículos."
+        },
+        {
+          "id": "b",
+          "text": "Porque surge de acuerdos sociales y normas que evolucionan con la historia."
+        },
+        {
+          "id": "c",
+          "text": "Porque cada persona puede circular libremente sin reglas."
+        },
+        {
+          "id": "d",
+          "text": "Porque el tránsito es un fenómeno natural y no social."
+        }
       ],
-      "correct": ["false"],
-      "explanation": "Aunque ambos se obtienen por pirólisis, el biochar se destina a mejorar suelos y almacenar carbono, mientras que el carbón activado se usa para purificación por su estructura más porosa."
+      "correct": [
+        "b"
+      ],
+      "explanation": "El tránsito refleja la organización social y las reglas de convivencia creadas históricamente por las personas."
     },
     {
       "id": "mcq-003",
-      "type": "multiple",
-      "stem": "Seleccione las aplicaciones típicas del carbón activado:",
+      "type": "single",
+      "stem": "¿Qué papel cumple la ética ciudadana en la educación vial?",
       "options": [
-        { "id": "a", "text": "Tratamiento de agua" },
-        { "id": "b", "text": "Purificación de gases" },
-        { "id": "c", "text": "Combustible directo" },
-        { "id": "d", "text": "Filtración de aire" }
+        {
+          "id": "a",
+          "text": "Promueve el respeto, la responsabilidad y la solidaridad al conducir."
+        },
+        {
+          "id": "b",
+          "text": "Instruye sobre mecánica básica del automóvil."
+        },
+        {
+          "id": "c",
+          "text": "Determina la velocidad máxima permitida."
+        },
+        {
+          "id": "d",
+          "text": "Reemplaza las normas legales por costumbres sociales."
+        }
       ],
-      "correct": ["a", "b", "d"],
-      "explanation": "El carbón activado se usa en filtración de agua, aire y gases industriales debido a su alta capacidad de adsorción; no se emplea como combustible."
+      "correct": [
+        "a"
+      ],
+      "explanation": "La ética ciudadana impulsa valores que favorecen decisiones responsables y respetuosas en la vía pública."
     },
     {
       "id": "mcq-004",
       "type": "single",
-      "stem": "¿Cuál es el principal parámetro que determina la calidad de un carbón activado?",
+      "stem": "¿Por qué la educación vial debe ser permanente y no limitarse al momento de obtener la licencia?",
       "options": [
-        { "id": "a", "text": "Color del material" },
-        { "id": "b", "text": "Área superficial específica" },
-        { "id": "c", "text": "Contenido de humedad" }
+        {
+          "id": "a",
+          "text": "Porque las normas cambian constantemente y el aprendizaje debe continuar."
+        },
+        {
+          "id": "b",
+          "text": "Porque solo aplica a conductores profesionales."
+        },
+        {
+          "id": "c",
+          "text": "Porque se aprende una sola vez y no se modifica."
+        },
+        {
+          "id": "d",
+          "text": "Porque solo es obligatoria en las escuelas primarias."
+        }
       ],
-      "correct": ["b"],
-      "explanation": "El área superficial específica (medida BET) es el indicador más importante de la calidad de un carbón activado, ya que determina su capacidad de adsorción."
+      "correct": [
+        "a"
+      ],
+      "explanation": "La educación vial forma hábitos a largo plazo y se adapta a los cambios tecnológicos y normativos."
     },
     {
       "id": "mcq-005",
       "type": "multiple",
-      "stem": "¿Cuáles de los siguientes factores influyen en el rendimiento del biochar?",
+      "stem": "Selecciona algunos valores fundamentales de un buen ciudadano en el tránsito.",
       "options": [
-        { "id": "a", "text": "Temperatura de pirólisis" },
-        { "id": "b", "text": "Tipo de biomasa" },
-        { "id": "c", "text": "Velocidad de calentamiento" },
-        { "id": "d", "text": "Humedad del gas de combustión" }
+        {
+          "id": "a",
+          "text": "Respeto y tolerancia"
+        },
+        {
+          "id": "b",
+          "text": "Solidaridad y responsabilidad"
+        },
+        {
+          "id": "c",
+          "text": "Agresividad y competencia"
+        },
+        {
+          "id": "d",
+          "text": "Paciencia y empatía"
+        }
       ],
-      "correct": ["a", "b", "c"],
-      "explanation": "La temperatura, el tipo de biomasa y la velocidad de calentamiento determinan la proporción de biochar, gases y líquidos obtenidos."
+      "correct": [
+        "a",
+        "b",
+        "d"
+      ],
+      "explanation": "El respeto, la empatía, la paciencia y la solidaridad favorecen una convivencia vial segura y armónica."
     },
     {
       "id": "mcq-006",
       "type": "single",
-      "stem": "¿Cuál es el principal beneficio ambiental del biochar?",
+      "stem": "¿Cómo influyen las normas de tránsito en la convivencia entre peatones, ciclistas y conductores?",
       "options": [
-        { "id": "a", "text": "Aumenta la emisión de CO₂" },
-        { "id": "b", "text": "Permite el secuestro de carbono" },
-        { "id": "c", "text": "Reduce la capacidad del suelo de retener agua" }
+        {
+          "id": "a",
+          "text": "Imponen sanciones únicamente a los automovilistas."
+        },
+        {
+          "id": "b",
+          "text": "Regulan la convivencia ordenada y segura entre todos los usuarios de la vía."
+        },
+        {
+          "id": "c",
+          "text": "Eliminan la responsabilidad individual en el tránsito."
+        },
+        {
+          "id": "d",
+          "text": "Favorecen solo a los peatones."
+        }
       ],
-      "correct": ["b"],
-      "explanation": "El biochar almacena carbono de forma estable en el suelo, contribuyendo a la mitigación del cambio climático."
+      "correct": [
+        "b"
+      ],
+      "explanation": "Las normas establecen reglas claras que evitan conflictos y promueven el respeto mutuo en la vía pública."
     },
     {
       "id": "mcq-007",
-      "type": "truefalse",
-      "stem": "La gasificación se realiza en ausencia total de oxígeno.",
+      "type": "single",
+      "stem": "¿Qué consecuencias puede tener la falta de educación y ética vial en la sociedad?",
       "options": [
-        { "id": "true", "text": "Verdadero" },
-        { "id": "false", "text": "Falso" }
+        {
+          "id": "a",
+          "text": "Aumenta los siniestros y el irrespeto a las normas de tránsito."
+        },
+        {
+          "id": "b",
+          "text": "Genera mayor responsabilidad y respeto."
+        },
+        {
+          "id": "c",
+          "text": "Reduce la cantidad de infracciones."
+        },
+        {
+          "id": "d",
+          "text": "Mejora la convivencia entre conductores."
+        }
       ],
-      "correct": ["false"],
-      "explanation": "La gasificación se realiza con una cantidad limitada de oxígeno o vapor, no en ausencia total como la pirólisis."
+      "correct": [
+        "a"
+      ],
+      "explanation": "La ausencia de educación y ética vial provoca conductas imprudentes y pone en riesgo la seguridad colectiva."
     },
     {
       "id": "mcq-008",
-      "type": "multiple",
-      "stem": "Seleccione los métodos de activación del carbón:",
+      "type": "single",
+      "stem": "¿Cómo se relacionan el tránsito y el comportamiento humano?",
       "options": [
-        { "id": "a", "text": "Activación térmica (física)" },
-        { "id": "b", "text": "Activación química" },
-        { "id": "c", "text": "Activación biológica" },
-        { "id": "d", "text": "Activación electroquímica" }
+        {
+          "id": "a",
+          "text": "El tránsito refleja las actitudes y decisiones de las personas al circular."
+        },
+        {
+          "id": "b",
+          "text": "El tránsito depende solo del diseño de las calles."
+        },
+        {
+          "id": "c",
+          "text": "Las personas no influyen en el tránsito."
+        },
+        {
+          "id": "d",
+          "text": "Solo los peatones determinan la seguridad vial."
+        }
       ],
-      "correct": ["a", "b"],
-      "explanation": "Los dos métodos principales son la activación térmica (usando CO₂ o vapor) y la activación química (usando agentes como KOH o H₃PO₄)."
+      "correct": [
+        "a"
+      ],
+      "explanation": "El tránsito es un espejo del comportamiento humano: respeto, paciencia y responsabilidad impactan directamente en la seguridad vial."
     },
     {
       "id": "mcq-009",
       "type": "single",
-      "stem": "¿Qué propiedad del biochar mejora la retención de agua en el suelo?",
+      "stem": "¿Por qué se dice que el espacio público es un espacio compartido?",
       "options": [
-        { "id": "a", "text": "Su estructura porosa" },
-        { "id": "b", "text": "Su color negro" },
-        { "id": "c", "text": "Su composición aromática" }
+        {
+          "id": "a",
+          "text": "Porque pertenece a todos y debe usarse con respeto y responsabilidad."
+        },
+        {
+          "id": "b",
+          "text": "Porque solo lo utilizan los automovilistas."
+        },
+        {
+          "id": "c",
+          "text": "Porque cada persona puede ocuparlo sin restricciones."
+        },
+        {
+          "id": "d",
+          "text": "Porque está destinado únicamente al tránsito vehicular."
+        }
       ],
-      "correct": ["a"],
-      "explanation": "La estructura porosa del biochar incrementa la capacidad del suelo para retener agua y nutrientes."
+      "correct": [
+        "a"
+      ],
+      "explanation": "El espacio público es de todos los ciudadanos, y su uso responsable garantiza la convivencia y los derechos de todos."
     },
     {
       "id": "mcq-010",
-      "type": "truefalse",
-      "stem": "El carbón activado se obtiene a partir de materiales no renovables.",
+      "type": "single",
+      "stem": "¿Qué rol cumple el Estado en la educación y seguridad vial?",
       "options": [
-        { "id": "true", "text": "Verdadero" },
-        { "id": "false", "text": "Falso" }
+        {
+          "id": "a",
+          "text": "Fiscalizar y promover políticas de prevención y educación vial."
+        },
+        {
+          "id": "b",
+          "text": "Otorgar licencias sin controles."
+        },
+        {
+          "id": "c",
+          "text": "Limitar la circulación en calles urbanas."
+        },
+        {
+          "id": "d",
+          "text": "Construir vehículos más seguros para las empresas privadas."
+        }
       ],
-      "correct": ["false"],
-      "explanation": "El carbón activado puede producirse a partir de biomasa renovable como cáscaras, residuos agrícolas o maderas."
+      "correct": [
+        "a"
+      ],
+      "explanation": "El Estado garantiza la educación vial, fiscaliza el cumplimiento de normas y promueve campañas para reducir siniestros."
     },
     {
       "id": "mcq-011",
-      "type": "multiple",
-      "stem": "Seleccione las condiciones que favorecen la formación de gases durante la pirólisis:",
+      "type": "single",
+      "stem": "¿Qué es la Licencia Nacional de Conducir (LNC) y cuál es su finalidad?",
       "options": [
-        { "id": "a", "text": "Altas temperaturas" },
-        { "id": "b", "text": "Pirólisis lenta" },
-        { "id": "c", "text": "Baja temperatura" },
-        { "id": "d", "text": "Pirólisis rápida" }
+        {
+          "id": "a",
+          "text": "Un permiso provisorio otorgado por las escuelas de manejo."
+        },
+        {
+          "id": "b",
+          "text": "Un documento oficial que habilita legalmente a una persona a conducir vehículos en Argentina."
+        },
+        {
+          "id": "c",
+          "text": "Una constancia temporal para circular dentro del municipio."
+        },
+        {
+          "id": "d",
+          "text": "Un certificado médico que acredita la aptitud física del conductor."
+        }
       ],
-      "correct": ["a", "d"],
-      "explanation": "Las altas temperaturas y la pirólisis rápida favorecen la producción de gases y líquidos, reduciendo el rendimiento de biochar sólido."
+      "correct": [
+        "b"
+      ],
+      "explanation": "La Licencia Nacional de Conducir es un documento oficial que acredita la autorización y capacidad para conducir de forma segura en el territorio argentino."
     },
     {
       "id": "mcq-012",
       "type": "single",
-      "stem": "¿Qué gas se utiliza comúnmente en la activación física del carbón?",
+      "stem": "¿Qué autoridad es responsable de emitir la Licencia Nacional de Conducir en Argentina?",
       "options": [
-        { "id": "a", "text": "CO₂" },
-        { "id": "b", "text": "N₂" },
-        { "id": "c", "text": "H₂" }
+        {
+          "id": "a",
+          "text": "La Agencia Nacional de Seguridad Vial (ANSV) directamente."
+        },
+        {
+          "id": "b",
+          "text": "El Ministerio de Transporte de la Nación."
+        },
+        {
+          "id": "c",
+          "text": "Las municipalidades o comunas con Centros de Emisión de Licencias homologados por la ANSV."
+        },
+        {
+          "id": "d",
+          "text": "Los Juzgados de Faltas provinciales."
+        }
       ],
-      "correct": ["a"],
-      "explanation": "El dióxido de carbono (CO₂) y el vapor de agua se usan como agentes oxidantes controlados en la activación física del carbón."
+      "correct": [
+        "c"
+      ],
+      "explanation": "Las licencias se emiten en municipios o comunas que poseen un Centro de Emisión de Licencias (CEL) validado por la ANSV."
     },
     {
       "id": "mcq-013",
       "type": "multiple",
-      "stem": "¿Qué características son comunes entre biochar y carbón activado?",
+      "stem": "Selecciona las clases de licencias de conducir según la legislación argentina.",
       "options": [
-        { "id": "a", "text": "Origen en biomasa" },
-        { "id": "b", "text": "Alta porosidad" },
-        { "id": "c", "text": "Mismo proceso de producción" },
-        { "id": "d", "text": "Capacidad de adsorción" }
+        {
+          "id": "a",
+          "text": "Clase A: motocicletas"
+        },
+        {
+          "id": "b",
+          "text": "Clase B: automóviles y camionetas"
+        },
+        {
+          "id": "c",
+          "text": "Clase D: transporte de pasajeros"
+        },
+        {
+          "id": "d",
+          "text": "Clase F: maquinaria pesada exclusiva para obras públicas"
+        }
       ],
-      "correct": ["a", "b", "d"],
-      "explanation": "Ambos derivan de biomasa y poseen estructura porosa con capacidad de adsorción, aunque difieren en el grado de activación y el uso final."
+      "correct": [
+        "a",
+        "b",
+        "c"
+      ],
+      "explanation": "Las clases se dividen por tipo de vehículo y función. Clase A: motos, B: autos y camionetas, C: camiones, D: transporte, E: acoplados, F: discapacidad, G: maquinaria agrícola o vial."
     },
     {
       "id": "mcq-014",
-      "type": "single",
-      "stem": "¿Qué parámetro se usa para medir el área superficial específica de un material poroso?",
+      "type": "multiple",
+      "stem": "¿Qué requisitos básicos debe cumplir una persona para obtener la Licencia Nacional de Conducir?",
       "options": [
-        { "id": "a", "text": "Método BET" },
-        { "id": "b", "text": "Ensayo ASTM D" },
-        { "id": "c", "text": "Ensayo de humedad relativa" }
+        {
+          "id": "a",
+          "text": "Edad mínima según la clase solicitada y residencia en el país"
+        },
+        {
+          "id": "b",
+          "text": "Aprobar exámenes psicofísicos, teóricos y prácticos"
+        },
+        {
+          "id": "c",
+          "text": "Presentar DNI, CUIL, CENAT y libre deuda de infracciones"
+        },
+        {
+          "id": "d",
+          "text": "Poseer vehículo propio al momento del examen"
+        }
       ],
-      "correct": ["a"],
-      "explanation": "El método BET (Brunauer–Emmett–Teller) se utiliza para determinar el área superficial específica de materiales porosos como el carbón activado."
+      "correct": [
+        "a",
+        "b",
+        "c"
+      ],
+      "explanation": "Los requisitos incluyen edad mínima, residencia, exámenes aprobados y documentación válida. No es necesario tener vehículo propio."
     },
     {
       "id": "mcq-015",
-      "type": "truefalse",
-      "stem": "El biochar puede emplearse como material precursor para producir carbón activado.",
+      "type": "single",
+      "stem": "¿De qué depende la vigencia de la Licencia Nacional de Conducir?",
       "options": [
-        { "id": "true", "text": "Verdadero" },
-        { "id": "false", "text": "Falso" }
+        {
+          "id": "a",
+          "text": "De la cantidad de infracciones cometidas"
+        },
+        {
+          "id": "b",
+          "text": "De la edad del conductor, la clase de licencia y el examen psicofísico"
+        },
+        {
+          "id": "c",
+          "text": "Del modelo del vehículo que utiliza el titular"
+        },
+        {
+          "id": "d",
+          "text": "De la aprobación del seguro obligatorio"
+        }
       ],
-      "correct": ["true"],
-      "explanation": "El biochar puede someterse a un proceso posterior de activación térmica o química para transformarse en carbón activado con mayor porosidad."
+      "correct": [
+        "b"
+      ],
+      "explanation": "La vigencia varía según edad, tipo de licencia y resultado de los exámenes psicofísicos. Puede ser de 1 a 5 años."
+    },
+    {
+      "id": "mcq-016",
+      "type": "single",
+      "stem": "¿Qué es el CENAT y para qué se utiliza?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Un certificado de antecedentes judiciales."
+        },
+        {
+          "id": "b",
+          "text": "Un documento que registra infracciones de tránsito a nivel nacional."
+        },
+        {
+          "id": "c",
+          "text": "Un examen médico obligatorio para conducir."
+        },
+        {
+          "id": "d",
+          "text": "Un permiso temporal para circular dentro del país."
+        }
+      ],
+      "correct": [
+        "b"
+      ],
+      "explanation": "El CENAT (Certificado Nacional de Antecedentes de Tránsito) reúne todas las infracciones y es requisito obligatorio para tramitar o renovar la licencia."
+    },
+    {
+      "id": "mcq-017",
+      "type": "multiple",
+      "stem": "Selecciona los documentos obligatorios para circular dentro del territorio argentino.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Licencia Nacional de Conducir vigente"
+        },
+        {
+          "id": "b",
+          "text": "DNI y cédula verde o azul"
+        },
+        {
+          "id": "c",
+          "text": "Seguro obligatorio y comprobante de patente visible"
+        },
+        {
+          "id": "d",
+          "text": "Título de propiedad original del vehículo"
+        }
+      ],
+      "correct": [
+        "a",
+        "b",
+        "c"
+      ],
+      "explanation": "Los documentos obligatorios son licencia, DNI, cédula, seguro vigente, patente visible y, si corresponde, la VTV."
+    },
+    {
+      "id": "mcq-018",
+      "type": "multiple",
+      "stem": "¿Qué documentación adicional se requiere para circular fuera del país dentro del Mercosur?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Carta Verde (seguro internacional)"
+        },
+        {
+          "id": "b",
+          "text": "Cédula del vehículo y licencia vigente"
+        },
+        {
+          "id": "c",
+          "text": "Documento de identidad o pasaporte"
+        },
+        {
+          "id": "d",
+          "text": "Permiso Internacional para Conducir emitido por el ACA"
+        }
+      ],
+      "correct": [
+        "a",
+        "b",
+        "c"
+      ],
+      "explanation": "Para circular en el Mercosur se requiere Carta Verde, cédula, licencia y documento de identidad. El permiso internacional es para fuera del Mercosur."
+    },
+    {
+      "id": "mcq-019",
+      "type": "single",
+      "stem": "¿Qué condiciones deben cumplirse para circular fuera del Mercosur?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Contar con licencia nacional y pasaporte solamente."
+        },
+        {
+          "id": "b",
+          "text": "Tener permiso internacional emitido por el ACA, licencia nacional y seguro internacional."
+        },
+        {
+          "id": "c",
+          "text": "Poseer registro municipal vigente y libre deuda de infracciones."
+        },
+        {
+          "id": "d",
+          "text": "Ninguna, ya que el registro nacional es válido en todo el mundo."
+        }
+      ],
+      "correct": [
+        "b"
+      ],
+      "explanation": "Para conducir fuera del Mercosur se exige el Permiso Internacional, la licencia nacional, pasaporte y un seguro de cobertura internacional."
+    },
+    {
+      "id": "mcq-020",
+      "type": "single",
+      "stem": "¿Por qué es importante mantener actualizada la Licencia Nacional de Conducir?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Porque garantiza la validez legal para conducir y la evaluación psicofísica del titular."
+        },
+        {
+          "id": "b",
+          "text": "Porque evita pagar multas anuales."
+        },
+        {
+          "id": "c",
+          "text": "Porque permite acceder a descuentos en el seguro automotor."
+        },
+        {
+          "id": "d",
+          "text": "Porque es requisito solo para viajes internacionales."
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "Una licencia vigente acredita que el conductor conserva sus aptitudes y cumple con la normativa para circular legalmente."
+    },
+    {
+      "id": "mcq-021",
+      "type": "single",
+      "stem": "¿Qué se entiende por seguridad activa en un vehículo?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Conjunto de elementos que actúan después de un accidente."
+        },
+        {
+          "id": "b",
+          "text": "Sistemas y componentes que ayudan a evitar accidentes."
+        },
+        {
+          "id": "c",
+          "text": "Reglas de tránsito que establecen sanciones al conductor."
+        },
+        {
+          "id": "d",
+          "text": "Partes del vehículo relacionadas con el confort de los pasajeros."
+        }
+      ],
+      "correct": [
+        "b"
+      ],
+      "explanation": "La seguridad activa abarca todos los sistemas del vehículo que contribuyen a prevenir accidentes, como frenos, suspensión, dirección y luces."
+    },
+    {
+      "id": "mcq-022",
+      "type": "multiple",
+      "stem": "Selecciona los principales elementos que forman parte de la seguridad activa.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Sistema de frenos y dirección"
+        },
+        {
+          "id": "b",
+          "text": "Control de tracción y estabilidad"
+        },
+        {
+          "id": "c",
+          "text": "Neumáticos y luces"
+        },
+        {
+          "id": "d",
+          "text": "Airbags y cinturones de seguridad"
+        }
+      ],
+      "correct": [
+        "a",
+        "b",
+        "c"
+      ],
+      "explanation": "Los elementos activos ayudan a mantener el control del vehículo antes del accidente. Los airbags y cinturones pertenecen a la seguridad pasiva."
+    },
+    {
+      "id": "mcq-023",
+      "type": "single",
+      "stem": "¿Cuál es la función de la seguridad pasiva en un vehículo?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Reducir las lesiones en caso de accidente."
+        },
+        {
+          "id": "b",
+          "text": "Evitar que el vehículo pierda estabilidad."
+        },
+        {
+          "id": "c",
+          "text": "Ahorrar combustible y energía."
+        },
+        {
+          "id": "d",
+          "text": "Aumentar la potencia del motor."
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "La seguridad pasiva actúa durante un impacto para minimizar daños a los ocupantes, mediante cinturones, airbags y estructuras deformables."
+    },
+    {
+      "id": "mcq-024",
+      "type": "single",
+      "stem": "¿Qué diferencia principal existe entre seguridad activa y pasiva?",
+      "options": [
+        {
+          "id": "a",
+          "text": "La activa previene accidentes, la pasiva protege durante el impacto."
+        },
+        {
+          "id": "b",
+          "text": "La pasiva evita accidentes y la activa protege en choques."
+        },
+        {
+          "id": "c",
+          "text": "Ambas se refieren a la comodidad del vehículo."
+        },
+        {
+          "id": "d",
+          "text": "La activa se relaciona con el diseño y la pasiva con la pintura del auto."
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "La seguridad activa busca evitar el accidente, mientras que la pasiva reduce sus consecuencias."
+    },
+    {
+      "id": "mcq-025",
+      "type": "single",
+      "stem": "¿Qué se entiende por seguridad preventiva?",
+      "options": [
+        {
+          "id": "a",
+          "text": "La suma de conductas responsables y mantenimiento adecuado del vehículo."
+        },
+        {
+          "id": "b",
+          "text": "El sistema automático de frenado de emergencia."
+        },
+        {
+          "id": "c",
+          "text": "Un componente electrónico de la dirección asistida."
+        },
+        {
+          "id": "d",
+          "text": "Un protocolo de respuesta posterior al accidente."
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "La seguridad preventiva combina el comportamiento del conductor con el mantenimiento del vehículo para anticipar riesgos."
+    },
+    {
+      "id": "mcq-026",
+      "type": "single",
+      "stem": "¿Por qué el mantenimiento periódico del vehículo es esencial para la seguridad vial?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Porque previene fallas mecánicas y garantiza el buen funcionamiento del vehículo."
+        },
+        {
+          "id": "b",
+          "text": "Porque evita multas en los controles de tránsito."
+        },
+        {
+          "id": "c",
+          "text": "Porque mejora la estética del vehículo."
+        },
+        {
+          "id": "d",
+          "text": "Porque reduce el consumo de combustible en todos los casos."
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "Un mantenimiento regular previene fallas y garantiza el correcto desempeño de los sistemas de seguridad activa y pasiva."
+    },
+    {
+      "id": "mcq-027",
+      "type": "multiple",
+      "stem": "¿Qué controles básicos deben realizarse antes de conducir?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Niveles de aceite y líquido de frenos"
+        },
+        {
+          "id": "b",
+          "text": "Estado de los neumáticos y funcionamiento de las luces"
+        },
+        {
+          "id": "c",
+          "text": "Alineación de ruedas y suspensión completa"
+        },
+        {
+          "id": "d",
+          "text": "Limpieza de parabrisas y cinturones de seguridad operativos"
+        }
+      ],
+      "correct": [
+        "a",
+        "b",
+        "d"
+      ],
+      "explanation": "Los controles básicos incluyen revisar niveles de fluidos, luces, neumáticos, limpiaparabrisas y cinturones antes de iniciar el viaje."
+    },
+    {
+      "id": "mcq-028",
+      "type": "single",
+      "stem": "¿Qué es la Revisión Técnica Obligatoria (RTO) y cuál es su objetivo?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Un examen teórico para renovar la licencia."
+        },
+        {
+          "id": "b",
+          "text": "Una verificación periódica del estado mecánico y de seguridad del vehículo."
+        },
+        {
+          "id": "c",
+          "text": "Un trámite municipal para pagar impuestos."
+        },
+        {
+          "id": "d",
+          "text": "Una certificación sobre el tipo de combustible del vehículo."
+        }
+      ],
+      "correct": [
+        "b"
+      ],
+      "explanation": "La RTO garantiza que el vehículo se encuentre en condiciones técnicas seguras para circular sin representar riesgo para otros."
+    },
+    {
+      "id": "mcq-029",
+      "type": "multiple",
+      "stem": "¿Qué aspectos se controlan durante la Revisión Técnica Obligatoria (RTO)?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Sistema de frenos, dirección y suspensión"
+        },
+        {
+          "id": "b",
+          "text": "Luces, neumáticos y emisiones contaminantes"
+        },
+        {
+          "id": "c",
+          "text": "Nivel de ruido y cinturones de seguridad"
+        },
+        {
+          "id": "d",
+          "text": "Color del vehículo y estado de la pintura"
+        }
+      ],
+      "correct": [
+        "a",
+        "b",
+        "c"
+      ],
+      "explanation": "Durante la RTO se revisan los sistemas de seguridad y las condiciones técnicas generales, pero no aspectos estéticos del vehículo."
+    },
+    {
+      "id": "mcq-030",
+      "type": "single",
+      "stem": "¿Qué consecuencias puede tener circular sin haber realizado la RTO en tiempo y forma?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Solo se aplica una advertencia verbal por parte de la autoridad."
+        },
+        {
+          "id": "b",
+          "text": "Multas, retención del vehículo y mayor riesgo de siniestros por fallas mecánicas."
+        },
+        {
+          "id": "c",
+          "text": "Ninguna, si el vehículo está en buen estado visual."
+        },
+        {
+          "id": "d",
+          "text": "Se pierde automáticamente la licencia de conducir."
+        }
+      ],
+      "correct": [
+        "b"
+      ],
+      "explanation": "Circular sin RTO vigente constituye una infracción que puede derivar en sanciones y aumenta el riesgo de accidentes mecánicos."
+    },
+    {
+      "id": "mcq-031",
+      "type": "single",
+      "stem": "¿Qué se entiende por conducción eficiente y por qué es importante?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Una conducción rápida y competitiva para reducir tiempos."
+        },
+        {
+          "id": "b",
+          "text": "Una forma de manejo que optimiza el consumo, reduce contaminación y mantiene la seguridad."
+        },
+        {
+          "id": "c",
+          "text": "Un estilo de manejo basado en aceleraciones intensas."
+        },
+        {
+          "id": "d",
+          "text": "Una técnica exclusiva para vehículos eléctricos."
+        }
+      ],
+      "correct": [
+        "b"
+      ],
+      "explanation": "La conducción eficiente busca ahorrar combustible, disminuir emisiones y prolongar la vida útil del vehículo sin comprometer la seguridad."
+    },
+    {
+      "id": "mcq-032",
+      "type": "single",
+      "stem": "¿Qué práctica favorece el cuidado del motor al encender el vehículo?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Acelerar varias veces para calentar el motor rápidamente."
+        },
+        {
+          "id": "b",
+          "text": "Dejarlo unos segundos en ralentí antes de iniciar la marcha."
+        },
+        {
+          "id": "c",
+          "text": "Encenderlo y apagarlo varias veces seguidas."
+        },
+        {
+          "id": "d",
+          "text": "Arrancar directamente en marcha sin esperar."
+        }
+      ],
+      "correct": [
+        "b"
+      ],
+      "explanation": "Dejar el motor en ralentí unos segundos estabiliza la presión del aceite y evita desgaste prematuro, especialmente en frío."
+    },
+    {
+      "id": "mcq-033",
+      "type": "single",
+      "stem": "¿Qué información brinda el cuentarrevoluciones al conductor?",
+      "options": [
+        {
+          "id": "a",
+          "text": "La velocidad promedio en kilómetros por hora."
+        },
+        {
+          "id": "b",
+          "text": "La cantidad de vueltas del motor por minuto (rpm)."
+        },
+        {
+          "id": "c",
+          "text": "El nivel de combustible restante."
+        },
+        {
+          "id": "d",
+          "text": "La temperatura del aceite del motor."
+        }
+      ],
+      "correct": [
+        "b"
+      ],
+      "explanation": "El cuentarrevoluciones indica las rpm del motor, ayudando a cambiar de marcha en el momento adecuado para reducir consumo y desgaste."
+    },
+    {
+      "id": "mcq-034",
+      "type": "single",
+      "stem": "¿Por qué es importante realizar los cambios de velocidad en el momento adecuado?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Porque evita sobrecargar el motor y reduce el consumo de combustible."
+        },
+        {
+          "id": "b",
+          "text": "Porque permite acelerar más rápidamente en zonas urbanas."
+        },
+        {
+          "id": "c",
+          "text": "Porque evita el uso del freno motor."
+        },
+        {
+          "id": "d",
+          "text": "Porque mejora el confort del vehículo al frenar."
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "Cambiar de marcha en el rango de revoluciones correcto protege el motor y mejora la eficiencia energética."
+    },
+    {
+      "id": "mcq-035",
+      "type": "single",
+      "stem": "¿Qué es el freno motor y cuándo se recomienda su uso?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Una técnica para frenar el vehículo usando la resistencia del motor."
+        },
+        {
+          "id": "b",
+          "text": "Un sistema electrónico que reemplaza los frenos convencionales."
+        },
+        {
+          "id": "c",
+          "text": "Un freno adicional que solo se utiliza en vehículos de carga."
+        },
+        {
+          "id": "d",
+          "text": "Un sistema que inmoviliza las ruedas en caso de emergencia."
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "El freno motor utiliza la resistencia del motor para reducir la velocidad, ideal en descensos o antes de una curva."
+    },
+    {
+      "id": "mcq-036",
+      "type": "single",
+      "stem": "¿Qué ventajas tiene el freno motor frente al freno de servicio?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Disminuye el desgaste y la temperatura de los frenos, mejorando el control del vehículo."
+        },
+        {
+          "id": "b",
+          "text": "Permite detener el vehículo más rápidamente en cualquier superficie."
+        },
+        {
+          "id": "c",
+          "text": "Aumenta el consumo de combustible al reducir la marcha."
+        },
+        {
+          "id": "d",
+          "text": "Evita que se necesite mantenimiento de frenos."
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "El freno motor reduce el esfuerzo sobre el sistema de frenos, evita el sobrecalentamiento y mantiene mejor control en pendientes."
+    },
+    {
+      "id": "mcq-037",
+      "type": "single",
+      "stem": "¿Por qué se dice que el automóvil es una máquina de consumo?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Porque transforma energía de combustibles en movimiento, generando emisiones."
+        },
+        {
+          "id": "b",
+          "text": "Porque no produce ningún tipo de contaminación."
+        },
+        {
+          "id": "c",
+          "text": "Porque utiliza exclusivamente energía solar."
+        },
+        {
+          "id": "d",
+          "text": "Porque no necesita mantenimiento."
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "El automóvil consume energía proveniente de combustibles fósiles, generando emisiones contaminantes y costos de uso."
+    },
+    {
+      "id": "mcq-038",
+      "type": "multiple",
+      "stem": "Selecciona las características del vehículo que influyen en la conducción eficiente.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Peso y aerodinámica del vehículo"
+        },
+        {
+          "id": "b",
+          "text": "Presión correcta de los neumáticos"
+        },
+        {
+          "id": "c",
+          "text": "Mantenimiento general y tipo de motor"
+        },
+        {
+          "id": "d",
+          "text": "Color exterior del vehículo"
+        }
+      ],
+      "correct": [
+        "a",
+        "b",
+        "c"
+      ],
+      "explanation": "Factores como peso, aerodinámica, mantenimiento y presión de neumáticos afectan directamente el consumo y la eficiencia del vehículo."
+    },
+    {
+      "id": "mcq-039",
+      "type": "single",
+      "stem": "¿Cómo influye la carga del vehículo en la eficiencia y seguridad de la conducción?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Una carga excesiva aumenta el consumo y reduce la estabilidad del vehículo."
+        },
+        {
+          "id": "b",
+          "text": "La carga no influye en la seguridad ni en el consumo."
+        },
+        {
+          "id": "c",
+          "text": "Cuanto mayor la carga, menor el consumo de combustible."
+        },
+        {
+          "id": "d",
+          "text": "La carga no afecta la distancia de frenado."
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "Cargar el vehículo más allá de lo permitido incrementa el consumo, dificulta el control y alarga la distancia de frenado."
+    },
+    {
+      "id": "mcq-040",
+      "type": "multiple",
+      "stem": "Selecciona los hábitos que contribuyen a una conducción eficiente y responsable.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Planificar el recorrido y evitar aceleraciones bruscas"
+        },
+        {
+          "id": "b",
+          "text": "Mantener una velocidad constante y anticipar frenadas"
+        },
+        {
+          "id": "c",
+          "text": "Revisar presión de neumáticos y evitar ralentí prolongado"
+        },
+        {
+          "id": "d",
+          "text": "Acelerar y frenar constantemente para mantener el ritmo del tráfico"
+        }
+      ],
+      "correct": [
+        "a",
+        "b",
+        "c"
+      ],
+      "explanation": "Planificación, anticipación y mantenimiento adecuado son claves para una conducción más eficiente, económica y segura."
+    },
+    {
+      "id": "mcq-068",
+      "type": "single",
+      "stem": "¿Qué función cumplen las señales viales dentro del sistema de tránsito?",
+      "options": [
+        { "id": "a", "text": "Advertir únicamente la ubicación de los semáforos." },
+        { "id": "b", "text": "Regular, orientar y prevenir accidentes mediante información clara." },
+        { "id": "c", "text": "Indicar la marca del fabricante de la ruta." },
+        { "id": "d", "text": "Servir solo de decoración urbana." }
+      ],
+      "correct": ["b"],
+      "explanation": "Las señales ordenan y regulan la circulación, orientan a los usuarios y previenen accidentes proporcionando información uniforme y comprensible."
+    },
+    {
+      "id": "mcq-069",
+      "type": "multiple",
+      "stem": "¿Cómo se clasifican las señales viales según su función?",
+      "options": [
+        { "id": "a", "text": "Reglamentarias o prescriptivas" },
+        { "id": "b", "text": "Preventivas" },
+        { "id": "c", "text": "Informativas" },
+        { "id": "d", "text": "Transitorias" }
+      ],
+      "correct": ["a", "b", "c", "d"],
+      "explanation": "Las señales se dividen en cuatro grupos: reglamentarias, preventivas, informativas y transitorias, según la función que cumplen en la vía."
+    },
+    {
+      "id": "mcq-070",
+      "type": "single",
+      "stem": "¿Qué características tienen las señales reglamentarias o prescriptivas?",
+      "options": [
+        { "id": "a", "text": "Indican obligaciones o prohibiciones; son circulares con fondo blanco y borde rojo." },
+        { "id": "b", "text": "Advierten peligros y son amarillas en forma de rombo." },
+        { "id": "c", "text": "Informan sobre rutas y servicios; son azules o verdes." },
+        { "id": "d", "text": "Se utilizan solo en obras temporales y son anaranjadas." }
+      ],
+      "correct": ["a"],
+      "explanation": "Las señales reglamentarias imponen normas obligatorias. Su forma y color ayudan a distinguirlas rápidamente en la vía."
+    },
+    {
+      "id": "mcq-071",
+      "type": "single",
+      "stem": "¿Qué diferencia existe entre una señal de prohibición y una de obligación?",
+      "options": [
+        { "id": "a", "text": "Las de prohibición indican acciones no permitidas; las de obligación, conductas que deben cumplirse." },
+        { "id": "b", "text": "Ambas indican peligros en la vía." },
+        { "id": "c", "text": "Las de obligación tienen forma triangular y las de prohibición rectangular." },
+        { "id": "d", "text": "No existe diferencia; ambas son preventivas." }
+      ],
+      "correct": ["a"],
+      "explanation": "Las señales de prohibición limitan acciones; las de obligación establecen comportamientos que deben realizarse, como sentido único o uso de luces."
+    },
+    {
+      "id": "mcq-072",
+      "type": "single",
+      "stem": "¿Cuál es la función principal de las señales preventivas?",
+      "options": [
+        { "id": "a", "text": "Advertir sobre posibles peligros en la vía y promover la precaución." },
+        { "id": "b", "text": "Indicar la ubicación de servicios cercanos." },
+        { "id": "c", "text": "Imponer sanciones al conductor infractor." },
+        { "id": "d", "text": "Autorizar el paso en zonas restringidas." }
+      ],
+      "correct": ["a"],
+      "explanation": "Las señales preventivas advierten sobre riesgos próximos, ayudando al conductor a anticiparse y ajustar su conducción."
+    },
+    {
+      "id": "mcq-073",
+      "type": "single",
+      "stem": "¿Qué forma y color caracterizan a las señales preventivas?",
+      "options": [
+        { "id": "a", "text": "Cuadradas en posición de rombo, fondo amarillo y símbolo negro." },
+        { "id": "b", "text": "Rectangulares, fondo azul y letras blancas." },
+        { "id": "c", "text": "Circulares, fondo blanco y borde rojo." },
+        { "id": "d", "text": "Triangulares, fondo verde y borde blanco." }
+      ],
+      "correct": ["a"],
+      "explanation": "Las señales preventivas son amarillas con símbolo negro y forma romboidal, fácilmente reconocibles por su función de advertencia."
+    },
+    {
+      "id": "mcq-074",
+      "type": "single",
+      "stem": "¿Qué información brindan las señales informativas?",
+      "options": [
+        { "id": "a", "text": "Datos sobre rutas, destinos, servicios y lugares de interés." },
+        { "id": "b", "text": "Advertencias de peligro inminente." },
+        { "id": "c", "text": "Órdenes obligatorias de circulación." },
+        { "id": "d", "text": "Prohibiciones temporales en zonas urbanas." }
+      ],
+      "correct": ["a"],
+      "explanation": "Estas señales guían al conductor sobre recorridos, distancias y servicios, facilitando la orientación y decisión en ruta."
+    },
+    {
+      "id": "mcq-075",
+      "type": "multiple",
+      "stem": "Asocia los colores de las señales informativas con su significado.",
+      "options": [
+        { "id": "a", "text": "Verde: orientación y rutas" },
+        { "id": "b", "text": "Azul: servicios o instalaciones" },
+        { "id": "c", "text": "Blanco: información general" },
+        { "id": "d", "text": "Marrón: puntos de interés turístico" }
+      ],
+      "correct": ["a", "b", "c", "d"],
+      "explanation": "El color del fondo de las señales informativas permite identificar su propósito: orientación, servicios o turismo."
+    },
+    {
+      "id": "mcq-076",
+      "type": "single",
+      "stem": "¿Qué indican las señales transitorias y por qué son importantes?",
+      "options": [
+        { "id": "a", "text": "Señalan desvíos o trabajos temporales en la vía, advirtiendo precaución." },
+        { "id": "b", "text": "Indican zonas de descanso o servicios de emergencia." },
+        { "id": "c", "text": "Regulan el tránsito nocturno exclusivamente." },
+        { "id": "d", "text": "Informan sobre límites permanentes de velocidad." }
+      ],
+      "correct": ["a"],
+      "explanation": "Las señales transitorias informan sobre alteraciones temporales en la circulación por obras o mantenimiento."
+    },
+    {
+      "id": "mcq-077",
+      "type": "single",
+      "stem": "¿Qué color caracteriza a las señales transitorias?",
+      "options": [
+        { "id": "a", "text": "Naranja con símbolos negros, indicando precaución." },
+        { "id": "b", "text": "Rojo con letras blancas, indicando detención obligatoria." },
+        { "id": "c", "text": "Azul con pictogramas blancos, indicando servicios." },
+        { "id": "d", "text": "Verde con letras amarillas, indicando orientación." }
+      ],
+      "correct": ["a"],
+      "explanation": "El color naranja alerta sobre obras o cambios temporales en la vía, destacando su carácter transitorio."
+    },
+    {
+      "id": "mcq-078",
+      "type": "single",
+      "stem": "¿Por qué es importante respetar las señales de tránsito incluso cuando parecen innecesarias?",
+      "options": [
+        { "id": "a", "text": "Porque garantizan orden, previsibilidad y reducen el riesgo de accidentes." },
+        { "id": "b", "text": "Porque algunas son optativas y pueden ignorarse." },
+        { "id": "c", "text": "Porque solo sirven para orientar a los turistas." },
+        { "id": "d", "text": "Porque evitan el desgaste del vehículo." }
+      ],
+      "correct": ["a"],
+      "explanation": "Las señales constituyen el lenguaje común del tránsito; obedecerlas mantiene la seguridad y el orden vial."
+    },
+    {
+      "id": "mcq-079",
+      "type": "single",
+      "stem": "¿Qué consecuencias puede generar la falta o incumplimiento de señalización vial?",
+      "options": [
+        { "id": "a", "text": "Confusión, maniobras peligrosas y aumento del riesgo de siniestros." },
+        { "id": "b", "text": "Mayor fluidez del tránsito." },
+        { "id": "c", "text": "Reducción de la velocidad en zonas urbanas." },
+        { "id": "d", "text": "Disminución de la congestión vehicular." }
+      ],
+      "correct": ["a"],
+      "explanation": "La falta o incumplimiento de señales provoca caos, maniobras riesgosas y siniestros por falta de información clara."
+    },
+    {
+      "id": "mcq-080",
+      "type": "multiple",
+      "stem": "Selecciona ejemplos de señalización horizontal en la vía.",
+      "options": [
+        { "id": "a", "text": "Líneas de carril y sendas peatonales" },
+        { "id": "b", "text": "Líneas continuas o discontinuas" },
+        { "id": "c", "text": "Flechas direccionales y cebreados" },
+        { "id": "d", "text": "Carteles verticales de obras" }
+      ],
+      "correct": ["a", "b", "c"],
+      "explanation": "La señalización horizontal se pinta sobre la calzada y complementa la vertical para ordenar la circulación."
+    },
+    {
+      "id": "mcq-081",
+      "type": "single",
+      "stem": "¿Qué relación existe entre la señalización vial y el comportamiento del conductor?",
+      "options": [
+        { "id": "a", "text": "Cumplir las señales refleja respeto y reduce riesgos de accidente." },
+        { "id": "b", "text": "Las señales no influyen en la conducta del conductor." },
+        { "id": "c", "text": "El conductor puede reemplazar las señales por su criterio personal." },
+        { "id": "d", "text": "Solo los peatones deben respetar las señales." }
+      ],
+      "correct": ["a"],
+      "explanation": "La obediencia a las señales guía el comportamiento del conductor, promueve la convivencia y previene siniestros."
+    },
+    {
+      "id": "mcq-058",
+      "type": "single",
+      "stem": "¿Por qué la velocidad es uno de los factores más determinantes en la seguridad vial?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Porque reduce el tiempo de viaje sin efectos colaterales."
+        },
+        {
+          "id": "b",
+          "text": "Porque disminuye la distancia de frenado a mayor velocidad."
+        },
+        {
+          "id": "c",
+          "text": "Porque a mayor velocidad se reduce el tiempo de reacción y aumenta la distancia de frenado."
+        },
+        {
+          "id": "d",
+          "text": "Porque elimina la necesidad de mantener distancia."
+        }
+      ],
+      "correct": [
+        "c"
+      ],
+      "explanation": "Subir la velocidad recorta el tiempo para decidir y alarga la distancia necesaria para detenerse, elevando el riesgo y la gravedad de los siniestros."
+    },
+    {
+      "id": "mcq-059",
+      "type": "single",
+      "stem": "¿Qué se entiende por velocidad máxima permitida?",
+      "options": [
+        {
+          "id": "a",
+          "text": "La velocidad ideal recomendada por el fabricante del vehículo."
+        },
+        {
+          "id": "b",
+          "text": "La velocidad más alta permitida por la norma para una vía específica."
+        },
+        {
+          "id": "c",
+          "text": "La velocidad a la que todos deben circular obligatoriamente."
+        },
+        {
+          "id": "d",
+          "text": "La velocidad usada solo por vehículos de emergencia."
+        }
+      ],
+      "correct": [
+        "b"
+      ],
+      "explanation": "Es el límite superior legal fijado para una vía, sujeto a señalización y condiciones de circulación."
+    },
+    {
+      "id": "mcq-060",
+      "type": "single",
+      "stem": "¿Qué se entiende por velocidad mínima permitida?",
+      "options": [
+        {
+          "id": "a",
+          "text": "La velocidad por debajo de la cual se entorpece la circulación normal."
+        },
+        {
+          "id": "b",
+          "text": "La velocidad obligatoria en autopistas."
+        },
+        {
+          "id": "c",
+          "text": "La mitad de la velocidad máxima señalizada."
+        },
+        {
+          "id": "d",
+          "text": "La velocidad recomendada para condiciones climáticas adversas."
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "La velocidad mínima busca conservar la fluidez del tránsito y evitar diferencias peligrosas de velocidad entre vehículos."
+    },
+    {
+      "id": "mcq-061",
+      "type": "single",
+      "stem": "¿Qué es la velocidad precautoria y cuándo debe aplicarse?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Una velocidad superior a la máxima para sobrepasar con rapidez."
+        },
+        {
+          "id": "b",
+          "text": "Una velocidad por debajo de la máxima, adoptada ante lluvia, niebla, zonas escolares u otros riesgos."
+        },
+        {
+          "id": "c",
+          "text": "La velocidad igual a la mínima señalizada en toda circunstancia."
+        },
+        {
+          "id": "d",
+          "text": "Una velocidad exclusiva para vehículos pesados."
+        }
+      ],
+      "correct": [
+        "b"
+      ],
+      "explanation": "Es una reducción voluntaria frente a condiciones adversas o entornos de riesgo, incluso si el límite máximo lo permite."
+    },
+    {
+      "id": "mcq-062",
+      "type": "multiple",
+      "stem": "Selecciona factores que influyen en la velocidad de circulación segura.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Estado y tipo de vehículo (neumáticos, frenos, carga)"
+        },
+        {
+          "id": "b",
+          "text": "Condiciones climáticas y visibilidad"
+        },
+        {
+          "id": "c",
+          "text": "Estado de la calzada y señalización"
+        },
+        {
+          "id": "d",
+          "text": "Experiencia y condiciones del conductor"
+        }
+      ],
+      "correct": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "explanation": "La velocidad segura depende del vehículo, el camino, el clima/señalización y las capacidades del conductor."
+    },
+    {
+      "id": "mcq-063",
+      "type": "single",
+      "stem": "¿Cuáles son límites de referencia de velocidades máximas en Argentina (pueden variar por señalización)?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Calles 60 km/h; avenidas 80 km/h; autopistas 160 km/h."
+        },
+        {
+          "id": "b",
+          "text": "Calles 40 km/h; avenidas 60 km/h; rutas 110 km/h; autopistas 130 km/h."
+        },
+        {
+          "id": "c",
+          "text": "Calles 30 km/h; avenidas 50 km/h; rutas 90 km/h; autopistas 110 km/h."
+        },
+        {
+          "id": "d",
+          "text": "En todas las vías, 100 km/h."
+        }
+      ],
+      "correct": [
+        "b"
+      ],
+      "explanation": "Como referencia general: 40 km/h en calles, 60 km/h en avenidas, 110 km/h en rutas y 130 km/h en autopistas, salvo señalización específica."
+    },
+    {
+      "id": "mcq-064",
+      "type": "single",
+      "stem": "¿Por qué es importante respetar las velocidades mínimas y máximas señaladas?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Porque garantizan una circulación previsible y reducen riesgos por diferencias de velocidad."
+        },
+        {
+          "id": "b",
+          "text": "Porque evitan el desgaste del motor."
+        },
+        {
+          "id": "c",
+          "text": "Porque permiten llegar más rápido al destino."
+        },
+        {
+          "id": "d",
+          "text": "Porque solo afectan a los vehículos de carga."
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "Respetar los límites mantiene el flujo ordenado y reduce choques por alcance o maniobras inesperadas."
+    },
+    {
+      "id": "mcq-065",
+      "type": "single",
+      "stem": "¿Qué relación existe entre la velocidad y la distancia de frenado?",
+      "options": [
+        {
+          "id": "a",
+          "text": "La distancia de frenado disminuye al aumentar la velocidad."
+        },
+        {
+          "id": "b",
+          "text": "La distancia de frenado aumenta de manera más que proporcional con la velocidad."
+        },
+        {
+          "id": "c",
+          "text": "No hay relación entre ambas magnitudes."
+        },
+        {
+          "id": "d",
+          "text": "La distancia de frenado solo depende del estado de los neumáticos."
+        }
+      ],
+      "correct": [
+        "b"
+      ],
+      "explanation": "La energía cinética crece con el cuadrado de la velocidad; por eso, duplicar la velocidad puede cuadruplicar la distancia necesaria para detenerse."
+    },
+    {
+      "id": "mcq-066",
+      "type": "single",
+      "stem": "¿Cómo influye la velocidad en la gravedad de los siniestros viales?",
+      "options": [
+        {
+          "id": "a",
+          "text": "A mayor velocidad, los impactos suelen ser más graves por la mayor energía involucrada."
+        },
+        {
+          "id": "b",
+          "text": "A mayor velocidad, disminuye la severidad de los choques."
+        },
+        {
+          "id": "c",
+          "text": "La gravedad no cambia con la velocidad."
+        },
+        {
+          "id": "d",
+          "text": "Solo influye en choques contra objetos fijos, no entre vehículos."
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "Más velocidad implica más energía de impacto y, por tanto, lesiones y daños potencialmente más severos."
+    },
+    {
+      "id": "mcq-067",
+      "type": "multiple",
+      "stem": "¿Qué actitud debe adoptar el conductor cuando las condiciones exigen disminuir la velocidad?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Reducir progresivamente la velocidad."
+        },
+        {
+          "id": "b",
+          "text": "Aumentar la distancia de seguridad."
+        },
+        {
+          "id": "c",
+          "text": "Evitar frenadas bruscas y adaptar la conducción al clima y la visibilidad."
+        },
+        {
+          "id": "d",
+          "text": "Mantener la velocidad para no obstaculizar."
+        }
+      ],
+      "correct": [
+        "a",
+        "b",
+        "c"
+      ],
+      "explanation": "La conducción precautoria exige bajar la velocidad con suavidad, ampliar distancias y adecuarse a clima, visibilidad y tránsito."
+    },
+    {
+      "id": "mcq-068",
+      "type": "single",
+      "stem": "¿Qué función cumplen las señales viales dentro del sistema de tránsito?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Advertir únicamente la ubicación de los semáforos."
+        },
+        {
+          "id": "b",
+          "text": "Regular, orientar y prevenir accidentes mediante información clara."
+        },
+        {
+          "id": "c",
+          "text": "Indicar la marca del fabricante de la ruta."
+        },
+        {
+          "id": "d",
+          "text": "Servir solo de decoración urbana."
+        }
+      ],
+      "correct": [
+        "b"
+      ],
+      "explanation": "Las señales ordenan y regulan la circulación, orientan a los usuarios y previenen accidentes proporcionando información uniforme y comprensible."
+    },
+    {
+      "id": "mcq-069",
+      "type": "multiple",
+      "stem": "¿Cómo se clasifican las señales viales según su función?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Reglamentarias o prescriptivas"
+        },
+        {
+          "id": "b",
+          "text": "Preventivas"
+        },
+        {
+          "id": "c",
+          "text": "Informativas"
+        },
+        {
+          "id": "d",
+          "text": "Transitorias"
+        }
+      ],
+      "correct": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "explanation": "Las señales se dividen en cuatro grupos: reglamentarias, preventivas, informativas y transitorias, según la función que cumplen en la vía."
+    },
+    {
+      "id": "mcq-070",
+      "type": "single",
+      "stem": "¿Qué características tienen las señales reglamentarias o prescriptivas?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Indican obligaciones o prohibiciones; son circulares con fondo blanco y borde rojo."
+        },
+        {
+          "id": "b",
+          "text": "Advierten peligros y son amarillas en forma de rombo."
+        },
+        {
+          "id": "c",
+          "text": "Informan sobre rutas y servicios; son azules o verdes."
+        },
+        {
+          "id": "d",
+          "text": "Se utilizan solo en obras temporales y son anaranjadas."
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "Las señales reglamentarias imponen normas obligatorias. Su forma y color ayudan a distinguirlas rápidamente en la vía."
+    },
+    {
+      "id": "mcq-071",
+      "type": "single",
+      "stem": "¿Qué diferencia existe entre una señal de prohibición y una de obligación?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Las de prohibición indican acciones no permitidas; las de obligación, conductas que deben cumplirse."
+        },
+        {
+          "id": "b",
+          "text": "Ambas indican peligros en la vía."
+        },
+        {
+          "id": "c",
+          "text": "Las de obligación tienen forma triangular y las de prohibición rectangular."
+        },
+        {
+          "id": "d",
+          "text": "No existe diferencia; ambas son preventivas."
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "Las señales de prohibición limitan acciones; las de obligación establecen comportamientos que deben realizarse, como sentido único o uso de luces."
+    },
+    {
+      "id": "mcq-072",
+      "type": "single",
+      "stem": "¿Cuál es la función principal de las señales preventivas?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Advertir sobre posibles peligros en la vía y promover la precaución."
+        },
+        {
+          "id": "b",
+          "text": "Indicar la ubicación de servicios cercanos."
+        },
+        {
+          "id": "c",
+          "text": "Imponer sanciones al conductor infractor."
+        },
+        {
+          "id": "d",
+          "text": "Autorizar el paso en zonas restringidas."
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "Las señales preventivas advierten sobre riesgos próximos, ayudando al conductor a anticiparse y ajustar su conducción."
+    },
+    {
+      "id": "mcq-073",
+      "type": "single",
+      "stem": "¿Qué forma y color caracterizan a las señales preventivas?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Cuadradas en posición de rombo, fondo amarillo y símbolo negro."
+        },
+        {
+          "id": "b",
+          "text": "Rectangulares, fondo azul y letras blancas."
+        },
+        {
+          "id": "c",
+          "text": "Circulares, fondo blanco y borde rojo."
+        },
+        {
+          "id": "d",
+          "text": "Triangulares, fondo verde y borde blanco."
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "Las señales preventivas son amarillas con símbolo negro y forma romboidal, fácilmente reconocibles por su función de advertencia."
+    },
+    {
+      "id": "mcq-074",
+      "type": "single",
+      "stem": "¿Qué información brindan las señales informativas?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Datos sobre rutas, destinos, servicios y lugares de interés."
+        },
+        {
+          "id": "b",
+          "text": "Advertencias de peligro inminente."
+        },
+        {
+          "id": "c",
+          "text": "Órdenes obligatorias de circulación."
+        },
+        {
+          "id": "d",
+          "text": "Prohibiciones temporales en zonas urbanas."
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "Estas señales guían al conductor sobre recorridos, distancias y servicios, facilitando la orientación y decisión en ruta."
+    },
+    {
+      "id": "mcq-075",
+      "type": "multiple",
+      "stem": "Asocia los colores de las señales informativas con su significado.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Verde: orientación y rutas"
+        },
+        {
+          "id": "b",
+          "text": "Azul: servicios o instalaciones"
+        },
+        {
+          "id": "c",
+          "text": "Blanco: información general"
+        },
+        {
+          "id": "d",
+          "text": "Marrón: puntos de interés turístico"
+        }
+      ],
+      "correct": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "explanation": "El color del fondo de las señales informativas permite identificar su propósito: orientación, servicios o turismo."
+    },
+    {
+      "id": "mcq-076",
+      "type": "single",
+      "stem": "¿Qué indican las señales transitorias y por qué son importantes?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Señalan desvíos o trabajos temporales en la vía, advirtiendo precaución."
+        },
+        {
+          "id": "b",
+          "text": "Indican zonas de descanso o servicios de emergencia."
+        },
+        {
+          "id": "c",
+          "text": "Regulan el tránsito nocturno exclusivamente."
+        },
+        {
+          "id": "d",
+          "text": "Informan sobre límites permanentes de velocidad."
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "Las señales transitorias informan sobre alteraciones temporales en la circulación por obras o mantenimiento."
+    },
+    {
+      "id": "mcq-077",
+      "type": "single",
+      "stem": "¿Qué color caracteriza a las señales transitorias?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Naranja con símbolos negros, indicando precaución."
+        },
+        {
+          "id": "b",
+          "text": "Rojo con letras blancas, indicando detención obligatoria."
+        },
+        {
+          "id": "c",
+          "text": "Azul con pictogramas blancos, indicando servicios."
+        },
+        {
+          "id": "d",
+          "text": "Verde con letras amarillas, indicando orientación."
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "El color naranja alerta sobre obras o cambios temporales en la vía, destacando su carácter transitorio."
+    },
+    {
+      "id": "mcq-078",
+      "type": "single",
+      "stem": "¿Por qué es importante respetar las señales de tránsito incluso cuando parecen innecesarias?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Porque garantizan orden, previsibilidad y reducen el riesgo de accidentes."
+        },
+        {
+          "id": "b",
+          "text": "Porque algunas son optativas y pueden ignorarse."
+        },
+        {
+          "id": "c",
+          "text": "Porque solo sirven para orientar a los turistas."
+        },
+        {
+          "id": "d",
+          "text": "Porque evitan el desgaste del vehículo."
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "Las señales constituyen el lenguaje común del tránsito; obedecerlas mantiene la seguridad y el orden vial."
+    },
+    {
+      "id": "mcq-079",
+      "type": "single",
+      "stem": "¿Qué consecuencias puede generar la falta o incumplimiento de señalización vial?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Confusión, maniobras peligrosas y aumento del riesgo de siniestros."
+        },
+        {
+          "id": "b",
+          "text": "Mayor fluidez del tránsito."
+        },
+        {
+          "id": "c",
+          "text": "Reducción de la velocidad en zonas urbanas."
+        },
+        {
+          "id": "d",
+          "text": "Disminución de la congestión vehicular."
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "La falta o incumplimiento de señales provoca caos, maniobras riesgosas y siniestros por falta de información clara."
+    },
+    {
+      "id": "mcq-080",
+      "type": "multiple",
+      "stem": "Selecciona ejemplos de señalización horizontal en la vía.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Líneas de carril y sendas peatonales"
+        },
+        {
+          "id": "b",
+          "text": "Líneas continuas o discontinuas"
+        },
+        {
+          "id": "c",
+          "text": "Flechas direccionales y cebreados"
+        },
+        {
+          "id": "d",
+          "text": "Carteles verticales de obras"
+        }
+      ],
+      "correct": [
+        "a",
+        "b",
+        "c"
+      ],
+      "explanation": "La señalización horizontal se pinta sobre la calzada y complementa la vertical para ordenar la circulación."
+    },
+    {
+      "id": "mcq-081",
+      "type": "single",
+      "stem": "¿Qué relación existe entre la señalización vial y el comportamiento del conductor?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Cumplir las señales refleja respeto y reduce riesgos de accidente."
+        },
+        {
+          "id": "b",
+          "text": "Las señales no influyen en la conducta del conductor."
+        },
+        {
+          "id": "c",
+          "text": "El conductor puede reemplazar las señales por su criterio personal."
+        },
+        {
+          "id": "d",
+          "text": "Solo los peatones deben respetar las señales."
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "La obediencia a las señales guía el comportamiento del conductor, promueve la convivencia y previene siniestros."
+    },
+    {
+      "id": "mcq-082",
+      "type": "single",
+      "stem": "¿Por qué la capacidad visual es crítica para conducir con seguridad?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Porque permite detectar señales, peatones y peligros en la vía."
+        },
+        {
+          "id": "b",
+          "text": "Porque define el color del vehículo."
+        },
+        {
+          "id": "c",
+          "text": "Porque mejora el consumo de combustible."
+        },
+        {
+          "id": "d",
+          "text": "Porque evita el uso del espejo retrovisor."
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "La vista es el sentido más importante para conducir. La agudeza visual, el campo visual y la percepción de profundidad son esenciales para detectar riesgos."
+    },
+    {
+      "id": "mcq-083",
+      "type": "single",
+      "stem": "¿Cómo afecta el aumento de la velocidad al campo visual del conductor?",
+      "options": [
+        {
+          "id": "a",
+          "text": "El campo visual se amplía, permitiendo ver más objetos laterales."
+        },
+        {
+          "id": "b",
+          "text": "El campo visual se reduce, dificultando la detección de riesgos laterales."
+        },
+        {
+          "id": "c",
+          "text": "No tiene ningún efecto sobre el campo visual."
+        },
+        {
+          "id": "d",
+          "text": "Solo afecta la visión nocturna."
+        }
+      ],
+      "correct": [
+        "b"
+      ],
+      "explanation": "A mayor velocidad, el campo visual efectivo se estrecha, disminuyendo la percepción de los riesgos laterales y aumentando el peligro."
+    },
+    {
+      "id": "mcq-084",
+      "type": "multiple",
+      "stem": "Selecciona ejemplos de señales auditivas relevantes durante la conducción.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Sirenas de emergencia"
+        },
+        {
+          "id": "b",
+          "text": "Bocinas de otros vehículos"
+        },
+        {
+          "id": "c",
+          "text": "Ruidos anómalos del motor"
+        },
+        {
+          "id": "d",
+          "text": "Música del sistema de audio del vehículo"
+        }
+      ],
+      "correct": [
+        "a",
+        "b",
+        "c"
+      ],
+      "explanation": "El oído complementa la vista al alertar sobre peligros o desperfectos, como sirenas, bocinas y ruidos mecánicos anormales."
+    },
+    {
+      "id": "mcq-085",
+      "type": "single",
+      "stem": "¿Qué deben tener en cuenta las personas con capacidades diferentes para conducir con seguridad?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Contar con apto psicofísico y adaptaciones vehiculares adecuadas."
+        },
+        {
+          "id": "b",
+          "text": "Evitar usar el vehículo en zonas urbanas."
+        },
+        {
+          "id": "c",
+          "text": "No pueden obtener licencia de conducir."
+        },
+        {
+          "id": "d",
+          "text": "Solo pueden conducir con acompañante."
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "Las personas con discapacidad deben tener licencia especial y vehículos adaptados a sus necesidades, garantizando seguridad y autonomía."
+    },
+    {
+      "id": "mcq-086",
+      "type": "multiple",
+      "stem": "Selecciona factores que afectan negativamente las condiciones físicas del conductor.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Fatiga o falta de sueño"
+        },
+        {
+          "id": "b",
+          "text": "Estrés o enfermedad"
+        },
+        {
+          "id": "c",
+          "text": "Deshidratación o temperaturas extremas"
+        },
+        {
+          "id": "d",
+          "text": "Ejercicio físico moderado antes de conducir"
+        }
+      ],
+      "correct": [
+        "a",
+        "b",
+        "c"
+      ],
+      "explanation": "Fatiga, enfermedad o deshidratación reducen la concentración, reflejos y capacidad de respuesta del conductor."
+    },
+    {
+      "id": "mcq-087",
+      "type": "single",
+      "stem": "¿Cómo pueden los medicamentos alterar la capacidad para conducir?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Provocando somnolencia, visión borrosa y lentitud de reflejos."
+        },
+        {
+          "id": "b",
+          "text": "Mejorando la atención y la coordinación."
+        },
+        {
+          "id": "c",
+          "text": "Reduciendo el tiempo de reacción."
+        },
+        {
+          "id": "d",
+          "text": "Aumentando la velocidad de respuesta ante emergencias."
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "Algunos fármacos afectan la atención y los reflejos; siempre debe leerse el prospecto y evitar conducir si hay efectos secundarios."
+    },
+    {
+      "id": "mcq-088",
+      "type": "single",
+      "stem": "¿Por qué el alcohol incrementa el riesgo de siniestros viales incluso en bajas concentraciones?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Porque reduce la atención y retrasa el tiempo de reacción."
+        },
+        {
+          "id": "b",
+          "text": "Porque mejora la coordinación motriz."
+        },
+        {
+          "id": "c",
+          "text": "Porque elimina el cansancio del conductor."
+        },
+        {
+          "id": "d",
+          "text": "Porque ayuda a concentrarse mejor en la conducción."
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "El alcohol deteriora la percepción, el juicio y los reflejos, aumentando el riesgo de accidentes graves."
+    },
+    {
+      "id": "mcq-089",
+      "type": "multiple",
+      "stem": "Selecciona efectos típicos de las drogas recreativas sobre la conducción.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Alteración de la percepción del tiempo y espacio"
+        },
+        {
+          "id": "b",
+          "text": "Somnolencia y lentitud de reacción"
+        },
+        {
+          "id": "c",
+          "text": "Aumento de la impulsividad y agresividad"
+        },
+        {
+          "id": "d",
+          "text": "Mejora de la concentración y los reflejos"
+        }
+      ],
+      "correct": [
+        "a",
+        "b",
+        "c"
+      ],
+      "explanation": "Las drogas alteran la percepción y los reflejos, produciendo impulsividad y comportamientos peligrosos al volante."
+    },
+    {
+      "id": "mcq-090",
+      "type": "multiple",
+      "stem": "¿Qué señales de fatiga deben alertar al conductor para detenerse?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Bostezos frecuentes o picazón ocular"
+        },
+        {
+          "id": "b",
+          "text": "Microsueños y pérdida de foco"
+        },
+        {
+          "id": "c",
+          "text": "Dificultad para mantener el carril"
+        },
+        {
+          "id": "d",
+          "text": "Aumento de la energía y concentración"
+        }
+      ],
+      "correct": [
+        "a",
+        "b",
+        "c"
+      ],
+      "explanation": "El cansancio causa somnolencia, pérdida de atención y control; detenerse a descansar previene accidentes."
+    },
+    {
+      "id": "mcq-091",
+      "type": "multiple",
+      "stem": "Selecciona medidas que ayudan a prevenir la somnolencia en viajes largos.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Dormir bien antes de conducir"
+        },
+        {
+          "id": "b",
+          "text": "Realizar pausas cada 2 horas"
+        },
+        {
+          "id": "c",
+          "text": "Hidratarse y ventilar el habitáculo"
+        },
+        {
+          "id": "d",
+          "text": "Evitar comidas copiosas y alternar conductores"
+        }
+      ],
+      "correct": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "explanation": "Descansar adecuadamente, hidratarse, evitar comidas pesadas y hacer pausas son claves para mantener la atención y evitar la fatiga."
+    },
+    {
+      "id": "mcq-092",
+      "type": "single",
+      "stem": "¿Por qué el uso del celular al volante incrementa significativamente el riesgo?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Porque distrae visual, manual y cognitivamente al conductor."
+        },
+        {
+          "id": "b",
+          "text": "Porque mejora la coordinación y atención visual."
+        },
+        {
+          "id": "c",
+          "text": "Porque ayuda a mantener el ritmo del tránsito."
+        },
+        {
+          "id": "d",
+          "text": "Porque reemplaza el uso del GPS."
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "Usar el celular desvía la atención de la vía, ocupando la vista, las manos y la mente, aumentando el riesgo de colisión."
+    },
+    {
+      "id": "mcq-093",
+      "type": "multiple",
+      "stem": "Selecciona prácticas seguras para gestionar llamadas o mensajes durante la conducción.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Usar modo 'no molestar' o conducción"
+        },
+        {
+          "id": "b",
+          "text": "Detenerse en un lugar seguro antes de atender"
+        },
+        {
+          "id": "c",
+          "text": "Usar manos libres solo si la normativa lo permite"
+        },
+        {
+          "id": "d",
+          "text": "Leer mensajes mientras se detiene en un semáforo"
+        }
+      ],
+      "correct": [
+        "a",
+        "b",
+        "c"
+      ],
+      "explanation": "Las llamadas o mensajes deben atenderse solo si el vehículo está detenido o mediante dispositivos permitidos; nunca durante la marcha."
+    },
+    {
+      "id": "mcq-094",
+      "type": "single",
+      "stem": "¿Por qué el conductor es considerado un sujeto responsable dentro del sistema de tránsito?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Porque sus decisiones y conductas influyen directamente en la seguridad vial."
+        },
+        {
+          "id": "b",
+          "text": "Porque solo debe preocuparse por su propio vehículo."
+        },
+        {
+          "id": "c",
+          "text": "Porque no tiene obligación de respetar normas si no hay control policial."
+        },
+        {
+          "id": "d",
+          "text": "Porque su función principal es llegar rápido a destino."
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "El conductor es responsable de su comportamiento en la vía, ya que sus acciones afectan la seguridad propia y la de los demás."
+    },
+    {
+      "id": "mcq-095",
+      "type": "single",
+      "stem": "¿Qué se entiende por responsabilidad civil en el contexto del tránsito?",
+      "options": [
+        {
+          "id": "a",
+          "text": "La obligación de reparar los daños ocasionados a terceros por un accidente."
+        },
+        {
+          "id": "b",
+          "text": "Una sanción penal por incumplir la ley de tránsito."
+        },
+        {
+          "id": "c",
+          "text": "El derecho a reclamar al Estado por daños materiales."
+        },
+        {
+          "id": "d",
+          "text": "La obligación de pagar el seguro anual del vehículo."
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "La responsabilidad civil implica compensar económicamente a los afectados por daños causados directa o indirectamente en un siniestro vial."
+    },
+    {
+      "id": "mcq-096",
+      "type": "single",
+      "stem": "¿Qué implica la responsabilidad penal del conductor?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Sanciones por delitos como manejar ebrio, causar lesiones o huir del lugar del siniestro."
+        },
+        {
+          "id": "b",
+          "text": "Reparar económicamente los daños ocasionados a terceros."
+        },
+        {
+          "id": "c",
+          "text": "Únicamente el pago de multas menores."
+        },
+        {
+          "id": "d",
+          "text": "Recibir una advertencia verbal de la autoridad."
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "La responsabilidad penal surge por conductas tipificadas como delitos, con sanciones que pueden incluir prisión o inhabilitación."
+    },
+    {
+      "id": "mcq-097",
+      "type": "single",
+      "stem": "¿Qué diferencia existe entre la responsabilidad civil y la penal en un siniestro vial?",
+      "options": [
+        {
+          "id": "a",
+          "text": "La civil repara el daño económico; la penal castiga la conducta delictiva del conductor."
+        },
+        {
+          "id": "b",
+          "text": "Ambas implican solo sanciones monetarias."
+        },
+        {
+          "id": "c",
+          "text": "La penal aplica únicamente a peatones."
+        },
+        {
+          "id": "d",
+          "text": "No existe diferencia, son equivalentes."
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "La civil busca compensar a las víctimas; la penal impone sanciones por infracciones graves o delitos cometidos al conducir."
+    },
+    {
+      "id": "mcq-098",
+      "type": "single",
+      "stem": "¿Qué es la responsabilidad contravencional y qué tipo de conductas abarca?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Faltas menores como exceso de velocidad o estacionar en lugares prohibidos."
+        },
+        {
+          "id": "b",
+          "text": "Delitos con penas de prisión efectiva."
+        },
+        {
+          "id": "c",
+          "text": "Acciones premiadas por buena conducta vial."
+        },
+        {
+          "id": "d",
+          "text": "Infracciones internacionales entre países del Mercosur."
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "Las infracciones contravencionales no constituyen delitos, pero se sancionan con multas, puntos o suspensión de la licencia."
+    },
+    {
+      "id": "mcq-099",
+      "type": "single",
+      "stem": "¿Qué debe hacer un conductor que participa en un siniestro vial con víctimas?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Detenerse, asistir a las víctimas, señalizar el lugar y avisar a la autoridad."
+        },
+        {
+          "id": "b",
+          "text": "Abandonar el lugar para evitar sanciones."
+        },
+        {
+          "id": "c",
+          "text": "Esperar a que otros transeúntes actúen."
+        },
+        {
+          "id": "d",
+          "text": "Continuar su marcha si el daño no fue grave."
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "La ley exige detenerse, brindar ayuda y comunicar el hecho a las autoridades; huir del lugar es un delito penal."
+    },
+    {
+      "id": "mcq-100",
+      "type": "multiple",
+      "stem": "Selecciona la documentación que debe presentar el conductor ante un control o accidente.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Licencia de conducir vigente"
+        },
+        {
+          "id": "b",
+          "text": "DNI o documento de identidad"
+        },
+        {
+          "id": "c",
+          "text": "Cédula verde o azul y comprobante de seguro"
+        },
+        {
+          "id": "d",
+          "text": "Constancia de VTV o RTO, si corresponde"
+        }
+      ],
+      "correct": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "explanation": "La documentación básica incluye licencia, DNI, cédula, seguro y VTV/RTO, todos actualizados y en buen estado."
+    },
+    {
+      "id": "mcq-101",
+      "type": "single",
+      "stem": "¿Qué obligaciones tiene un conductor ante la autoridad luego de cometer una infracción?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Identificarse, entregar la documentación y acatar las instrucciones de la autoridad."
+        },
+        {
+          "id": "b",
+          "text": "Negarse a colaborar y abandonar el control."
+        },
+        {
+          "id": "c",
+          "text": "Esperar a que otro conductor asuma la culpa."
+        },
+        {
+          "id": "d",
+          "text": "No responder preguntas para evitar sanciones."
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "El conductor debe colaborar con la autoridad y tiene derecho a realizar su descargo posteriormente mediante los canales legales."
+    },
+    {
+      "id": "mcq-102",
+      "type": "multiple",
+      "stem": "Selecciona medidas preventivas para evitar accidentes relacionados con la velocidad.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Respetar los límites máximos y mínimos"
+        },
+        {
+          "id": "b",
+          "text": "Reducir la velocidad en zonas urbanas o escolares"
+        },
+        {
+          "id": "c",
+          "text": "Mantener distancia de seguridad y adaptar la marcha al clima"
+        },
+        {
+          "id": "d",
+          "text": "Circular al límite máximo en todo momento"
+        }
+      ],
+      "correct": [
+        "a",
+        "b",
+        "c"
+      ],
+      "explanation": "Respetar límites y ajustar la velocidad a las condiciones del camino y el entorno previene la mayoría de los siniestros viales."
+    },
+    {
+      "id": "mcq-103",
+      "type": "multiple",
+      "stem": "Selecciona conocimientos básicos de primeros auxilios que debe tener un conductor responsable.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Mantener la calma y evaluar la seguridad del lugar"
+        },
+        {
+          "id": "b",
+          "text": "Llamar al 107 o 911 para pedir asistencia"
+        },
+        {
+          "id": "c",
+          "text": "No mover a los heridos salvo peligro inminente"
+        },
+        {
+          "id": "d",
+          "text": "Controlar hemorragias y acompañar hasta la llegada de ayuda"
+        }
+      ],
+      "correct": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "explanation": "Un conductor preparado puede salvar vidas aplicando medidas básicas de primeros auxilios y solicitando asistencia profesional inmediata."
+    },
+    {
+      "id": "mcq-104",
+      "type": "single",
+      "stem": "¿Por qué no debe moverse a una persona lesionada luego de un accidente vial?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Porque puede tener lesiones de columna y moverla puede agravar su estado."
+        },
+        {
+          "id": "b",
+          "text": "Porque podría obstaculizar la labor policial."
+        },
+        {
+          "id": "c",
+          "text": "Porque es ilegal brindar asistencia sin licencia médica."
+        },
+        {
+          "id": "d",
+          "text": "Porque el conductor no tiene obligación alguna."
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "Mover a un herido sin conocimiento médico puede empeorar lesiones internas o vertebrales; se debe esperar a profesionales."
+    },
+    {
+      "id": "mcq-105",
+      "type": "single",
+      "stem": "¿Qué actitud ética debe mantener un conductor responsable ante un siniestro, aunque no sea culpable?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Mantener una actitud solidaria y cooperar con las víctimas y la autoridad."
+        },
+        {
+          "id": "b",
+          "text": "Ignorar el hecho y continuar su viaje."
+        },
+        {
+          "id": "c",
+          "text": "Culpar al otro conductor para evitar sanciones."
+        },
+        {
+          "id": "d",
+          "text": "Esperar a que terceros intervengan sin involucrarse."
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "El respeto, la empatía y la colaboración son principios éticos esenciales para todo conductor, independientemente de la culpa."
+    },
+    {
+      "id": "mcq-106",
+      "type": "single",
+      "stem": "¿Qué se entiende por infracción de tránsito?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Toda acción u omisión que viola las normas viales y pone en riesgo la seguridad."
+        },
+        {
+          "id": "b",
+          "text": "Una simple advertencia sin consecuencias."
+        },
+        {
+          "id": "c",
+          "text": "Un acto permitido por la ley de tránsito."
+        },
+        {
+          "id": "d",
+          "text": "Una conducta que solo afecta al propio conductor."
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "Una infracción es la violación de las normas establecidas, generando peligro o desorden en la circulación."
+    },
+    {
+      "id": "mcq-107",
+      "type": "multiple",
+      "stem": "Selecciona los principales tipos de sanciones que puede recibir un conductor.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Multas"
+        },
+        {
+          "id": "b",
+          "text": "Inhabilitaciones temporales o permanentes"
+        },
+        {
+          "id": "c",
+          "text": "Retención de licencia o vehículo"
+        },
+        {
+          "id": "d",
+          "text": "Quita de puntos del registro"
+        }
+      ],
+      "correct": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "explanation": "Las sanciones pueden incluir multas, suspensión o retiro de la licencia y pérdida de puntos, dependiendo de la gravedad."
+    },
+    {
+      "id": "mcq-108",
+      "type": "single",
+      "stem": "¿Qué objetivos persigue el régimen de sanciones en materia de tránsito?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Educar, prevenir infracciones y desalentar conductas peligrosas."
+        },
+        {
+          "id": "b",
+          "text": "Recaudar fondos municipales exclusivamente."
+        },
+        {
+          "id": "c",
+          "text": "Permitir mayor velocidad en rutas nacionales."
+        },
+        {
+          "id": "d",
+          "text": "Castigar sin posibilidad de defensa."
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "El régimen sancionatorio busca educar al conductor, promover la conciencia vial y prevenir infracciones futuras."
+    },
+    {
+      "id": "mcq-109",
+      "type": "single",
+      "stem": "¿Qué procedimiento debe seguirse ante una infracción de tránsito?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Se labra un acta, se notifica al conductor y puede presentar descargo o pruebas."
+        },
+        {
+          "id": "b",
+          "text": "El conductor es sancionado automáticamente sin derecho a defensa."
+        },
+        {
+          "id": "c",
+          "text": "Se retira la licencia sin aviso previo."
+        },
+        {
+          "id": "d",
+          "text": "El proceso se realiza únicamente de forma oral."
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "Toda infracción debe registrarse formalmente y el conductor tiene derecho a descargo antes de que la autoridad decida la sanción."
+    },
+    {
+      "id": "mcq-110",
+      "type": "multiple",
+      "stem": "Selecciona los derechos del conductor cuando es sancionado por una infracción.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Ser informado del motivo de la infracción"
+        },
+        {
+          "id": "b",
+          "text": "Presentar su descargo y aportar pruebas"
+        },
+        {
+          "id": "c",
+          "text": "Solicitar audiencia y apelar la sanción"
+        },
+        {
+          "id": "d",
+          "text": "Negarse a recibir la notificación"
+        }
+      ],
+      "correct": [
+        "a",
+        "b",
+        "c"
+      ],
+      "explanation": "El conductor conserva su derecho a la defensa: conocer la falta, presentar pruebas y recurrir la decisión si la considera injusta."
+    },
+    {
+      "id": "mcq-111",
+      "type": "single",
+      "stem": "¿Qué es el Sistema Nacional de Puntos y cómo funciona?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Cada conductor posee 20 puntos que se descuentan según la gravedad de las infracciones."
+        },
+        {
+          "id": "b",
+          "text": "Es un sistema de premios por buena conducta vial."
+        },
+        {
+          "id": "c",
+          "text": "Otorga puntos extra por no recibir multas."
+        },
+        {
+          "id": "d",
+          "text": "Solo aplica a conductores profesionales."
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "El sistema resta puntos por infracciones; si el puntaje llega a cero, la licencia se suspende temporalmente."
+    },
+    {
+      "id": "mcq-112",
+      "type": "single",
+      "stem": "¿Qué ocurre cuando un conductor pierde la totalidad de los puntos en su licencia?",
+      "options": [
+        {
+          "id": "a",
+          "text": "La licencia se suspende y debe realizar un curso de reeducación para recuperarla."
+        },
+        {
+          "id": "b",
+          "text": "Pierde la licencia de forma definitiva sin posibilidad de recuperarla."
+        },
+        {
+          "id": "c",
+          "text": "Debe pagar una multa y los puntos se restablecen automáticamente."
+        },
+        {
+          "id": "d",
+          "text": "Solo recibe una advertencia verbal."
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "Al perder todos los puntos, la licencia se suspende; el conductor debe capacitarse y rendir nuevamente para rehabilitarse."
+    },
+    {
+      "id": "mcq-113",
+      "type": "multiple",
+      "stem": "Selecciona infracciones que provocan la pérdida de mayor cantidad de puntos.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Conducir bajo efectos del alcohol"
+        },
+        {
+          "id": "b",
+          "text": "Cruzar con semáforo en rojo"
+        },
+        {
+          "id": "c",
+          "text": "Exceder los límites de velocidad"
+        },
+        {
+          "id": "d",
+          "text": "No respetar la prioridad de paso"
+        }
+      ],
+      "correct": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "explanation": "Las infracciones graves relacionadas con alcohol, velocidad o señales son las que más puntos descuentan."
+    },
+    {
+      "id": "mcq-114",
+      "type": "single",
+      "stem": "¿Qué diferencia existe entre una falta leve y una falta grave?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Las leves son de bajo riesgo; las graves suponen peligro para la seguridad vial."
+        },
+        {
+          "id": "b",
+          "text": "Las leves se castigan con prisión; las graves, con advertencia."
+        },
+        {
+          "id": "c",
+          "text": "Las graves no tienen sanción económica."
+        },
+        {
+          "id": "d",
+          "text": "No existe diferencia, ambas son equivalentes."
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "Las faltas leves implican sanciones menores; las graves implican riesgo para la seguridad y sanciones más severas."
+    },
+    {
+      "id": "mcq-115",
+      "type": "single",
+      "stem": "¿Qué puede hacer un conductor si considera injusta una sanción aplicada?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Presentar un recurso o apelación ante la autoridad competente."
+        },
+        {
+          "id": "b",
+          "text": "Ignorar la sanción y continuar conduciendo."
+        },
+        {
+          "id": "c",
+          "text": "Esperar que la multa se anule sola con el tiempo."
+        },
+        {
+          "id": "d",
+          "text": "Transferir los puntos a otro conductor."
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "El conductor tiene derecho a apelar dentro del plazo legal, aportando pruebas o testigos para respaldar su descargo."
+    },
+    {
+      "id": "mcq-116",
+      "type": "single",
+      "stem": "¿Por qué el cumplimiento de las sanciones también forma parte de la responsabilidad ciudadana?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Porque promueve la educación vial y el respeto por las normas."
+        },
+        {
+          "id": "b",
+          "text": "Porque evita pagar impuestos adicionales."
+        },
+        {
+          "id": "c",
+          "text": "Porque permite acumular puntos positivos en la licencia."
+        },
+        {
+          "id": "d",
+          "text": "Porque reemplaza la obligación de asistir a cursos viales."
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "Cumplir sanciones refuerza la responsabilidad social, fomenta la convivencia y consolida la cultura vial."
+    },
+    {
+      "id": "mcq-117",
+      "type": "multiple",
+      "stem": "Selecciona medidas preventivas que puede adoptar un conductor para evitar sanciones.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Cumplir las normas y respetar las señales"
+        },
+        {
+          "id": "b",
+          "text": "Mantener el vehículo en buen estado"
+        },
+        {
+          "id": "c",
+          "text": "No usar celular ni consumir alcohol o drogas al conducir"
+        },
+        {
+          "id": "d",
+          "text": "Circular a la máxima velocidad posible para evitar multas"
+        }
+      ],
+      "correct": [
+        "a",
+        "b",
+        "c"
+      ],
+      "explanation": "Respetar las normas, conducir con responsabilidad y mantener el vehículo en condiciones son la mejor forma de evitar sanciones."
     }
   ]
 }

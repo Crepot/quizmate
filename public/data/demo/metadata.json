@@ -1,7 +1,8 @@
 {
   "id": "demo",
-  "title": "Cuestionario Demo",
+  "title": "Educacion Vial - Demo",
   "locale": "es-AR",
   "sections": ["freeform", "mcq", "image-map"],
-  "scoring": { "freeform": 0, "mcq": 1, "imageMap": 1 }
+  "scoring": { "freeform": 0, "mcq": 1, "imageMap": 1 },
+  "sources": { "freeform": "demo", "mcq": "demo", "image-map": "demo" }
 }

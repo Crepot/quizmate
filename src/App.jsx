@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useReducer, useRef, useState } from 'react';
-import { loadQuiz, validateAll, loadProgress, saveProgress, clearProgress } from './utils';
+import { loadQuiz, validateAll, loadProgress, saveProgress, clearProgress, scoreMcq } from './utils';
 
 const initial = {
   quizId: 'demo',
@@ -32,6 +32,7 @@ export default function App(){
   const [mode, setMode] = useState('freeform');
   const [index, setIndex] = useState(0);
   const [finished, setFinished] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   useEffect(() => {
     const saved = loadProgress(state.quizId);
@@ -78,6 +79,17 @@ export default function App(){
   const ansMCQ = mcqItem ? (state.answers.mcq[mcqItem.id] || []) : [];
   const ansIM = imItem ? (state.answers.imageMap[imItem.id] || '') : '';
 
+  // Totales de MCQ para mostrar puntaje general
+  const mcqScore = useMemo(() => {
+    const total = mcqItems.length;
+    let correct = 0;
+    for (const it of mcqItems) {
+      const user = state.answers.mcq[it.id] || [];
+      if (scoreMcq(it, user)) correct++;
+    }
+    return { correct, total };
+  }, [mcqItems, state.answers.mcq]);
+
   // Mantener foco en el textarea de Freeform
   const taRef = useRef(null);
   // Local state for textarea to avoid dispatch on every keystroke (prevents focus loss)
@@ -112,7 +124,7 @@ export default function App(){
 
 
   // Cambio de modo: reset índice y finalizado
-  const changeMode = (m) => { setMode(m); setIndex(0); setFinished(false); };
+  const changeMode = (m) => { setMode(m); setIndex(0); setFinished(false); setSidebarOpen(false); };
 
   // Navegación y acciones
   const countForMode = mode === 'freeform' ? ffItems.length : mode === 'mcq' ? mcqItems.length : imItems.length;
@@ -170,7 +182,7 @@ export default function App(){
   return (
     <div style={{ minHeight: '100vh', display: 'grid', placeItems: 'center', padding: '24px 16px' }}>
       <div style={{ width: 'min(100%, 960px)', margin: '0 auto' }}>
-        <header style={{ display: 'grid', gap: 12, justifyItems: 'center', textAlign: 'center' }}>
+        <header style={{ display: 'grid', gap: 12, justifyItems: 'center', textAlign: 'center', position: 'relative' }}>
           <h1 style={{ margin: 0, fontSize: 28 }}>{metadata.title}</h1>
           {/* Progress bar for current section */}
           <div style={{ width: '100%', maxWidth: 960 }}>
@@ -184,6 +196,9 @@ export default function App(){
             <ModeButton id="mcq" label="Múltiple opción" />
             <ModeButton id="image-map" label="Imagen" />
           </div>
+          {mode === 'mcq' && (
+            <div style={{ fontSize: 14, fontWeight: 600 }}>Puntaje: {mcqScore.correct} / {mcqScore.total}</div>
+          )}
           <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', justifyContent: 'center' }}>
             <button onClick={onNew} style={{
               background: 'linear-gradient(135deg, #22c55e, #10b981)',
@@ -193,8 +208,40 @@ export default function App(){
               background: 'linear-gradient(135deg, #3b82f6, #06b6d4)',
               color: 'white', border: '1px solid #0ea5e9', borderRadius: 8, padding: '8px 12px'
             }}>Exportar resultados</button>
+            <button onClick={() => setSidebarOpen(s => !s)} style={{
+              background: 'linear-gradient(135deg, #f59e0b, #f97316)',
+              color: 'white', border: '1px solid #fb923c', borderRadius: 8, padding: '8px 12px'
+            }}>{sidebarOpen ? 'Cerrar índice' : 'Abrir índice'}</button>
           </div>
         </header>
+
+        {/* Sidebar de navegación */}
+        {sidebarOpen && (
+          <div style={{ position: 'fixed', inset: 0, zIndex: 30 }} onClick={() => setSidebarOpen(false)}>
+            <div style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.4)' }} />
+            <div style={{ position: 'absolute', top: 0, left: 0, bottom: 0, width: 280, background: '#0f0f0f', borderRight: '1px solid #2a2a2a', padding: 12, overflowY: 'auto' }} onClick={e => e.stopPropagation()}>
+              <div style={{ fontWeight: 700, marginBottom: 8 }}>Navegar preguntas ({mode})</div>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 8 }}>
+                {Array.from({ length: countForMode }).map((_, i) => {
+                  const isActive = i === index;
+                  // Estado respondido por cada modo
+                  let answered = false;
+                  if (mode === 'freeform') answered = !!(ffItems[i] && (state.answers.freeform[ffItems[i].id] || '').length);
+                  else if (mode === 'mcq') answered = !!(mcqItems[i] && Array.isArray(state.answers.mcq[mcqItems[i].id]) && state.answers.mcq[mcqItems[i].id].length);
+                  else if (mode === 'image-map') answered = !!(imItems[i] && (state.answers.imageMap[imItems[i].id] || ''));
+                  return (
+                    <button key={i} onClick={() => { setIndex(i); setSidebarOpen(false); }} style={{
+                      padding: '8px 0', borderRadius: 8, border: '1px solid',
+                      borderColor: isActive ? '#646cff' : answered ? '#4cc38a' : '#3a3a3a',
+                      background: isActive ? 'rgba(100,108,255,.12)' : answered ? 'rgba(76,195,138,.10)' : '#111',
+                      color: 'inherit'
+                    }}>{i + 1}</button>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        )}
 
       {mode === 'freeform' && ffItem && (
         <Section>
@@ -228,7 +275,7 @@ export default function App(){
               <div>Revisión manual sugerida.</div>
               <div style={{ marginTop: 8 }}>Palabras clave esperadas: {(ffItem.keywords || []).join(', ') || '—'}</div>
               {ffItem.correct && (
-                <div style={{ marginTop: 12, padding: 12, background: 'rgba(64,64,64,0.35)', borderRadius: 8, fontSize: 13 }}>
+                <div style={{ marginTop: 12, padding: 12, background: 'rgba(76,195,138,.12)', border: '1px solid #4cc38a', borderRadius: 8, fontSize: 13 }}>
                   <strong>Respuesta esperada:</strong>
                   <div style={{ marginTop: 6 }}>{ffItem.correct}</div>
                 </div>

@@ -1,124 +1,1523 @@
 {
+  "name": "Preguntas y respuestas - Educacion Vial",
   "items": [
     {
       "id": "ff-001",
-      "prompt": "Explique la diferencia entre biochar y carbón activado.",
-      "maxLength": 120000,
+      "prompt": "¿Qué se entiende por educación vial y cuál es su finalidad principal?",
+      "maxLength": 350,
       "required": true,
-      "keywords": ["porosidad", "activación"],
-      "correct": "Biochar es un residuo carbonoso creado por pirólisis de biomasa y se usa para mejorar suelos; el carbón activado es un material procesado para tener alta porosidad y capacidad de adsorción, utilizado en filtración y purificación."
+      "keywords": [
+        "educación vial",
+        "conducta",
+        "seguridad",
+        "convivencia"
+      ],
+      "correct": "La educación vial es un proceso de aprendizaje continuo que busca desarrollar conductas responsables y seguras en el tránsito, promoviendo la convivencia, el respeto y la prevención de siniestros viales."
     },
     {
       "id": "ff-002",
-      "prompt": "Describa el proceso de pirólisis y sus principales productos.",
-      "maxLength": 120000,
+      "prompt": "Explica por qué el tránsito se considera una construcción social e histórica.",
+      "maxLength": 350,
       "required": true,
-      "keywords": ["pirólisis", "biomasa", "biochar", "gases", "líquidos"],
-      "correct": "La pirólisis es la descomposición térmica de la biomasa en ausencia de oxígeno, generando tres productos principales: biochar (sólido carbonoso), bio-oil (líquido condensado) y gases no condensables. La proporción de cada uno depende de la temperatura y la velocidad de calentamiento."
+      "keywords": [
+        "social",
+        "histórica",
+        "normas",
+        "sociedad"
+      ],
+      "correct": "El tránsito es una construcción social e histórica porque surge de la organización de la sociedad, sus costumbres y la evolución tecnológica. Las normas de tránsito reflejan acuerdos sociales sobre cómo circular y convivir en el espacio público."
     },
     {
       "id": "ff-003",
-      "prompt": "Explique la diferencia entre combustión y gasificación.",
-      "maxLength": 120000,
+      "prompt": "¿Qué papel cumple la ética ciudadana en la educación vial?",
+      "maxLength": 300,
       "required": true,
-      "keywords": ["oxidación", "temperatura", "gases", "combustión parcial"],
-      "correct": "La combustión ocurre con exceso de oxígeno y convierte la biomasa en CO₂ y H₂O, liberando calor. La gasificación se realiza con un suministro limitado de oxígeno o vapor, produciendo un gas combustible rico en CO y H₂ (gas de síntesis)."
+      "keywords": [
+        "ética",
+        "valores",
+        "respeto",
+        "responsabilidad"
+      ],
+      "correct": "La ética ciudadana promueve valores como el respeto, la responsabilidad y la solidaridad, esenciales para tomar decisiones correctas en la vía pública y contribuir a una convivencia segura."
     },
     {
       "id": "ff-004",
-      "prompt": "Defina el concepto de área superficial específica y su importancia en adsorción.",
-      "maxLength": 120000,
-      "required": true,
-      "keywords": ["BET", "porosidad", "adsorción"],
-      "correct": "El área superficial específica mide la superficie total disponible por unidad de masa de un material (m²/g). Es clave en procesos de adsorción porque determina la cantidad de sitios activos disponibles para retener moléculas en la superficie del material."
+      "prompt": "¿Por qué la educación vial debe ser permanente y no limitarse al momento de obtener la licencia?",
+      "maxLength": 300,
+      "required": false,
+      "keywords": [
+        "aprendizaje",
+        "continuo",
+        "hábitos",
+        "conciencia"
+      ],
+      "correct": "Debe ser permanente porque la educación vial forma hábitos y conciencia a largo plazo, adaptándose a los cambios en el tránsito, las normas y las tecnologías."
     },
     {
       "id": "ff-005",
-      "prompt": "Mencione las principales diferencias entre materiales microporosos, mesoporosos y macroporosos.",
-      "maxLength": 120000,
+      "prompt": "Menciona algunos valores fundamentales que debe tener un buen ciudadano en el tránsito.",
+      "maxLength": 200,
       "required": true,
-      "keywords": ["microporos", "mesoporos", "macroporos", "tamaño"],
-      "correct": "Los materiales microporosos tienen poros menores a 2 nm, los mesoporosos entre 2 y 50 nm, y los macroporosos mayores a 50 nm. Esta clasificación afecta la difusión y la capacidad de adsorción del material."
+      "keywords": [
+        "respeto",
+        "tolerancia",
+        "solidaridad",
+        "paciencia"
+      ],
+      "correct": "Respeto, tolerancia, solidaridad, responsabilidad, empatía y paciencia son valores esenciales para convivir de forma segura en el tránsito."
     },
     {
       "id": "ff-006",
-      "prompt": "Explique cómo el biochar puede contribuir a la mitigación del cambio climático.",
-      "maxLength": 120000,
+      "prompt": "¿Cómo influyen las normas de tránsito en la convivencia entre peatones, ciclistas y conductores?",
+      "maxLength": 300,
       "required": true,
-      "keywords": ["secuestro de carbono", "biomasa", "emisiones"],
-      "correct": "El biochar inmoviliza carbono de la biomasa en forma estable, evitando su emisión como CO₂ o CH₄. Además, mejora los suelos y reduce el uso de fertilizantes, contribuyendo indirectamente a la mitigación de emisiones."
+      "keywords": [
+        "normas",
+        "convivencia",
+        "orden",
+        "seguridad"
+      ],
+      "correct": "Las normas de tránsito establecen reglas claras que permiten la convivencia ordenada y segura entre los distintos actores del tránsito, evitando conflictos y accidentes."
     },
     {
       "id": "ff-007",
-      "prompt": "Describa cómo el carbón activado se utiliza en el tratamiento de aguas residuales.",
-      "maxLength": 120000,
+      "prompt": "¿Qué consecuencias puede tener la falta de educación y ética vial en la sociedad?",
+      "maxLength": 300,
       "required": true,
-      "keywords": ["adsorción", "contaminantes", "porosidad"],
-      "correct": "El carbón activado se utiliza para adsorber contaminantes orgánicos, colorantes y metales pesados del agua. Su alta porosidad y área superficial permiten retener moléculas en su superficie, purificando el efluente."
+      "keywords": [
+        "accidentes",
+        "irrespeto",
+        "riesgo",
+        "convivencia"
+      ],
+      "correct": "La falta de educación y ética vial genera comportamientos imprudentes, aumenta los siniestros, deteriora la convivencia y pone en riesgo la vida de las personas."
     },
     {
       "id": "ff-008",
-      "prompt": "¿Qué relación existe entre la temperatura de pirólisis y el rendimiento de biochar?",
-      "maxLength": 120000,
+      "prompt": "Explica la relación entre el tránsito y el comportamiento humano.",
+      "maxLength": 300,
       "required": true,
-      "keywords": ["temperatura", "rendimiento", "biochar"],
-      "correct": "A medida que aumenta la temperatura de pirólisis, el rendimiento en biochar disminuye y aumenta la fracción gaseosa, porque se favorece la desvolatilización y la formación de productos gaseosos."
+      "keywords": [
+        "comportamiento",
+        "hábitos",
+        "actitudes",
+        "decisiones"
+      ],
+      "correct": "El tránsito refleja el comportamiento humano porque depende de las decisiones, hábitos y actitudes de cada individuo al circular, demostrando respeto o imprudencia hacia los demás."
     },
     {
       "id": "ff-009",
-      "prompt": "Mencione dos parámetros que determinan la calidad de un carbón activado.",
-      "maxLength": 120000,
+      "prompt": "¿Por qué se dice que el espacio público es un espacio compartido?",
+      "maxLength": 250,
       "required": true,
-      "keywords": ["porosidad", "área superficial", "capacidad de adsorción"],
-      "correct": "Los principales parámetros son el área superficial específica (BET) y la distribución del tamaño de poros, ya que ambos determinan la capacidad de adsorción del material."
+      "keywords": [
+        "espacio público",
+        "convivencia",
+        "compartido",
+        "derechos"
+      ],
+      "correct": "Porque pertenece a todos los ciudadanos y debe ser usado con respeto y responsabilidad, garantizando la convivencia y el ejercicio de los derechos de todos."
     },
     {
       "id": "ff-010",
-      "prompt": "Compare las propiedades del biochar obtenido de cáscara de maní y del rastrojo de maíz.",
-      "maxLength": 120000,
+      "prompt": "¿Qué rol cumple el Estado en la educación y seguridad vial?",
+      "maxLength": 300,
       "required": true,
-      "keywords": ["materia prima", "biomasa", "carbonización", "porosidad"],
-      "correct": "El biochar de cáscara de maní suele presentar mayor contenido de carbono fijo y menor ceniza, mientras que el de rastrojo de maíz posee mayor volumen de poros y reactividad debido a su composición lignocelulósica."
+      "keywords": [
+        "Estado",
+        "políticas",
+        "control",
+        "educación"
+      ],
+      "correct": "El Estado debe garantizar la educación vial desde la escuela, establecer políticas de prevención, fiscalizar el cumplimiento de las normas y promover campañas de concientización."
     },
     {
       "id": "ff-011",
-      "prompt": "Explique la importancia del control de temperatura y atmósfera en la activación del carbón.",
-      "maxLength": 120000,
+      "prompt": "¿Qué es la Licencia Nacional de Conducir (LNC) y cuál es su finalidad?",
+      "maxLength": 300,
       "required": true,
-      "keywords": ["activación", "CO₂", "vapor de agua", "porosidad"],
-      "correct": "La activación térmica controlada, usando CO₂ o vapor de agua, permite desarrollar la porosidad sin destruir la estructura del carbón. La temperatura y la atmósfera determinan el tipo y tamaño de poros generados."
+      "keywords": [
+        "licencia",
+        "documento",
+        "habilita",
+        "conducir"
+      ],
+      "correct": "Es un documento oficial que habilita legalmente a una persona a conducir vehículos dentro del territorio nacional, acreditando que posee los conocimientos y aptitudes necesarias para hacerlo de manera segura y responsable."
     },
     {
       "id": "ff-012",
-      "prompt": "Describa los beneficios del uso de biochar en suelos agrícolas.",
-      "maxLength": 120000,
+      "prompt": "¿Qué autoridad es responsable de emitir la Licencia Nacional de Conducir en Argentina?",
+      "maxLength": 250,
       "required": true,
-      "keywords": ["fertilidad", "retención de agua", "nutrientes"],
-      "correct": "El biochar mejora la retención de agua y nutrientes, reduce la lixiviación y aumenta la actividad microbiana. Esto incrementa la productividad y estabilidad del suelo a largo plazo."
+      "keywords": [
+        "autoridad",
+        "emisión",
+        "municipalidad",
+        "registro"
+      ],
+      "correct": "La emite la autoridad municipal o comunal que cuente con un Centro de Emisión de Licencias (CEL) homologado por la Agencia Nacional de Seguridad Vial (ANSV)."
     },
     {
       "id": "ff-013",
-      "prompt": "¿Por qué la materia prima influye en la estructura del biochar producido?",
-      "maxLength": 120000,
+      "prompt": "Enumera las principales clases de licencias de conducir existentes en Argentina.",
+      "maxLength": 350,
       "required": true,
-      "keywords": ["biomasa", "lignina", "celulosa", "hemicelulosa"],
-      "correct": "Cada biomasa tiene diferentes proporciones de lignina, celulosa y hemicelulosa, lo que afecta la estabilidad térmica y la estructura porosa del biochar resultante. Ligninas altas generan biochar más aromático y estable."
+      "keywords": [
+        "clases",
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G"
+      ],
+      "correct": "Clase A: motocicletas. Clase B: automóviles y camionetas. Clase C: camiones sin acoplado. Clase D: transporte de pasajeros. Clase E: camiones con acoplado o maquinaria especial. Clase F: personas con discapacidad. Clase G: tractores, maquinaria agrícola o vial."
     },
     {
       "id": "ff-014",
-      "prompt": "Describa cómo la velocidad de calentamiento afecta la pirólisis.",
-      "maxLength": 120000,
+      "prompt": "¿Qué requisitos básicos debe cumplir una persona para obtener la Licencia Nacional de Conducir?",
+      "maxLength": 400,
       "required": true,
-      "keywords": ["pirólisis rápida", "pirólisis lenta", "tiempo de residencia"],
-      "correct": "En la pirólisis rápida, la biomasa se calienta muy rápido y produce más líquidos (bio-oil); en la pirólisis lenta, la tasa de calentamiento es baja, favoreciendo la formación de biochar sólido."
+      "keywords": [
+        "edad",
+        "domicilio",
+        "exámenes",
+        "documentación"
+      ],
+      "correct": "Debe acreditar edad mínima según la clase solicitada, residencia en el país, aprobar exámenes psicofísicos, teóricos y prácticos, presentar DNI vigente, constancia de CUIL, certificado CENAT y libre deuda de infracciones, además de abonar las tasas correspondientes."
     },
     {
       "id": "ff-015",
-      "prompt": "Explique la diferencia entre activación física y activación química del carbón.",
-      "maxLength": 120000,
+      "prompt": "¿Cuál es la vigencia de la Licencia Nacional de Conducir y de qué factores depende?",
+      "maxLength": 250,
       "required": true,
-      "keywords": ["activación física", "activación química", "vapor", "agentes químicos"],
-      "correct": "La activación física usa gases oxidantes como vapor o CO₂ a alta temperatura. La activación química emplea agentes como KOH o H₃PO₄ antes de la carbonización para generar más microporos a menor temperatura."
+      "keywords": [
+        "vigencia",
+        "años",
+        "edad",
+        "evaluación psicofísica"
+      ],
+      "correct": "La vigencia varía entre 1 y 5 años dependiendo de la edad del conductor, el tipo de licencia y el resultado del examen psicofísico."
+    },
+    {
+      "id": "ff-016",
+      "prompt": "¿Qué es el CENAT y para qué se utiliza?",
+      "maxLength": 300,
+      "required": true,
+      "keywords": [
+        "CENAT",
+        "certificado",
+        "antecedentes",
+        "tránsito"
+      ],
+      "correct": "El CENAT (Certificado Nacional de Antecedentes de Tránsito) es un documento que reúne todas las infracciones de tránsito cometidas a nivel nacional y debe presentarse como requisito obligatorio para obtener o renovar la licencia."
+    },
+    {
+      "id": "ff-017",
+      "prompt": "¿Cuáles son los requisitos generales para circular con un vehículo en el territorio argentino?",
+      "maxLength": 400,
+      "required": true,
+      "keywords": [
+        "documentación",
+        "vehículo",
+        "seguro",
+        "licencia",
+        "patente"
+      ],
+      "correct": "Se debe portar la Licencia Nacional de Conducir vigente, DNI, cédula verde o azul, comprobante del seguro obligatorio, patente colocada y visible, comprobante de pago de impuestos y la Verificación Técnica Vehicular (VTV) si corresponde."
+    },
+    {
+      "id": "ff-018",
+      "prompt": "¿Qué documentación adicional se requiere para circular fuera del país dentro del Mercosur?",
+      "maxLength": 400,
+      "required": true,
+      "keywords": [
+        "Mercosur",
+        "documentación",
+        "carta verde",
+        "seguro internacional"
+      ],
+      "correct": "Además de la documentación nacional, se requiere la Carta Verde (seguro internacional válido en países del Mercosur), cédula del vehículo, licencia vigente y documento de identidad. En algunos casos se puede solicitar el permiso de circulación del titular."
+    },
+    {
+      "id": "ff-019",
+      "prompt": "¿Qué condiciones deben cumplirse para circular fuera del Mercosur?",
+      "maxLength": 350,
+      "required": false,
+      "keywords": [
+        "fuera del Mercosur",
+        "permiso internacional",
+        "seguro"
+      ],
+      "correct": "Se debe contar con el Permiso Internacional para Conducir emitido por el Automóvil Club Argentino (ACA) o autoridad competente, junto con la licencia nacional, pasaporte y seguro de cobertura internacional."
+    },
+    {
+      "id": "ff-020",
+      "prompt": "¿Por qué es importante mantener actualizada la Licencia Nacional de Conducir?",
+      "maxLength": 300,
+      "required": true,
+      "keywords": [
+        "vigencia",
+        "seguridad",
+        "validez",
+        "control"
+      ],
+      "correct": "Porque garantiza la validez legal para conducir, refleja que el conductor mantiene las condiciones psicofísicas necesarias y contribuye al control y la seguridad vial."
+    },
+    {
+      "id": "ff-021",
+      "prompt": "¿Qué se entiende por seguridad activa en un vehículo?",
+      "maxLength": 300,
+      "required": true,
+      "keywords": [
+        "seguridad activa",
+        "prevención",
+        "control",
+        "sistemas"
+      ],
+      "correct": "La seguridad activa comprende los sistemas y componentes del vehículo que ayudan a evitar accidentes, como frenos, suspensión, dirección, neumáticos, control de estabilidad y luces."
+    },
+    {
+      "id": "ff-022",
+      "prompt": "¿Cuáles son los principales elementos que forman parte de la seguridad activa?",
+      "maxLength": 350,
+      "required": true,
+      "keywords": [
+        "frenos",
+        "neumáticos",
+        "luces",
+        "dirección",
+        "suspensión"
+      ],
+      "correct": "Los frenos, los neumáticos, el sistema de suspensión, la dirección, las luces y el control de tracción o estabilidad son los principales elementos de la seguridad activa."
+    },
+    {
+      "id": "ff-023",
+      "prompt": "Explica qué se entiende por seguridad pasiva y cuál es su función.",
+      "maxLength": 300,
+      "required": true,
+      "keywords": [
+        "seguridad pasiva",
+        "lesiones",
+        "impacto",
+        "protección"
+      ],
+      "correct": "La seguridad pasiva agrupa los elementos diseñados para reducir las lesiones en caso de accidente, como cinturones de seguridad, airbags, apoyacabezas, paragolpes y estructura deformable del vehículo."
+    },
+    {
+      "id": "ff-024",
+      "prompt": "¿Qué diferencia existe entre seguridad activa y pasiva?",
+      "maxLength": 350,
+      "required": true,
+      "keywords": [
+        "activa",
+        "pasiva",
+        "prevención",
+        "protección"
+      ],
+      "correct": "La seguridad activa busca prevenir accidentes mediante el control del vehículo, mientras que la seguridad pasiva actúa durante el impacto para minimizar daños a los ocupantes."
+    },
+    {
+      "id": "ff-025",
+      "prompt": "¿Qué se entiende por seguridad preventiva?",
+      "maxLength": 300,
+      "required": true,
+      "keywords": [
+        "preventiva",
+        "anticipación",
+        "mantenimiento",
+        "hábitos"
+      ],
+      "correct": "La seguridad preventiva combina las conductas del conductor y el mantenimiento del vehículo para anticipar riesgos, incluyendo revisar neumáticos, luces, frenos y mantener una conducción responsable."
+    },
+    {
+      "id": "ff-026",
+      "prompt": "¿Por qué el mantenimiento periódico del vehículo es esencial para la seguridad vial?",
+      "maxLength": 350,
+      "required": true,
+      "keywords": [
+        "mantenimiento",
+        "fallas",
+        "seguridad",
+        "prevención"
+      ],
+      "correct": "El mantenimiento periódico previene fallas mecánicas, garantiza el funcionamiento correcto de los sistemas de seguridad y evita siniestros causados por desperfectos del vehículo."
+    },
+    {
+      "id": "ff-027",
+      "prompt": "¿Qué controles básicos deben realizarse antes de conducir un vehículo?",
+      "maxLength": 400,
+      "required": true,
+      "keywords": [
+        "niveles",
+        "luces",
+        "frenos",
+        "presión de neumáticos"
+      ],
+      "correct": "Se deben revisar los niveles de aceite, líquido de frenos y refrigerante, el funcionamiento de las luces, el estado de los neumáticos, los frenos, los limpiaparabrisas y los cinturones de seguridad."
+    },
+    {
+      "id": "ff-028",
+      "prompt": "¿Qué es la Revisión Técnica Obligatoria (RTO) y cuál es su objetivo?",
+      "maxLength": 300,
+      "required": true,
+      "keywords": [
+        "RTO",
+        "verificación",
+        "obligatoria",
+        "seguridad"
+      ],
+      "correct": "La RTO es una verificación periódica obligatoria del estado mecánico y de seguridad del vehículo para garantizar que esté en condiciones adecuadas de circulación y no represente riesgo para terceros."
+    },
+    {
+      "id": "ff-029",
+      "prompt": "¿Qué aspectos se controlan durante la Revisión Técnica Obligatoria?",
+      "maxLength": 400,
+      "required": true,
+      "keywords": [
+        "frenos",
+        "dirección",
+        "luces",
+        "emisiones",
+        "ruido"
+      ],
+      "correct": "Durante la RTO se controlan frenos, dirección, suspensión, neumáticos, luces, emisión de gases, niveles de ruido, espejos, cinturones de seguridad y elementos reglamentarios del vehículo."
+    },
+    {
+      "id": "ff-030",
+      "prompt": "¿Qué consecuencias puede tener circular sin haber realizado la RTO en tiempo y forma?",
+      "maxLength": 350,
+      "required": true,
+      "keywords": [
+        "infracción",
+        "multa",
+        "retención",
+        "riesgo"
+      ],
+      "correct": "Circular sin la RTO vigente constituye una infracción, puede implicar multas, la retención del vehículo y, sobre todo, aumenta el riesgo de siniestros por fallas mecánicas no detectadas."
+    },
+    {
+      "id": "ff-031",
+      "prompt": "¿Qué se entiende por conducción eficiente y por qué es importante?",
+      "maxLength": 350,
+      "required": true,
+      "keywords": [
+        "eficiente",
+        "ahorro",
+        "energía",
+        "contaminación",
+        "seguridad"
+      ],
+      "correct": "La conducción eficiente es una forma de manejo que busca optimizar el consumo de combustible, reducir la contaminación y prolongar la vida útil del vehículo, manteniendo siempre la seguridad vial."
+    },
+    {
+      "id": "ff-032",
+      "prompt": "¿Qué prácticas deben seguirse al encender el motor para favorecer la eficiencia y el cuidado del vehículo?",
+      "maxLength": 350,
+      "required": true,
+      "keywords": [
+        "encendido",
+        "motor",
+        "ralentí",
+        "revoluciones"
+      ],
+      "correct": "Al encender el motor no se debe acelerar de inmediato. Es conveniente dejarlo unos segundos en ralentí para estabilizar la presión del aceite y evitar desgastes prematuros, especialmente en motores fríos."
+    },
+    {
+      "id": "ff-033",
+      "prompt": "¿Qué información brinda el cuentarrevoluciones y cómo ayuda a una conducción eficiente?",
+      "maxLength": 350,
+      "required": true,
+      "keywords": [
+        "cuentarrevoluciones",
+        "rpm",
+        "cambios",
+        "consumo"
+      ],
+      "correct": "El cuentarrevoluciones indica la cantidad de vueltas del motor por minuto (rpm) y permite cambiar de marcha en el momento óptimo, evitando sobreaceleraciones y reduciendo el consumo de combustible."
+    },
+    {
+      "id": "ff-034",
+      "prompt": "¿Por qué es importante realizar los cambios de velocidad en el momento adecuado?",
+      "maxLength": 350,
+      "required": true,
+      "keywords": [
+        "cambios",
+        "marcha",
+        "consumo",
+        "motor"
+      ],
+      "correct": "Porque hacerlo en el rango correcto de revoluciones evita exigencias innecesarias al motor, reduce el consumo de combustible y mejora la eficiencia energética del vehículo."
+    },
+    {
+      "id": "ff-035",
+      "prompt": "Explica qué es el freno motor y cuándo debe utilizarse.",
+      "maxLength": 300,
+      "required": true,
+      "keywords": [
+        "freno motor",
+        "descenso",
+        "reducción",
+        "marcha baja"
+      ],
+      "correct": "El freno motor consiste en aprovechar la resistencia natural del motor al soltar el acelerador, reduciendo la velocidad sin usar los frenos. Se utiliza especialmente en descensos o al acercarse a semáforos o curvas."
+    },
+    {
+      "id": "ff-036",
+      "prompt": "¿Qué ventajas tiene el uso del freno motor respecto al freno de servicio?",
+      "maxLength": 350,
+      "required": true,
+      "keywords": [
+        "freno motor",
+        "desgaste",
+        "temperatura",
+        "eficiencia"
+      ],
+      "correct": "Disminuye el desgaste y la temperatura de los frenos, mejora el control del vehículo en pendientes y contribuye a una conducción más segura y eficiente."
+    },
+    {
+      "id": "ff-037",
+      "prompt": "¿Por qué se dice que el automóvil es una máquina de consumo?",
+      "maxLength": 350,
+      "required": true,
+      "keywords": [
+        "combustible",
+        "energía",
+        "emisiones",
+        "eficiencia"
+      ],
+      "correct": "Porque utiliza energía proveniente de combustibles fósiles para funcionar, generando emisiones y gastos económicos. Su eficiencia depende del mantenimiento, el tipo de conducción y las condiciones del entorno."
+    },
+    {
+      "id": "ff-038",
+      "prompt": "Menciona algunas características generales del vehículo que influyen en la conducción eficiente.",
+      "maxLength": 400,
+      "required": true,
+      "keywords": [
+        "peso",
+        "aerodinámica",
+        "presión",
+        "motor"
+      ],
+      "correct": "El peso, la aerodinámica, la presión de los neumáticos, el tipo de motor, la carga transportada y el mantenimiento influyen directamente en el rendimiento y el consumo del vehículo."
+    },
+    {
+      "id": "ff-039",
+      "prompt": "¿Cómo influye la carga del vehículo en la eficiencia y seguridad de la conducción?",
+      "maxLength": 350,
+      "required": true,
+      "keywords": [
+        "carga",
+        "peso",
+        "equilibrio",
+        "consumo"
+      ],
+      "correct": "Una carga excesiva o mal distribuida aumenta el consumo, reduce la estabilidad del vehículo y afecta la distancia de frenado. La carga debe estar bien sujeta y dentro de los límites permitidos por ley."
+    },
+    {
+      "id": "ff-040",
+      "prompt": "¿Qué hábitos contribuyen a una conducción eficiente y responsable?",
+      "maxLength": 400,
+      "required": true,
+      "keywords": [
+        "planificación",
+        "marcha",
+        "velocidad",
+        "anticipación"
+      ],
+      "correct": "Planificar el recorrido, evitar aceleraciones bruscas, mantener una velocidad constante, usar correctamente los cambios, anticipar frenadas, revisar la presión de los neumáticos y evitar el ralentí prolongado son hábitos de conducción eficiente."
+    },
+    {
+      "id": "ff-041",
+      "prompt": "¿Por qué se considera que el tránsito está directamente relacionado con el comportamiento humano?",
+      "maxLength": 350,
+      "required": true,
+      "keywords": [
+        "comportamiento",
+        "hábitos",
+        "actitudes",
+        "convivencia"
+      ],
+      "correct": "Porque el tránsito depende de las decisiones, actitudes y hábitos de las personas al circular, reflejando el grado de respeto, responsabilidad y convivencia de la sociedad."
+    },
+    {
+      "id": "ff-042",
+      "prompt": "¿Qué se entiende por marcha y qué factores deben considerarse al iniciar la circulación?",
+      "maxLength": 350,
+      "required": true,
+      "keywords": [
+        "marcha",
+        "iniciar",
+        "precaución",
+        "observación"
+      ],
+      "correct": "La marcha es el inicio del movimiento del vehículo. Antes de iniciarla, el conductor debe observar el entorno, señalizar correctamente y asegurarse de que la maniobra no represente peligro para otros usuarios de la vía."
+    },
+    {
+      "id": "ff-043",
+      "prompt": "¿Qué significa prioridad de paso y en qué situaciones se aplica?",
+      "maxLength": 350,
+      "required": true,
+      "keywords": [
+        "prioridad",
+        "intersección",
+        "regla",
+        "ceder el paso"
+      ],
+      "correct": "La prioridad de paso es el derecho que tiene un vehículo o peatón a pasar antes que otro. En cruces sin señalización, tiene prioridad quien viene por la derecha. También la tienen peatones y vehículos de emergencia en servicio."
+    },
+    {
+      "id": "ff-044",
+      "prompt": "¿Qué es el campo visual del conductor y cómo afecta la velocidad?",
+      "maxLength": 350,
+      "required": true,
+      "keywords": [
+        "campo visual",
+        "visión",
+        "velocidad",
+        "riesgo"
+      ],
+      "correct": "El campo visual es el área que el conductor puede ver sin mover la cabeza. A mayor velocidad, el campo visual se reduce, lo que limita la percepción de riesgos laterales."
+    },
+    {
+      "id": "ff-045",
+      "prompt": "¿Qué son los puntos ciegos y cómo pueden evitarse accidentes relacionados con ellos?",
+      "maxLength": 350,
+      "required": true,
+      "keywords": [
+        "puntos ciegos",
+        "espejos",
+        "retrovisores",
+        "visibilidad"
+      ],
+      "correct": "Son zonas que no pueden verse con los espejos retrovisores. Para reducirlos, se deben ajustar correctamente los espejos y girar la cabeza brevemente antes de cambiar de carril."
+    },
+    {
+      "id": "ff-046",
+      "prompt": "¿Qué es la distancia de seguridad y cómo debe calcularse?",
+      "maxLength": 350,
+      "required": true,
+      "keywords": [
+        "distancia",
+        "seguridad",
+        "segundos",
+        "frenado"
+      ],
+      "correct": "Es el espacio que debe mantenerse con el vehículo delantero para poder frenar a tiempo sin colisionar. Se recomienda una distancia equivalente a al menos 2 segundos respecto al vehículo que va adelante."
+    },
+    {
+      "id": "ff-047",
+      "prompt": "¿Qué precauciones deben tomarse al realizar giros o maniobras?",
+      "maxLength": 350,
+      "required": true,
+      "keywords": [
+        "giros",
+        "maniobras",
+        "señalizar",
+        "anticipar"
+      ],
+      "correct": "Debe señalizarse con anticipación, reducir la velocidad, verificar los espejos y puntos ciegos, y realizar la maniobra sin interrumpir la marcha de otros vehículos."
+    },
+    {
+      "id": "ff-048",
+      "prompt": "¿Qué factores deben considerarse al conducir en pendientes o bajadas?",
+      "maxLength": 350,
+      "required": true,
+      "keywords": [
+        "pendientes",
+        "freno motor",
+        "control",
+        "velocidad"
+      ],
+      "correct": "En pendientes se debe usar una marcha baja para mantener el control del vehículo y aplicar el freno motor, evitando el uso prolongado del freno de servicio para no sobrecalentarlo."
+    },
+    {
+      "id": "ff-049",
+      "prompt": "¿Por qué las curvas requieren atención especial al conducir?",
+      "maxLength": 350,
+      "required": true,
+      "keywords": [
+        "curvas",
+        "centrífuga",
+        "adherencia",
+        "velocidad"
+      ],
+      "correct": "Porque al girar se genera una fuerza centrífuga que tiende a sacar el vehículo del camino. Es necesario reducir la velocidad antes de ingresar y no frenar dentro de la curva para mantener la adherencia."
+    },
+    {
+      "id": "ff-050",
+      "prompt": "¿Qué condiciones deben cumplirse para realizar un adelantamiento seguro?",
+      "maxLength": 400,
+      "required": true,
+      "keywords": [
+        "adelantamiento",
+        "visibilidad",
+        "señalizar",
+        "seguridad"
+      ],
+      "correct": "Debe haber visibilidad suficiente, señalización previa, espacio libre para completar la maniobra y respetar la línea demarcatoria del carril. Está prohibido adelantar en curvas, puentes o pasos peatonales."
+    },
+    {
+      "id": "ff-051",
+      "prompt": "¿Qué se debe hacer ante un evento imprevisto durante la conducción?",
+      "maxLength": 350,
+      "required": true,
+      "keywords": [
+        "imprevisto",
+        "frenar",
+        "control",
+        "anticipación"
+      ],
+      "correct": "Mantener la calma, evitar movimientos bruscos, usar los frenos progresivamente y sostener el control del volante. La anticipación y la distancia de seguridad son claves para evitar accidentes."
+    },
+    {
+      "id": "ff-052",
+      "prompt": "¿Qué diferencia existe entre detención y estacionamiento?",
+      "maxLength": 300,
+      "required": true,
+      "keywords": [
+        "detención",
+        "estacionamiento",
+        "tiempo",
+        "motivo"
+      ],
+      "correct": "La detención es una parada momentánea por razones del tránsito o para ascenso/descenso de pasajeros. El estacionamiento implica dejar el vehículo inmovilizado por un tiempo prolongado en un lugar permitido."
+    },
+    {
+      "id": "ff-053",
+      "prompt": "¿Cómo deben adaptarse las maniobras de conducción en condiciones climáticas adversas?",
+      "maxLength": 400,
+      "required": true,
+      "keywords": [
+        "lluvia",
+        "niebla",
+        "viento",
+        "visibilidad"
+      ],
+      "correct": "Debe reducirse la velocidad, aumentar la distancia de seguridad, usar luces bajas en lluvia o niebla, y evitar maniobras bruscas. También es importante revisar neumáticos y limpiaparabrisas antes de conducir."
+    },
+    {
+      "id": "ff-054",
+      "prompt": "¿Qué tipos de luces deben usarse en distintas condiciones de conducción?",
+      "maxLength": 400,
+      "required": true,
+      "keywords": [
+        "bajas",
+        "altas",
+        "posición",
+        "intermitentes"
+      ],
+      "correct": "Luces bajas: conducción nocturna o lluvia. Luces altas: caminos rurales sin tránsito. Luces de posición: vehículo detenido. Intermitentes: advertir maniobras o emergencias. Nunca se deben encandilar otros conductores."
+    },
+    {
+      "id": "ff-055",
+      "prompt": "¿Qué responsabilidades tiene el conductor respecto de los peatones?",
+      "maxLength": 350,
+      "required": true,
+      "keywords": [
+        "peatones",
+        "prioridad",
+        "cruce",
+        "respeto"
+      ],
+      "correct": "El conductor debe respetar siempre la prioridad del peatón, detenerse en las sendas peatonales y circular con precaución en zonas urbanas o escolares."
+    },
+    {
+      "id": "ff-056",
+      "prompt": "¿Qué normas deben respetarse al circular cerca de ciclistas?",
+      "maxLength": 350,
+      "required": true,
+      "keywords": [
+        "bicicletas",
+        "distancia",
+        "carril",
+        "precaución"
+      ],
+      "correct": "Debe mantenerse una distancia lateral mínima de 1,5 metros al adelantarlos, no invadir ciclovías y reducir la velocidad en zonas compartidas. El respeto al ciclista mejora la seguridad de todos."
+    },
+    {
+      "id": "ff-057",
+      "prompt": "¿Por qué es importante la anticipación en la conducción?",
+      "maxLength": 350,
+      "required": true,
+      "keywords": [
+        "anticipación",
+        "riesgo",
+        "prevención",
+        "reacción"
+      ],
+      "correct": "Porque permite detectar a tiempo posibles riesgos y actuar con margen suficiente para evitarlos, reduciendo la necesidad de maniobras de emergencia."
+    },
+    {
+      "id": "ff-058",
+      "prompt": "¿Por qué la velocidad es uno de los factores más determinantes en la seguridad vial?",
+      "maxLength": 350,
+      "required": true,
+      "keywords": [
+        "velocidad",
+        "seguridad",
+        "tiempo de reacción",
+        "impacto"
+      ],
+      "correct": "Porque a mayor velocidad, menor es el tiempo de reacción del conductor y mayor la distancia de frenado, lo que aumenta significativamente la gravedad de los siniestros."
+    },
+    {
+      "id": "ff-059",
+      "prompt": "¿Qué se entiende por velocidad máxima permitida?",
+      "maxLength": 300,
+      "required": true,
+      "keywords": [
+        "velocidad máxima",
+        "límite",
+        "seguridad",
+        "condiciones"
+      ],
+      "correct": "Es la velocidad más alta a la que está permitido circular en una vía determinada según las normas de tránsito, garantizando la seguridad propia y de terceros."
+    },
+    {
+      "id": "ff-060",
+      "prompt": "¿Qué se entiende por velocidad mínima permitida?",
+      "maxLength": 300,
+      "required": true,
+      "keywords": [
+        "velocidad mínima",
+        "fluidez",
+        "tránsito"
+      ],
+      "correct": "Es la velocidad más baja a la que se puede circular sin entorpecer la circulación normal. Su objetivo es mantener el flujo del tránsito y evitar maniobras riesgosas por diferencia de velocidad."
+    },
+    {
+      "id": "ff-061",
+      "prompt": "¿Qué es la velocidad precautoria y en qué situaciones debe aplicarse?",
+      "maxLength": 350,
+      "required": true,
+      "keywords": [
+        "precautoria",
+        "condiciones",
+        "peligro",
+        "reducción"
+      ],
+      "correct": "La velocidad precautoria es aquella inferior a la máxima permitida, que el conductor adopta voluntariamente ante condiciones adversas como lluvia, niebla, curvas, zonas escolares o alto tránsito peatonal."
+    },
+    {
+      "id": "ff-062",
+      "prompt": "Enumera algunos factores que influyen en la velocidad de circulación.",
+      "maxLength": 350,
+      "required": true,
+      "keywords": [
+        "vehículo",
+        "estado de la vía",
+        "clima",
+        "conductor"
+      ],
+      "correct": "Influyen el tipo y estado del vehículo, las condiciones climáticas, el estado de la calzada, la visibilidad, la señalización y el nivel de experiencia del conductor."
+    },
+    {
+      "id": "ff-063",
+      "prompt": "¿Cuáles son las velocidades máximas permitidas en zonas urbanas y rurales en Argentina?",
+      "maxLength": 400,
+      "required": true,
+      "keywords": [
+        "urbana",
+        "rural",
+        "autopista",
+        "camino"
+      ],
+      "correct": "En zonas urbanas: 40 km/h en calles y 60 km/h en avenidas. En rutas: 110 km/h para automóviles. En autopistas: 130 km/h. En caminos rurales: 80 km/h. Los límites pueden variar según señalización específica."
+    },
+    {
+      "id": "ff-064",
+      "prompt": "¿Por qué es importante respetar las velocidades mínimas y máximas señaladas?",
+      "maxLength": 350,
+      "required": true,
+      "keywords": [
+        "respeto",
+        "normas",
+        "seguridad",
+        "convivencia"
+      ],
+      "correct": "Porque permite mantener una circulación segura y previsible, reduce el riesgo de choques por diferencia de velocidad y contribuye a la convivencia ordenada en la vía pública."
+    },
+    {
+      "id": "ff-065",
+      "prompt": "¿Qué relación existe entre la velocidad y la distancia de frenado?",
+      "maxLength": 350,
+      "required": true,
+      "keywords": [
+        "distancia de frenado",
+        "velocidad",
+        "energía cinética"
+      ],
+      "correct": "La distancia de frenado aumenta exponencialmente con la velocidad. Si se duplica la velocidad, la distancia necesaria para detenerse se cuadruplica debido a la energía cinética del vehículo."
+    },
+    {
+      "id": "ff-066",
+      "prompt": "¿Cómo influye la velocidad en la gravedad de los siniestros viales?",
+      "maxLength": 350,
+      "required": true,
+      "keywords": [
+        "impacto",
+        "energía",
+        "lesiones",
+        "fatalidad"
+      ],
+      "correct": "La velocidad aumenta la energía del impacto. A mayor velocidad, más graves son las lesiones y la probabilidad de fatalidad en caso de colisión."
+    },
+    {
+      "id": "ff-067",
+      "prompt": "¿Qué actitud debe adoptar el conductor frente a condiciones que requieran disminuir la velocidad?",
+      "maxLength": 400,
+      "required": true,
+      "keywords": [
+        "precaución",
+        "reducción",
+        "visibilidad",
+        "clima"
+      ],
+      "correct": "Debe reducir progresivamente la velocidad, mantener mayor distancia de seguridad, evitar frenadas bruscas y adaptarse a las condiciones del clima, visibilidad o tránsito."
+    },
+    {
+      "id": "ff-068",
+      "prompt": "¿Qué función cumplen las señales viales dentro del sistema de tránsito?",
+      "maxLength": 350,
+      "required": true,
+      "keywords": [
+        "señales",
+        "función",
+        "orden",
+        "seguridad"
+      ],
+      "correct": "Las señales viales ordenan y regulan la circulación, orientan a los usuarios y previenen accidentes al brindar información clara sobre cómo comportarse en la vía pública."
+    },
+    {
+      "id": "ff-069",
+      "prompt": "¿Cómo se clasifican las señales viales según su función?",
+      "maxLength": 300,
+      "required": true,
+      "keywords": [
+        "clasificación",
+        "reglamentarias",
+        "preventivas",
+        "informativas",
+        "transitorias"
+      ],
+      "correct": "Se clasifican en: reglamentarias o prescriptivas, preventivas, informativas y transitorias."
+    },
+    {
+      "id": "ff-070",
+      "prompt": "¿Qué características tienen las señales reglamentarias o prescriptivas?",
+      "maxLength": 400,
+      "required": true,
+      "keywords": [
+        "reglamentarias",
+        "prohibición",
+        "obligación",
+        "forma circular",
+        "borde rojo"
+      ],
+      "correct": "Indican prohibiciones, obligaciones o restricciones. Son de forma circular, con fondo blanco, borde rojo y símbolo negro. Ejemplo: Prohibido girar, Máxima velocidad, Pare."
+    },
+    {
+      "id": "ff-071",
+      "prompt": "¿Qué diferencia existe entre una señal de prohibición y una de obligación?",
+      "maxLength": 350,
+      "required": true,
+      "keywords": [
+        "prohibición",
+        "obligación",
+        "diferencia",
+        "acciones"
+      ],
+      "correct": "Las señales de prohibición indican lo que no se puede hacer (ejemplo: Prohibido adelantar), mientras que las de obligación indican acciones que deben cumplirse (ejemplo: Sentido obligatorio)."
+    },
+    {
+      "id": "ff-072",
+      "prompt": "¿Cuál es la función de las señales preventivas?",
+      "maxLength": 350,
+      "required": true,
+      "keywords": [
+        "preventivas",
+        "advertencia",
+        "peligro",
+        "precaución"
+      ],
+      "correct": "Advierten al conductor sobre peligros existentes o potenciales en la vía, permitiendo anticipar maniobras o reducir la velocidad. Ejemplo: Curva peligrosa, cruce de animales, niños jugando."
+    },
+    {
+      "id": "ff-073",
+      "prompt": "¿Qué forma y color caracterizan a las señales preventivas?",
+      "maxLength": 300,
+      "required": true,
+      "keywords": [
+        "forma",
+        "color",
+        "cuadrada",
+        "amarilla",
+        "símbolo negro"
+      ],
+      "correct": "Son de forma cuadrada colocada en posición de rombo, con fondo amarillo y símbolo negro."
+    },
+    {
+      "id": "ff-074",
+      "prompt": "¿Qué información brindan las señales informativas?",
+      "maxLength": 350,
+      "required": true,
+      "keywords": [
+        "informativas",
+        "servicios",
+        "destinos",
+        "orientación"
+      ],
+      "correct": "Brindan información útil al conductor sobre rutas, destinos, distancias, lugares de interés, servicios y normativa vigente. Facilitan la orientación y la toma de decisiones durante el viaje."
+    },
+    {
+      "id": "ff-075",
+      "prompt": "¿Qué colores suelen utilizar las señales informativas y qué significan?",
+      "maxLength": 400,
+      "required": true,
+      "keywords": [
+        "color",
+        "verde",
+        "azul",
+        "blanco",
+        "turístico"
+      ],
+      "correct": "Fondo verde: orientación y rutas. Fondo azul: servicios o instalaciones. Fondo blanco: información general o reglamentaria adicional. Fondo marrón: puntos de interés turístico."
+    },
+    {
+      "id": "ff-076",
+      "prompt": "¿Qué indican las señales transitorias y por qué son importantes?",
+      "maxLength": 350,
+      "required": true,
+      "keywords": [
+        "transitorias",
+        "trabajos",
+        "precaución",
+        "cambio"
+      ],
+      "correct": "Indican modificaciones temporales en la vía por obras o desvíos. Son importantes porque advierten sobre la presencia de trabajadores, maquinaria o alteraciones en el tránsito habitual."
+    },
+    {
+      "id": "ff-077",
+      "prompt": "¿Qué color caracteriza a las señales transitorias y qué significa?",
+      "maxLength": 300,
+      "required": true,
+      "keywords": [
+        "naranja",
+        "temporal",
+        "obras",
+        "precaución"
+      ],
+      "correct": "Son de color anaranjado con símbolos o leyendas negras, lo que indica precaución y advierte sobre cambios temporales en la circulación."
+    },
+    {
+      "id": "ff-078",
+      "prompt": "¿Por qué es importante respetar las señales de tránsito incluso cuando parecen innecesarias?",
+      "maxLength": 350,
+      "required": true,
+      "keywords": [
+        "respeto",
+        "normas",
+        "prevención",
+        "orden"
+      ],
+      "correct": "Porque las señales son el lenguaje común del tránsito. Respetarlas evita confusiones, previene accidentes y mantiene el orden y la previsibilidad en la circulación."
+    },
+    {
+      "id": "ff-079",
+      "prompt": "¿Qué consecuencias puede generar la falta o incumplimiento de señalización vial?",
+      "maxLength": 400,
+      "required": true,
+      "keywords": [
+        "accidentes",
+        "confusión",
+        "riesgo",
+        "caos"
+      ],
+      "correct": "La falta o incumplimiento de las señales puede generar confusión, maniobras peligrosas, pérdida de tiempo, congestión y siniestros viales con consecuencias graves."
+    },
+    {
+      "id": "ff-080",
+      "prompt": "¿Cuál es el papel de la señalización horizontal y qué ejemplos existen?",
+      "maxLength": 400,
+      "required": true,
+      "keywords": [
+        "horizontal",
+        "líneas",
+        "pintura",
+        "demarcación"
+      ],
+      "correct": "La señalización horizontal complementa las señales verticales y se realiza sobre la calzada. Ejemplos: líneas de carril, sendas peatonales, líneas continuas o discontinuas, flechas direccionales y cebreados."
+    },
+    {
+      "id": "ff-081",
+      "prompt": "¿Qué relación existe entre la señalización vial y el comportamiento del conductor?",
+      "maxLength": 400,
+      "required": true,
+      "keywords": [
+        "conducta",
+        "obediencia",
+        "orden",
+        "prevención"
+      ],
+      "correct": "La señalización guía el comportamiento del conductor. Cumplirla demuestra respeto, favorece la convivencia vial y reduce el riesgo de accidentes por malas decisiones o distracción."
+    },
+    {
+      "id": "ff-082",
+      "prompt": "¿Por qué la capacidad visual es crítica para conducir con seguridad y qué aspectos de la visión intervienen?",
+      "maxLength": 380,
+      "required": true,
+      "keywords": [
+        "vista",
+        "agudeza",
+        "campo visual",
+        "percepción de profundidad"
+      ],
+      "correct": "Porque permite detectar señales, peatones, distancias y peligros. Intervienen la agudeza visual, el campo visual, la percepción de profundidad, la sensibilidad al contraste y la visión nocturna."
+    },
+    {
+      "id": "ff-083",
+      "prompt": "Explica cómo la reducción del campo visual afecta la conducción al aumentar la velocidad.",
+      "maxLength": 320,
+      "required": true,
+      "keywords": [
+        "campo visual",
+        "velocidad",
+        "riesgo lateral"
+      ],
+      "correct": "Al subir la velocidad, el campo visual efectivo se estrecha, disminuyendo la detección de riesgos laterales y aumentando la probabilidad de no ver peatones, ciclistas u obstáculos."
+    },
+    {
+      "id": "ff-084",
+      "prompt": "Describe el rol del oído en la conducción y menciona ejemplos de señales auditivas relevantes.",
+      "maxLength": 320,
+      "required": true,
+      "keywords": [
+        "oído",
+        "sirenas",
+        "bocina",
+        "motor"
+      ],
+      "correct": "El oído complementa la vista al alertar sobre peligros fuera del campo visual. Ejemplos: sirenas de emergencia, bocinas, ruidos anómalos del vehículo y advertencias acústicas del propio auto."
+    },
+    {
+      "id": "ff-085",
+      "prompt": "¿Qué consideraciones deben tenerse para la conducción por personas con capacidades diferentes?",
+      "maxLength": 380,
+      "required": true,
+      "keywords": [
+        "capacidades diferentes",
+        "adaptaciones",
+        "seguridad"
+      ],
+      "correct": "Deben contar con apto psicofísico, licencias acordes y las adaptaciones vehiculares necesarias (controles manuales, pedales modificados, señalización), así como formación y práctica específica."
+    },
+    {
+      "id": "ff-086",
+      "prompt": "Enumera factores que afectan negativamente las condiciones físicas del conductor.",
+      "maxLength": 260,
+      "required": true,
+      "keywords": [
+        "fatiga",
+        "estrés",
+        "enfermedad",
+        "sueño"
+      ],
+      "correct": "Fatiga, somnolencia, estrés, dolor o enfermedad, deshidratación, mala postura, hambre, temperaturas extremas y viajes prolongados sin pausas."
+    },
+    {
+      "id": "ff-087",
+      "prompt": "¿Cómo pueden los medicamentos alterar la capacidad para conducir y qué precauciones deben tomarse?",
+      "maxLength": 380,
+      "required": true,
+      "keywords": [
+        "medicamentos",
+        "somnolencia",
+        "prospecto"
+      ],
+      "correct": "Algunos fármacos causan somnolencia, visión borrosa o lentifican los reflejos. Se debe leer el prospecto, consultar al médico/farmacéutico y evitar conducir al iniciar tratamientos o al ajustar dosis."
+    },
+    {
+      "id": "ff-088",
+      "prompt": "Explica por qué el alcohol incrementa el riesgo de siniestros incluso en bajas concentraciones.",
+      "maxLength": 360,
+      "required": true,
+      "keywords": [
+        "alcohol",
+        "tiempo de reacción",
+        "percepción del riesgo"
+      ],
+      "correct": "Reduce la atención, aumenta el tiempo de reacción, altera la coordinación y hace sobreestimar las propias capacidades, elevando el riesgo aun con niveles bajos en sangre."
+    },
+    {
+      "id": "ff-089",
+      "prompt": "Indica efectos típicos de las drogas recreativas sobre la conducción.",
+      "maxLength": 360,
+      "required": true,
+      "keywords": [
+        "drogas",
+        "percepción",
+        "atención",
+        "reacción"
+      ],
+      "correct": "Alteran la percepción de colores, tiempo y espacio; dificultan la concentración, aumentan el tiempo de reacción, producen somnolencia, impulsividad y comportamientos competitivos o agresivos."
+    },
+    {
+      "id": "ff-090",
+      "prompt": "¿Qué señales de fatiga o cansancio deben alertar para detener la marcha?",
+      "maxLength": 320,
+      "required": true,
+      "keywords": [
+        "cansancio",
+        "somnolencia",
+        "microsueños"
+      ],
+      "correct": "Bostezos frecuentes, picazón ocular, parpadeo pesado, dificultad para mantener el carril, olvidos del último tramo recorrido, microsueños y pérdida de foco en señales."
+    },
+    {
+      "id": "ff-091",
+      "prompt": "Propón medidas para prevenir la somnolencia al conducir viajes largos.",
+      "maxLength": 360,
+      "required": true,
+      "keywords": [
+        "descansos",
+        "hidratación",
+        "rotación de conductores"
+      ],
+      "correct": "Dormir adecuadamente antes de viajar, hacer pausas cada 2 horas, hidratarse, ventilar el habitáculo, evitar comidas copiosas y, si es posible, alternar conductores."
+    },
+    {
+      "id": "ff-092",
+      "prompt": "¿Por qué el uso del celular al volante incrementa significativamente el riesgo?",
+      "maxLength": 360,
+      "required": true,
+      "keywords": [
+        "distracción",
+        "atención",
+        "multitarea"
+      ],
+      "correct": "Porque introduce distracción visual, manual y cognitiva simultáneamente: aparta la vista, ocupa una mano y desvía la atención del entorno, multiplicando la probabilidad de colisión."
+    },
+    {
+      "id": "ff-093",
+      "prompt": "Indica prácticas seguras para gestionar llamadas o mensajes durante la conducción.",
+      "maxLength": 360,
+      "required": true,
+      "keywords": [
+        "manos libres",
+        "detenerse",
+        "modo conducción"
+      ],
+      "correct": "Usar modo ‘no molestar’ o conducción, detenerse en lugar seguro para atender, emplear manos libres solo cuando la normativa lo permite y nunca leer/escribir mensajes en movimiento."
+    },
+    {
+      "id": "ff-094",
+      "prompt": "¿Por qué el conductor es considerado un sujeto responsable dentro del sistema de tránsito?",
+      "maxLength": 350,
+      "required": true,
+      "keywords": [
+        "responsabilidad",
+        "conductor",
+        "normas",
+        "seguridad"
+      ],
+      "correct": "Porque sus decisiones y conductas influyen directamente en la seguridad vial. Debe respetar las normas, mantener el control del vehículo y proteger la vida propia y ajena."
+    },
+    {
+      "id": "ff-095",
+      "prompt": "¿Qué se entiende por responsabilidad civil en el contexto del tránsito?",
+      "maxLength": 350,
+      "required": true,
+      "keywords": [
+        "civil",
+        "daño",
+        "indemnización",
+        "terceros"
+      ],
+      "correct": "Es la obligación de reparar los daños ocasionados a terceros como consecuencia de un accidente, ya sea de manera directa o por negligencia en la conducción."
+    },
+    {
+      "id": "ff-096",
+      "prompt": "¿Qué implica la responsabilidad penal del conductor?",
+      "maxLength": 350,
+      "required": true,
+      "keywords": [
+        "penal",
+        "delito",
+        "culpa",
+        "muerte"
+      ],
+      "correct": "Surge cuando el conductor comete un delito o falta grave, como conducir bajo los efectos del alcohol, huir de un siniestro o causar la muerte o lesiones por imprudencia o dolo."
+    },
+    {
+      "id": "ff-097",
+      "prompt": "¿Qué diferencia existe entre la responsabilidad civil y la penal en un siniestro vial?",
+      "maxLength": 350,
+      "required": true,
+      "keywords": [
+        "civil",
+        "penal",
+        "diferencia",
+        "sanción"
+      ],
+      "correct": "La responsabilidad civil busca reparar económicamente el daño, mientras que la penal sanciona la conducta delictiva del conductor con penas como multas, inhabilitaciones o prisión."
+    },
+    {
+      "id": "ff-098",
+      "prompt": "¿Qué es la responsabilidad contravencional y qué tipo de conductas abarca?",
+      "maxLength": 350,
+      "required": true,
+      "keywords": [
+        "contravencional",
+        "infracción",
+        "multa"
+      ],
+      "correct": "Es la responsabilidad derivada de infracciones a las normas de tránsito que no constituyen delitos, como exceso de velocidad, estacionamiento indebido o no usar cinturón. Se sancionan con multas o puntos."
+    },
+    {
+      "id": "ff-099",
+      "prompt": "¿Qué debe hacer un conductor que participa en un siniestro vial con víctimas?",
+      "maxLength": 400,
+      "required": true,
+      "keywords": [
+        "detenerse",
+        "asistencia",
+        "autoridad"
+      ],
+      "correct": "Debe detenerse de inmediato, señalizar el lugar, asistir a las víctimas, llamar a los servicios de emergencia y avisar a la autoridad policial. Abandonar el lugar constituye un delito."
+    },
+    {
+      "id": "ff-100",
+      "prompt": "¿Qué documentación debe presentar el conductor ante un control o luego de un accidente?",
+      "maxLength": 350,
+      "required": true,
+      "keywords": [
+        "documentación",
+        "licencia",
+        "seguro",
+        "cédula"
+      ],
+      "correct": "Licencia de conducir, DNI, cédula verde o azul, comprobante de seguro vigente, y en su caso, constancia de VTV o RTO. Toda esta documentación debe estar actualizada y en buen estado."
+    },
+    {
+      "id": "ff-101",
+      "prompt": "¿Qué obligaciones tiene un conductor ante la autoridad luego de cometer una infracción?",
+      "maxLength": 350,
+      "required": true,
+      "keywords": [
+        "autoridad",
+        "colaboración",
+        "descargo"
+      ],
+      "correct": "Debe identificarse correctamente, entregar la documentación solicitada y acatar las instrucciones de la autoridad. Tiene derecho a realizar su descargo o recurrir la sanción según el procedimiento establecido."
+    },
+    {
+      "id": "ff-102",
+      "prompt": "¿Qué medidas deben adoptarse para prevenir accidentes vinculados con la velocidad?",
+      "maxLength": 350,
+      "required": true,
+      "keywords": [
+        "velocidad",
+        "precaución",
+        "distancia",
+        "respeto"
+      ],
+      "correct": "Respetar los límites máximos y mínimos, reducir la velocidad en zonas urbanas o de riesgo, mantener distancia de seguridad y adaptar la marcha a las condiciones climáticas o del camino."
+    },
+    {
+      "id": "ff-103",
+      "prompt": "¿Qué conocimientos básicos de primeros auxilios debe tener un conductor responsable?",
+      "maxLength": 400,
+      "required": true,
+      "keywords": [
+        "primeros auxilios",
+        "emergencia",
+        "accidente",
+        "lesión"
+      ],
+      "correct": "Debe saber cómo actuar ante una emergencia: mantener la calma, evaluar la seguridad del lugar, llamar al 107 o 911, no mover a los heridos salvo peligro, controlar hemorragias y mantener comunicación hasta la llegada de ayuda."
+    },
+    {
+      "id": "ff-104",
+      "prompt": "¿Por qué es importante no mover a una persona lesionada luego de un accidente vial?",
+      "maxLength": 350,
+      "required": true,
+      "keywords": [
+        "lesión",
+        "columna",
+        "riesgo",
+        "empeorar"
+      ],
+      "correct": "Porque puede tener lesiones internas o de columna, y moverla sin conocimiento médico puede agravar su estado o causar daños irreversibles."
+    },
+    {
+      "id": "ff-105",
+      "prompt": "¿Qué actitud ética debe mantener un conductor responsable ante un siniestro, aunque no sea culpable?",
+      "maxLength": 350,
+      "required": true,
+      "keywords": [
+        "ética",
+        "solidaridad",
+        "colaboración",
+        "respeto"
+      ],
+      "correct": "Debe mantener una actitud solidaria y cooperar con las víctimas y la autoridad. La empatía y el respeto por la vida son deberes éticos básicos en la conducción."
+    },
+    {
+      "id": "ff-106",
+      "prompt": "¿Qué se entiende por infracción de tránsito?",
+      "maxLength": 350,
+      "required": true,
+      "keywords": [
+        "infracción",
+        "norma",
+        "tránsito",
+        "violación"
+      ],
+      "correct": "Es toda acción u omisión que viola las normas establecidas por la legislación vial y pone en riesgo la seguridad de las personas o el orden del tránsito."
+    },
+    {
+      "id": "ff-107",
+      "prompt": "¿Cuáles son los principales tipos de sanciones que puede recibir un conductor?",
+      "maxLength": 350,
+      "required": true,
+      "keywords": [
+        "sanciones",
+        "multa",
+        "inhabilitación",
+        "retención",
+        "puntos"
+      ],
+      "correct": "Multas, inhabilitaciones temporales o permanentes, retención de licencia o vehículo, y la quita de puntos del registro de conducir."
+    },
+    {
+      "id": "ff-108",
+      "prompt": "¿Qué objetivos persigue el régimen de sanciones en materia de tránsito?",
+      "maxLength": 350,
+      "required": true,
+      "keywords": [
+        "objetivo",
+        "educación",
+        "prevención",
+        "conciencia"
+      ],
+      "correct": "Busca prevenir infracciones, educar al conductor, promover la conciencia vial y desalentar conductas peligrosas mediante sanciones proporcionales al riesgo generado."
+    },
+    {
+      "id": "ff-109",
+      "prompt": "¿Qué procedimiento debe seguirse ante una infracción de tránsito?",
+      "maxLength": 400,
+      "required": true,
+      "keywords": [
+        "procedimiento",
+        "acta",
+        "notificación",
+        "descargo"
+      ],
+      "correct": "Se labra un acta de infracción, el conductor es notificado y puede realizar un descargo o presentar pruebas. Luego, la autoridad de juzgamiento determina la sanción o absuelve según corresponda."
+    },
+    {
+      "id": "ff-110",
+      "prompt": "¿Qué derechos tiene el conductor cuando es sancionado por una infracción?",
+      "maxLength": 400,
+      "required": true,
+      "keywords": [
+        "derechos",
+        "defensa",
+        "descargo",
+        "apelación"
+      ],
+      "correct": "Tiene derecho a ser informado, a presentar su descargo, aportar pruebas, solicitar audiencia y apelar la resolución si considera injusta la sanción."
+    },
+    {
+      "id": "ff-111",
+      "prompt": "¿Qué es el Sistema Nacional de Puntos y cómo funciona?",
+      "maxLength": 400,
+      "required": true,
+      "keywords": [
+        "puntos",
+        "licencia",
+        "infracciones",
+        "reincidencia"
+      ],
+      "correct": "Cada conductor cuenta con 20 puntos en su licencia. Al cometer infracciones, se descuentan puntos según la gravedad. Si llega a 0, la licencia se suspende por un período que aumenta en caso de reincidencia."
+    },
+    {
+      "id": "ff-112",
+      "prompt": "¿Qué consecuencias genera la pérdida total de puntos en la licencia de conducir?",
+      "maxLength": 350,
+      "required": true,
+      "keywords": [
+        "pérdida",
+        "suspensión",
+        "reeducación"
+      ],
+      "correct": "La licencia se suspende temporalmente y el conductor debe realizar un curso de reeducación y volver a rendir los exámenes para recuperarla. En caso de reincidencia, el tiempo de suspensión se amplía."
+    },
+    {
+      "id": "ff-113",
+      "prompt": "¿Qué tipos de infracciones provocan la pérdida de mayor cantidad de puntos?",
+      "maxLength": 350,
+      "required": true,
+      "keywords": [
+        "graves",
+        "alcohol",
+        "semáforo",
+        "velocidad"
+      ],
+      "correct": "Las infracciones graves como conducir alcoholizado, cruzar con semáforo en rojo, exceder los límites de velocidad o no respetar la prioridad de paso quitan la mayor cantidad de puntos."
+    },
+    {
+      "id": "ff-114",
+      "prompt": "¿Qué diferencia existe entre una falta leve y una falta grave?",
+      "maxLength": 350,
+      "required": true,
+      "keywords": [
+        "leve",
+        "grave",
+        "sanción",
+        "riesgo"
+      ],
+      "correct": "Las faltas leves implican infracciones de bajo riesgo y sanciones menores, mientras que las graves suponen peligro para la seguridad vial y se sancionan con multas más altas o suspensión de la licencia."
+    },
+    {
+      "id": "ff-115",
+      "prompt": "¿Qué medidas puede tomar un conductor si considera injusta una infracción o sanción aplicada?",
+      "maxLength": 350,
+      "required": true,
+      "keywords": [
+        "apelación",
+        "recurso",
+        "tribunal"
+      ],
+      "correct": "Puede presentar un recurso o apelación ante la autoridad competente dentro del plazo indicado, acompañando pruebas o testigos que demuestren su descargo."
+    },
+    {
+      "id": "ff-116",
+      "prompt": "¿Por qué el cumplimiento de las sanciones también forma parte de la responsabilidad ciudadana?",
+      "maxLength": 350,
+      "required": true,
+      "keywords": [
+        "cumplimiento",
+        "responsabilidad",
+        "convivencia",
+        "educación"
+      ],
+      "correct": "Porque aceptar y cumplir las sanciones promueve la educación vial, refuerza la convivencia ciudadana y contribuye a construir una cultura de respeto a las normas."
+    },
+    {
+      "id": "ff-117",
+      "prompt": "¿Qué medidas preventivas puede adoptar un conductor para evitar sanciones?",
+      "maxLength": 350,
+      "required": true,
+      "keywords": [
+        "prevención",
+        "cumplir normas",
+        "mantenimiento",
+        "respeto"
+      ],
+      "correct": "Cumplir las normas, respetar las señales, mantener el vehículo en buen estado, no usar el celular al conducir, no consumir alcohol ni drogas, y mantener una actitud responsable en todo momento."
     }
   ]
 }
