@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useReducer, useRef, useState } from 'react';
+﻿import React, { useEffect, useMemo, useReducer, useRef, useState } from 'react';
 import { loadQuiz, validateAll, loadProgress, saveProgress, clearProgress, scoreMcq, loadSession, saveSession } from './utils';
 
 const initial = {
@@ -34,6 +34,7 @@ export default function App(){
   const [finished, setFinished] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [session, setSession] = useState({ freeform: null, mcq: null, imageMap: null });
+  const importInputRef = useRef(null);
 
   useEffect(() => {
     const saved = loadProgress(state.quizId);
@@ -47,7 +48,7 @@ export default function App(){
         const v = validateAll(quiz);
         if (!v.ok) throw new Error(v.message);
         setData(quiz);
-        // Inicializar sesión aleatoria (por defecto: todos los índices)
+        // Inicializar sesiÃ³n aleatoria (por defecto: todos los Ã­ndices)
         const ffLen = Array.isArray(quiz?.freeform?.items) ? quiz.freeform.items.length : 0;
         const mcqLen = Array.isArray(quiz?.mcq?.items) ? quiz.mcq.items.length : 0;
         const imLen = Array.isArray(quiz?.imageMap?.items) ? quiz.imageMap.items.length : 0;
@@ -73,12 +74,13 @@ export default function App(){
   }, [state.quizId, state.answers]);
 
   // Hook order: compute memos unconditionally before any early return
-  const metadata = data?.metadata;
+  // Provide a safe fallback when imported file doesn't include `metadata` (e.g. mcq.json/freeform.json)
+  const metadata = data?.metadata || { title: data?.name || 'Cuestionario', sections: [] };
   const freeform = data?.freeform;
   const mcq = data?.mcq;
   const imageMap = data?.imageMap;
 
-  // Items por sección y el item actual según índice
+  // Items por secciÃ³n y el item actual segÃºn Ã­ndice
   const ffAll = freeform?.items || [];
   const mcqAll = mcq?.items || [];
   const imAll = imageMap?.items || [];
@@ -196,6 +198,44 @@ export default function App(){
     URL.revokeObjectURL(url);
   };
 
+  const onImportQuiz = (file) => {
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = () => {
+      try {
+        const obj = JSON.parse(String(reader.result || '{}'));
+        const v = validateAll(obj);
+        if (!v.ok) throw new Error(v.message || 'JSON invÃ¡lido');
+        // Cargar en memoria sin tocar rutas; resetea sesiÃ³n a todos
+        setData(obj);
+        const ffLen = Array.isArray(obj?.freeform?.items) ? obj.freeform.items.length : 0;
+        const mcqLen = Array.isArray(obj?.mcq?.items) ? obj.mcq.items.length : 0;
+        const imLen = Array.isArray(obj?.imageMap?.items) ? obj.imageMap.items.length : 0;
+        const def = (n) => Array.from({ length: n }, (_, i) => i);
+        const nextSession = {
+          freeform: def(ffLen),
+          mcq: def(mcqLen),
+          imageMap: def(imLen),
+        };
+        setSession(nextSession);
+        saveSession(state.quizId, nextSession);
+        // Reset UI
+        dispatch({ type: 'LOAD_PROGRESS', answers: initial.answers });
+        if (Array.isArray(obj?.metadata?.sections) && obj.metadata.sections.length > 0) {
+          setMode(obj.metadata.sections[0]);
+        } else {
+          setMode('freeform');
+        }
+        setIndex(0);
+        setFinished(false);
+      } catch (e) {
+        alert('Error al importar cuestionario: ' + (e?.message || String(e)));
+      }
+    };
+    reader.onerror = () => alert('No se pudo leer el archivo');
+    reader.readAsText(file);
+  };
+
   const ModeButton = ({ id, label }) => (
     <button
       onClick={() => changeMode(id)}
@@ -264,6 +304,23 @@ export default function App(){
             <div style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.4)' }} />
             <div style={{ position: 'absolute', top: 0, left: 0, bottom: 0, width: 280, background: '#0f0f0f', borderRight: '1px solid #2a2a2a', padding: 12, overflowY: 'auto' }} onClick={e => e.stopPropagation()}>
               <div style={{ fontWeight: 700, marginBottom: 8 }}>Navegar preguntas ({mode})</div>
+            <div style={{ display: 'flex', justifyContent: 'center', width: '100%', marginBottom: 8 }}>
+              <button onClick={() => importInputRef.current?.click()} style={{
+                background: 'linear-gradient(135deg, #f59e0b, #f97316)',
+                color: 'white', border: '1px solid #fb923c', borderRadius: 8, padding: '8px 12px'
+              }}>Importar cuestionario</button>
+            </div>
+            <input
+              ref={importInputRef}
+              type="file"
+              accept=".json,application/json"
+              style={{ display: 'none' }}
+              onChange={(e) => {
+                const f = e.target.files && e.target.files[0];
+                if (f) onImportQuiz(f);
+                e.target.value = '';
+              }}
+            />
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 8 }}>
                 {Array.from({ length: countForMode }).map((_, i) => {
                   const isActive = i === index;
