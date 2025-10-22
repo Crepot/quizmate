@@ -32,14 +32,33 @@ export default function App(){
   const [mode, setMode] = useState('freeform');
   const [index, setIndex] = useState(0);
   const [finished, setFinished] = useState(false);
-  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const mq = (q) => (typeof window !== 'undefined' && window.matchMedia) ? window.matchMedia(q).matches : false;
+  const [isDesktop, setIsDesktop] = useState(() => mq('(min-width: 1024px)'));
+  const [sidebarOpen, setSidebarOpen] = useState(() => mq('(min-width: 1024px)'));
   const [session, setSession] = useState({ freeform: null, mcq: null, imageMap: null });
+  const [review, setReview] = useState({ freeform: false, mcq: false, imageMap: false });
   const importInputRef = useRef(null);
 
   useEffect(() => {
     const saved = loadProgress(state.quizId);
     if (saved) dispatch({ type: 'LOAD_PROGRESS', answers: saved.answers });
   }, [state.quizId]);
+
+  // Detect desktop/mobile to decide sidebar default and persistence
+  useEffect(() => {
+    if (typeof window === 'undefined' || !window.matchMedia) return;
+    const mql = window.matchMedia('(min-width: 1024px)');
+    const onChange = (e) => {
+      setIsDesktop(e.matches);
+      // Do not override user toggled state; default is handled via initial value
+    };
+    if (mql.addEventListener) mql.addEventListener('change', onChange);
+    else mql.addListener(onChange);
+    return () => {
+      if (mql.removeEventListener) mql.removeEventListener('change', onChange);
+      else mql.removeListener(onChange);
+    };
+  }, []);
 
   useEffect(() => {
     (async () => {
@@ -48,7 +67,7 @@ export default function App(){
         const v = validateAll(quiz);
         if (!v.ok) throw new Error(v.message);
         setData(quiz);
-        // Inicializar sesiÃ³n aleatoria (por defecto: todos los Ã­ndices)
+        // Inicializar sesión aleatoria (por defecto: todos los índices)
         const ffLen = Array.isArray(quiz?.freeform?.items) ? quiz.freeform.items.length : 0;
         const mcqLen = Array.isArray(quiz?.mcq?.items) ? quiz.mcq.items.length : 0;
         const imLen = Array.isArray(quiz?.imageMap?.items) ? quiz.imageMap.items.length : 0;
@@ -80,7 +99,7 @@ export default function App(){
   const mcq = data?.mcq;
   const imageMap = data?.imageMap;
 
-  // Items por secciÃ³n y el item actual segÃºn Ã­ndice
+  // Items por sección y el item actual según índice
   const ffAll = freeform?.items || [];
   const mcqAll = mcq?.items || [];
   const imAll = imageMap?.items || [];
@@ -177,7 +196,7 @@ export default function App(){
 
 
   // Cambio de modo: reset índice y finalizado
-  const changeMode = (m) => { setMode(m); setIndex(0); setFinished(false); setSidebarOpen(false); };
+  const changeMode = (m) => { setMode(m); setIndex(0); setFinished(false); };
 
   // Navegación y acciones
   const countForMode = mode === 'freeform' ? ffItems.length : mode === 'mcq' ? mcqItems.length : imItems.length;
@@ -239,14 +258,42 @@ export default function App(){
     const reader = new FileReader();
     reader.onload = () => {
       try {
-        const obj = JSON.parse(String(reader.result || '{}'));
-        const v = validateAll(obj);
-        if (!v.ok) throw new Error(v.message || 'JSON invÃ¡lido');
-        // Cargar en memoria sin tocar rutas; resetea sesiÃ³n a todos
-        setData(obj);
-        const ffLen = Array.isArray(obj?.freeform?.items) ? obj.freeform.items.length : 0;
-        const mcqLen = Array.isArray(obj?.mcq?.items) ? obj.mcq.items.length : 0;
-        const imLen = Array.isArray(obj?.imageMap?.items) ? obj.imageMap.items.length : 0;
+                const raw = String(reader.result || '{}');
+        let obj;
+        try { obj = JSON.parse(raw); } catch { throw new Error('Archivo JSON inválido. No se pudo parsear.'); }
+        const detectSingle = (o) => {
+          const it = Array.isArray(o?.items) ? o.items : null;
+          if (!it || !it.length) return {};
+          const first = it[0] || {};
+          if (Array.isArray(first.options)) return { mcq: { items: it } };
+          if (first.image || Array.isArray(first.choices)) return { imageMap: { items: it } };
+          return { freeform: { items: it } };
+        };
+        let norm = obj;        // Ensure metadata has id/title if provided
+        if (obj?.metadata && (!obj?.metadata?.id || !obj?.metadata?.title)) {
+          const sections0 = Array.isArray(obj?.metadata?.sections) ? obj.metadata.sections : [];
+          const secsGuess = [];
+          if (obj.freeform?.items?.length) secsGuess.push('freeform');
+          if (obj.mcq?.items?.length) secsGuess.push('mcq');
+          if (obj.imageMap?.items?.length) secsGuess.push('image-map');
+          const mergedSections = sections0.length ? sections0 : secsGuess;
+          norm = { ...obj, metadata: { id: obj?.metadata?.id || 'imported', title: obj?.metadata?.title || obj?.name || 'Cuestionario importado', sections: mergedSections } };
+        }
+        if (!obj?.metadata || (!obj?.freeform && !obj?.mcq && !obj?.imageMap && Array.isArray(obj?.items))) {
+          const secs = detectSingle(obj);
+          const sections = [];
+          if (secs.freeform) sections.push('freeform');
+          if (secs.mcq) sections.push('mcq');
+          if (secs.imageMap) sections.push('image-map');
+          norm = { metadata: { id: 'imported', title: obj?.name || 'Cuestionario importado', sections }, ...secs };
+        }
+        const v = validateAll(norm);
+        if (!v.ok) throw new Error(v.message || 'JSON inválido');
+        setData(norm);
+        const ffLen = Array.isArray(norm?.freeform?.items) ? norm.freeform.items.length : 0;
+        const mcqLen = Array.isArray(norm?.mcq?.items) ? norm.mcq.items.length : 0;
+        const imLen = Array.isArray(norm?.imageMap?.items) ? norm.imageMap.items.length : 0;
+        if (!ffLen && !mcqLen && !imLen) throw new Error('El archivo no contiene items válidos.');
         const def = (n) => Array.from({ length: n }, (_, i) => i);
         const nextSession = {
           freeform: def(ffLen),
@@ -257,11 +304,9 @@ export default function App(){
         saveSession(state.quizId, nextSession);
         // Reset UI
         dispatch({ type: 'LOAD_PROGRESS', answers: initial.answers });
-        if (Array.isArray(obj?.metadata?.sections) && obj.metadata.sections.length > 0) {
-          setMode(obj.metadata.sections[0]);
-        } else {
-          setMode('freeform');
-        }
+        const sections = Array.isArray(norm?.metadata?.sections) ? norm.metadata.sections : [];
+        const firstSection = sections[0] || (ffLen ? 'freeform' : (mcqLen ? 'mcq' : (imLen ? 'image-map' : 'freeform')));
+        setMode(firstSection);
         setIndex(0);
         setFinished(false);
       } catch (e) {
@@ -298,9 +343,23 @@ export default function App(){
     }}>{children}</div>
   );
 
+  const contentWrapperStyle = { width: 'min(100%, 960px)', margin: '0 auto' };
+  if (isDesktop && sidebarOpen) Object.assign(contentWrapperStyle, { marginLeft: 300 });
+
   return (
     <div style={{ minHeight: '100vh', display: 'grid', placeItems: 'center', padding: '24px 16px' }}>
-      <div style={{ width: 'min(100%, 960px)', margin: '0 auto' }}>
+      {/* Botón hamburguesa esquina superior izquierda */}
+      <button
+        aria-label="Abrir/cerrar índice"
+        onClick={() => setSidebarOpen(s => !s)}
+        style={{ position: 'fixed', top: 12, left: 12, zIndex: 50, width: 40, height: 36, display: 'flex', flexDirection: 'column', gap: 5, alignItems: 'center', justifyContent: 'center', background: '#0f0f0f', border: '1px solid #2a2a2a', borderRadius: 8, cursor: 'pointer', color: 'inherit' }}
+      >
+        <span style={{ display: 'block', width: 22, height: 2, background: 'currentColor' }} />
+        <span style={{ display: 'block', width: 22, height: 2, background: 'currentColor' }} />
+        <span style={{ display: 'block', width: 22, height: 2, background: 'currentColor' }} />
+      </button>
+
+      <div style={contentWrapperStyle}>
         <header style={{ display: 'grid', gap: 12, justifyItems: 'center', textAlign: 'center', position: 'relative' }}>
           <h1 style={{ margin: 0, fontSize: 28 }}>{metadata.title}</h1>
           {/* Progress bar for current section */}
@@ -310,53 +369,50 @@ export default function App(){
             </div>
             <div style={{ fontSize: 12, marginTop: 6, opacity: .85 }}>{index + 1}/{countForMode} en sección</div>
           </div>
-          <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', justifyContent: 'center' }}>
-            <ModeButton id="freeform" label="Preguntas y respuestas" />
-            <ModeButton id="mcq" label="Múltiple opción" />
-            <ModeButton id="image-map" label="Imagen" />
-          </div>
+          {/* Botones de modo movidos al sidebar */}
           {mode === 'mcq' && finished && (
             <div style={{ fontSize: 14, fontWeight: 600 }}>Puntaje: {mcqScore.correct} / {mcqScore.total}</div>
           )}
-          <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', justifyContent: 'center' }}>
-            <button onClick={onNew} style={{
-              background: 'linear-gradient(135deg, #22c55e, #10b981)',
-              color: 'white', border: '1px solid #16a34a', borderRadius: 8, padding: '8px 12px'
-            }}>Nuevo</button>
-            <button onClick={onExport} style={{
-              background: 'linear-gradient(135deg, #3b82f6, #06b6d4)',
-              color: 'white', border: '1px solid #0ea5e9', borderRadius: 8, padding: '8px 12px'
-            }}>Exportar resultados</button>
-            <button onClick={() => setSidebarOpen(s => !s)} style={{
-              background: 'linear-gradient(135deg, #f59e0b, #f97316)',
-              color: 'white', border: '1px solid #fb923c', borderRadius: 8, padding: '8px 12px'
-            }}>{sidebarOpen ? 'Cerrar índice' : 'Abrir índice'}</button>
-          </div>
+          {/* Acciones movidas al sidebar */}
         </header>
 
-        {/* Sidebar de navegación */}
-        {sidebarOpen && (
+        {/* Sidebar de Navegación */}
+        {sidebarOpen && !isDesktop && (
           <div style={{ position: 'fixed', inset: 0, zIndex: 30 }} onClick={() => setSidebarOpen(false)}>
             <div style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.4)' }} />
-            <div style={{ position: 'absolute', top: 0, left: 0, bottom: 0, width: 280, background: '#0f0f0f', borderRight: '1px solid #2a2a2a', padding: 12, overflowY: 'auto' }} onClick={e => e.stopPropagation()}>
+            <div style={{ position: 'absolute', top: 0, left: 0, bottom: 0, width: 280, background: '#0f0f0f', borderRight: '1px solid #2a2a2a', padding: 12, paddingTop: 60, overflowY: 'auto' }} onClick={e => e.stopPropagation()}>
+              <div style={{ display: 'grid', gap: 8, marginBottom: 12 }}>
+                <ModeButton id="freeform" label="Preguntas y respuestas" />
+                <ModeButton id="mcq" label="Múltiple opción" />
+                <ModeButton id="image-map" label="Imagen" />
+                <button onClick={() => setReview(prev => { const key = (mode === 'image-map') ? 'imageMap' : mode; return { ...prev, [key]: !prev[key] }; })} style={{ background: 'linear-gradient(135deg, #8b5cf6, #06b6d4)', color: 'white', border: '1px solid #7c3aed', borderRadius: 8, padding: '8px 12px' }}>
+                  {(() => { const key = (mode === 'image-map') ? 'imageMap' : mode; return (review?.[key] ? 'Desactivar repaso' : 'Activar repaso'); })()}
+                </button>
+                <button onClick={onNew} style={{
+                  background: 'linear-gradient(135deg, #22c55e, #10b981)',
+                  color: 'white', border: '1px solid #16a34a', borderRadius: 8, padding: '8px 12px'
+                }}>Nuevo</button>
+                <button onClick={onExport} style={{
+                  background: 'linear-gradient(135deg, #3b82f6, #06b6d4)',
+                  color: 'white', border: '1px solid #0ea5e9', borderRadius: 8, padding: '8px 12px'
+                }}>Exportar resultados</button>
+                <button onClick={() => importInputRef.current?.click()} style={{
+                  background: 'linear-gradient(135deg, #f59e0b, #f97316)',
+                  color: 'white', border: '1px solid #fb923c', borderRadius: 8, padding: '8px 12px'
+                }}>Importar cuestionario</button>
+                <input
+                  ref={importInputRef}
+                  type="file"
+                  accept=".json,application/json"
+                  style={{ display: 'none' }}
+                  onChange={(e) => {
+                    const f = e.target.files && e.target.files[0];
+                    if (f) onImportQuiz(f);
+                    e.target.value = '';
+                  }}
+                />
+              </div>
               <div style={{ fontWeight: 700, marginBottom: 8 }}>Navegar preguntas ({mode})</div>
-            <div style={{ display: 'flex', justifyContent: 'center', width: '100%', marginBottom: 8 }}>
-              <button onClick={() => importInputRef.current?.click()} style={{
-                background: 'linear-gradient(135deg, #f59e0b, #f97316)',
-                color: 'white', border: '1px solid #fb923c', borderRadius: 8, padding: '8px 12px'
-              }}>Importar cuestionario</button>
-            </div>
-            <input
-              ref={importInputRef}
-              type="file"
-              accept=".json,application/json"
-              style={{ display: 'none' }}
-              onChange={(e) => {
-                const f = e.target.files && e.target.files[0];
-                if (f) onImportQuiz(f);
-                e.target.value = '';
-              }}
-            />
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 8 }}>
                 {Array.from({ length: countForMode }).map((_, i) => {
                   const isActive = i === index;
@@ -378,6 +434,35 @@ export default function App(){
             </div>
           </div>
         )}
+        {isDesktop && sidebarOpen && (
+          <div style={{ position: 'fixed', top: 0, left: 0, bottom: 0, width: 280, background: '#0f0f0f', borderRight: '1px solid #2a2a2a', padding: 12, paddingTop: 60, overflowY: 'auto', zIndex: 40 }}>
+            <div style={{ display: 'grid', gap: 8, marginBottom: 12 }}>
+              <ModeButton id="freeform" label="Preguntas y respuestas" />
+              <ModeButton id="mcq" label="Múltiple opción" />
+              <ModeButton id="image-map" label="Imagen" />
+              <button onClick={() => setReview(prev => { const key = (mode === 'image-map') ? 'imageMap' : mode; return { ...prev, [key]: !prev[key] }; })} style={{ background: 'linear-gradient(135deg, #8b5cf6, #06b6d4)', color: 'white', border: '1px solid #7c3aed', borderRadius: 8, padding: '8px 12px' }}>
+                {(() => { const key = (mode === 'image-map') ? 'imageMap' : mode; return (review?.[key] ? 'Desactivar repaso' : 'Activar repaso'); })()}
+              </button>
+              <button onClick={onNew} style={{ background: 'linear-gradient(135deg, #22c55e, #10b981)', color: 'white', border: '1px solid #16a34a', borderRadius: 8, padding: '8px 12px' }}>Nuevo</button>
+              <button onClick={onExport} style={{ background: 'linear-gradient(135deg, #3b82f6, #06b6d4)', color: 'white', border: '1px solid #0ea5e9', borderRadius: 8, padding: '8px 12px' }}>Exportar resultados</button>
+              <button onClick={() => importInputRef.current?.click()} style={{ background: 'linear-gradient(135deg, #f59e0b, #f97316)', color: 'white', border: '1px solid #fb923c', borderRadius: 8, padding: '8px 12px' }}>Importar cuestionario</button>
+              <input ref={importInputRef} type="file" accept=".json,application/json" style={{ display: 'none' }} onChange={(e) => { const f = e.target.files && e.target.files[0]; if (f) onImportQuiz(f); e.target.value = ''; }} />
+            </div>
+            <div style={{ fontWeight: 700, marginBottom: 8 }}>Navegar preguntas ({mode})</div>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 8 }}>
+              {Array.from({ length: countForMode }).map((_, i) => {
+                const isActive = i === index;
+                let answered = false;
+                if (mode === 'freeform') answered = !!(ffItems[i] && (state.answers.freeform[ffItems[i].id] || '').length);
+                else if (mode === 'mcq') answered = !!(mcqItems[i] && Array.isArray(state.answers.mcq[mcqItems[i].id]) && state.answers.mcq[mcqItems[i].id].length);
+                else if (mode === 'image-map') answered = !!(imItems[i] && (state.answers.imageMap[imItems[i].id] || ''));
+                return (
+                  <button key={i} onClick={() => setIndex(i)} style={{ padding: '8px 0', borderRadius: 8, border: '1px solid', borderColor: isActive ? '#646cff' : answered ? '#4cc38a' : '#3a3a3a', background: isActive ? 'rgba(100,108,255,.12)' : answered ? 'rgba(76,195,138,.10)' : '#111', color: 'inherit' }}>{i + 1}</button>
+                );
+              })}
+            </div>
+          </div>
+        )}
 
       {mode === 'freeform' && ffItem && (
         <Section>
@@ -392,7 +477,7 @@ export default function App(){
                 dispatch({ type: 'ANSWER_FREEFORM', id: ffItem.id, text: inputFF });
               }
             }}
-            placeholder="Escribe tu respuesta…"
+            placeholder="Escribe tu respuesta."
             maxLength={ffItem.maxLength || 1000}
             rows={8}
             style={{ width: '100%', resize: 'vertical', padding: 12, borderRadius: 8, border: '1px solid #3a3a3a', background: '#111', color: '#eee' }}
@@ -406,10 +491,10 @@ export default function App(){
             {!atLast && (<button onClick={onNext}>Siguiente</button>)}
             {atLast && (<button onClick={onFinish} disabled={finished}>Finalizar</button>)}
           </div>
-          {finished && (
+          {(finished || (review && review.freeform)) && (
             <div style={{ marginTop: 16, fontSize: 14, opacity: .9 }}>
               <div>Revisión manual sugerida.</div>
-              <div style={{ marginTop: 8 }}>Palabras clave esperadas: {(ffItem.keywords || []).join(', ') || '—'}</div>
+              <div style={{ marginTop: 8 }}>Palabras clave esperadas: {(ffItem.keywords || []).join(', ') || '-'}</div>
               {ffItem.correct && (
                 <div style={{ marginTop: 12, padding: 12, background: 'rgba(76,195,138,.12)', border: '1px solid #4cc38a', borderRadius: 8, fontSize: 13 }}>
                   <strong>Respuesta esperada:</strong>
@@ -442,8 +527,9 @@ export default function App(){
 
               // styling: green for correct options after finish, red for selected incorrect ones
               let background = '#111';
-              if (finished && isCorrect) background = 'rgba(76,195,138,.12)';
-              else if (finished && checked && !isCorrect) background = 'rgba(220,38,38,.12)';
+              const isReview = review?.mcq || review?.[mode === 'image-map' ? 'imageMap' : mode];
+              if ((finished || isReview) && isCorrect) background = 'rgba(76,195,138,.12)';
+              else if ((finished || isReview) && checked && !isCorrect) background = 'rgba(220,38,38,.12)';
 
               return (
                 <label key={opt.id} style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '8px 10px', borderRadius: 8, border: '1px solid #3a3a3a', background }}>
@@ -457,7 +543,7 @@ export default function App(){
                   <span style={{ flex: 1 }}>{opt.text}</span>
                   {finished && (
                     <span style={{ marginLeft: 8, fontWeight: 700 }}>
-                      {isCorrect ? '✔️' : (checked && !isCorrect ? '❌' : null)}
+                      {isCorrect ? '✔' : (checked && !isCorrect ? '✖' : null)}
                     </span>
                   )}
                 </label>
@@ -465,10 +551,8 @@ export default function App(){
             })}
           </div>
 
-          {Array.isArray(mcqItem.correct) && (
-            finished ? (
-              <div style={{ marginTop: 12, fontSize: 14 }}>Correcta(s): {mcqItem.correct.join(', ')}</div>
-            ) : null
+          {Array.isArray(mcqItem.correct) && (finished || (review?.mcq)) && (
+            <div style={{ marginTop: 12, fontSize: 14 }}>Correcta(s): {mcqItem.correct.join(', ')}</div>
           )}
           <div style={{ display:'flex', gap:8, justifyContent:'center', marginTop: 16, flexWrap:'wrap' }}>
             <button onClick={onPrev} disabled={atFirst}>Volver</button>
@@ -480,7 +564,7 @@ export default function App(){
 
       {mode === 'image-map' && imItem && (
         <Section>
-          <div style={{ display: 'grid', gap: 12, gridTemplateColumns: '1fr', alignItems: 'start' }}>
+      <div style={{ display: 'grid', gap: 12, gridTemplateColumns: '1fr', alignItems: 'start' }}>
             <div>
               <div style={{
                 width: '100%',
@@ -524,7 +608,7 @@ export default function App(){
                   );
                 })}
               </div>
-              {imItem.correct && finished && (
+              {imItem.correct && (finished || review?.imageMap) && (
                 <div style={{ marginTop: 12, fontSize: 14 }}>Correcta: {imItem.correct}</div>
               )}
             </div>
