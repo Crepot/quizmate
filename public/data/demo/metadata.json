@@ -1,6 +1,6 @@
 {
   "id": "demo",
-  "title": "Educacion Vial - Demo",
+  "title": "Curso de manejo seguro - Demo",
   "locale": "es-AR",
   "sections": ["freeform", "mcq", "image-map"],
   "scoring": { "freeform": 0, "mcq": 1, "imageMap": 1 },

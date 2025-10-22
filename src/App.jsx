@@ -96,6 +96,42 @@ export default function App(){
   const ansMCQ = mcqItem ? (state.answers.mcq[mcqItem.id] || []) : [];
   const ansIM = imItem ? (state.answers.imageMap[imItem.id] || '') : '';
 
+  // Imagen: mostrar solo 4 opciones (1 correcta + 3 distractores) de forma determinista por item
+  const seedFromString = (s) => {
+    let h = 2166136261 >>> 0; // FNV-1a
+    for (let i = 0; i < s.length; i++) {
+      h ^= s.charCodeAt(i);
+      h = Math.imul(h, 16777619);
+    }
+    return h >>> 0;
+  };
+  const seededShuffle = (arr, seed) => {
+    const a = arr.slice();
+    let s = seed >>> 0;
+    const rnd = () => {
+      // xorshift32
+      s ^= s << 13; s >>>= 0;
+      s ^= s >> 17; s >>>= 0;
+      s ^= s << 5;  s >>>= 0;
+      return (s & 0x7fffffff) / 0x80000000;
+    };
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(rnd() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  };
+  const imVisibleChoices = useMemo(() => {
+    if (!imItem) return [];
+    const all = Array.isArray(imItem.choices) ? imItem.choices.slice() : [];
+    if (all.length <= 4) return all;
+    const correct = imItem.correct;
+    const pool = all.filter(c => c !== correct);
+    const seed = seedFromString(imItem.id || '');
+    const distractors = seededShuffle(pool, seed).slice(0, 3);
+    return seededShuffle([correct, ...distractors], seed + 1);
+  }, [imItem]);
+
   // Totales de MCQ para mostrar puntaje general
   const mcqScore = useMemo(() => {
     const total = mcqItems.length;
@@ -362,7 +398,7 @@ export default function App(){
             style={{ width: '100%', resize: 'vertical', padding: 12, borderRadius: 8, border: '1px solid #3a3a3a', background: '#111', color: '#eee' }}
           />
           <div style={{ display:'flex', justifyContent:'space-between', marginTop: 8, fontSize: 12, opacity: .8 }}>
-            <span>{ffItem.required ? 'Requerido' : 'Opcional'}</span>
+            {/* <span>{ffItem.required ? 'Requerido' : 'Opcional'}</span> */}
             <span>{(ansFF || '').length}/{ffItem.maxLength || 1000}</span>
           </div>
           <div style={{ display:'flex', gap:8, justifyContent:'center', marginTop: 16, flexWrap:'wrap' }}>
@@ -469,7 +505,7 @@ export default function App(){
             <div>
               <div style={{ marginBottom: 8, fontWeight: 600 }}>Elige palabra clave:</div>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
-                {(imItem.choices || []).map(ch => {
+                {imVisibleChoices.map(ch => {
                   const active = ansIM === ch;
                   return (
                     <button
