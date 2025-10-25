@@ -5,6 +5,13 @@ const mustOk = async (res, name) => {
   return res.json();
 };
 
+// Carga JSON opcionalmente: si no existe o no es válido, devuelve null en lugar de lanzar.
+const fetchJsonMaybe = async (url) => {
+  const res = await fetch(url);
+  if (!res.ok) return null;
+  try { return await res.json(); } catch { return null; }
+};
+
 export async function loadQuiz(quizId = 'demo') {
   // Cargar primero metadata principal
   const metadata = await fetch(quizDataPath(quizId, 'metadata')).then(r => mustOk(r, 'metadata.json'));
@@ -15,10 +22,10 @@ export async function loadQuiz(quizId = 'demo') {
   const imId = sources['image-map'] || sources.imageMap || quizId;
 
   const [freeform, mcq, imageMap] = await Promise.all([
-    fetch(quizDataPath(ffId, 'freeform')).then(r => mustOk(r, 'freeform.json')),
-    fetch(quizDataPath(mcqId, 'mcq')).then(r => mustOk(r, 'mcq.json')),
-    fetch(quizDataPath(imId, 'image-map')).then(r => mustOk(r, 'image-map.json')),
+    fetchJsonMaybe(quizDataPath(ffId, 'freeform')),
+    fetchJsonMaybe(quizDataPath(mcqId, 'mcq')),
+    fetchJsonMaybe(quizDataPath(imId, 'image-map')),
   ]);
 
-  return { metadata, freeform, mcq, imageMap };
+  return { metadata, freeform: freeform || null, mcq: mcq || null, imageMap: imageMap || null };
 }

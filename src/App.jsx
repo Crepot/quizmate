@@ -38,6 +38,8 @@ export default function App(){
   const [session, setSession] = useState({ freeform: null, mcq: null, imageMap: null });
   const [review, setReview] = useState({ freeform: false, mcq: false, imageMap: false });
   const importInputRef = useRef(null);
+  const importFolderRef = useRef(null);
+  const importQuizFolderRef = useRef(null);
 
   useEffect(() => {
     const saved = loadProgress(state.quizId);
@@ -78,12 +80,29 @@ export default function App(){
           mcq: Array.isArray(savedSess.mcq) && savedSess.mcq.length ? savedSess.mcq.filter(i => i>=0 && i<mcqLen) : def(mcqLen),
           imageMap: Array.isArray(savedSess.imageMap) && savedSess.imageMap.length ? savedSess.imageMap.filter(i => i>=0 && i<imLen) : def(imLen),
         });
-        if (Array.isArray(quiz?.metadata?.sections) && quiz.metadata.sections.length > 0) {
-          setMode(quiz.metadata.sections[0]);
+        if (Array.isArray(quiz?.metadata?.sections)) {
+          const sections = quiz.metadata.sections;
+          const firstSection =
+            sections.find(s => (s === 'freeform' && ffLen) || (s === 'mcq' && mcqLen) || ((s === 'image-map' || s === 'imageMap') && imLen))
+            || (ffLen ? 'freeform' : (mcqLen ? 'mcq' : (imLen ? 'image-map' : 'freeform')));
+          setMode(firstSection);
           setIndex(0);
           setFinished(false);
         }
-      } catch (e) { setErr(e.message || String(e)); }
+      } catch (e) {
+        // Fallback a esqueleto cuando no hay datos para que no se rompa
+        const sk = skeletonDataset();
+        setData(sk);
+        const ffLen = sk.freeform.items.length;
+        const mcqLen = sk.mcq.items.length;
+        const imLen = sk.imageMap.items.length;
+        const def = (n) => Array.from({ length: n }, (_, i) => i);
+        setSession({ freeform: def(ffLen), mcq: def(mcqLen), imageMap: def(imLen) });
+        setMode(sk.metadata.sections[0]);
+        setIndex(0);
+        setFinished(false);
+        setErr('');
+      }
     })();
   }, [state.quizId]);
 
@@ -317,6 +336,162 @@ export default function App(){
     reader.readAsText(file);
   };
 
+  // Dataset esqueleto para mostrar ejemplo cuando no hay datos (función hoisted)
+  function skeletonDataset() {
+    return {
+      metadata: { id: 'skeleton', title: 'Ejemplo (sin datos cargados)', sections: ['freeform', 'mcq', 'image-map'] },
+      freeform: { items: [ { id: 'ff-skel-1', prompt: 'Ejemplo: Escribe tu respuesta aquí.', keywords: ['EJEMPLO'] } ] },
+      mcq: { items: [ { id: 'mcq-skel-1', stem: 'Ejemplo: Selecciona la opción correcta', type: 'single', options: [ { id: 'A', text: 'Opción A' }, { id: 'B', text: 'Opción B' }, { id: 'C', text: 'Opción C' }, { id: 'D', text: 'Opción D' } ], correct: ['A'] } ] },
+      imageMap: { items: [ { id: 'im-skel-1', image: '', alt: 'Ejemplo', choices: ['EJEMPLO', 'OPCIÓN 2', 'OPCIÓN 3', 'OPCIÓN 4'], correct: 'EJEMPLO' } ] }
+    };
+  }
+
+  // Importar carpeta de cuestionario con JSONs (metadata/freeform/mcq/image-map) y opcionalmente imágenes
+  const onImportQuizFolder = async (files) => {
+    try {
+      const list = Array.from(files || []);
+      if (!list.length) { alert('No se seleccionaron archivos.'); return; }
+      const jsonFiles = list.filter(f => (f.type === 'application/json') || /\.json$/i.test(f.name));
+      const imageFiles = list.filter(f => typeof f.type === 'string' && f.type.startsWith('image/'));
+
+      const byBase = new Map();
+      for (const f of jsonFiles) {
+        const base = (f.webkitRelativePath || f.name).split(/\\|\//).pop().toLowerCase();
+        byBase.set(base, f);
+      }
+
+      const readJson = async (f) => {
+        const raw = await f.text();
+        try { return JSON.parse(raw); } catch { throw new Error(`Archivo JSON inválido: ${f.name}`); }
+      };
+
+      const tryGet = async (name) => byBase.has(name) ? await readJson(byBase.get(name)) : null;
+
+      let metadata = await tryGet('metadata.json');
+      let freeform = await tryGet('freeform.json');
+      let mcq = await tryGet('mcq.json');
+      let imageMap = await tryGet('image-map.json');
+
+      if (!metadata && !freeform && !mcq && !imageMap && jsonFiles.length) {
+        const obj = await readJson(jsonFiles[0]);
+        const detectSingle = (o) => {
+          const it = Array.isArray(o?.items) ? o.items : null;
+          if (!it || !it.length) return {};
+          const first = it[0] || {};
+          if (Array.isArray(first.options)) return { mcq: { items: it } };
+          if (first.image || Array.isArray(first.choices)) return { imageMap: { items: it } };
+          return { freeform: { items: it } };
+        };
+        let norm = obj;
+        if (!obj?.metadata || (!obj?.freeform && !obj?.mcq && !obj?.imageMap && Array.isArray(obj?.items))) {
+          const secs = detectSingle(obj);
+          const sections = [];
+          if (secs.freeform) sections.push('freeform');
+          if (secs.mcq) sections.push('mcq');
+          if (secs.imageMap) sections.push('image-map');
+          norm = { metadata: { id: 'imported', title: obj?.name || 'Cuestionario importado', sections }, ...secs };
+        }
+        metadata = norm.metadata || null;
+        freeform = norm.freeform || null;
+        mcq = norm.mcq || null;
+        imageMap = norm.imageMap || null;
+      }
+
+      // Relink imágenes en imageMap a Object URLs si están en la carpeta
+      if (imageMap && Array.isArray(imageMap.items)) {
+        const imgByBase = new Map(imageFiles.map(f => [f.name, f]));
+        imageMap = {
+          ...imageMap,
+          items: imageMap.items.map((it) => {
+            const p = String(it.image || '');
+            const base = p.split('/').pop();
+            const f = imgByBase.get(base);
+            if (f) {
+              const url = URL.createObjectURL(f);
+              return { ...it, image: url };
+            }
+            return it;
+          })
+        };
+      }
+
+      const sectionsGuess = [];
+      if (freeform?.items?.length) sectionsGuess.push('freeform');
+      if (mcq?.items?.length) sectionsGuess.push('mcq');
+      if (imageMap?.items?.length) sectionsGuess.push('image-map');
+      const meta = metadata || { id: 'imported-folder', title: 'Cuestionario (carpeta)', sections: sectionsGuess };
+      const dataset = { metadata: meta, freeform, mcq, imageMap };
+
+      const v = validateAll(dataset);
+      if (!v.ok) throw new Error(v.message || 'Contenido inválido en carpeta.');
+
+      setData(dataset);
+      const ffLen = Array.isArray(dataset?.freeform?.items) ? dataset.freeform.items.length : 0;
+      const mcqLen = Array.isArray(dataset?.mcq?.items) ? dataset.mcq.items.length : 0;
+      const imLen = Array.isArray(dataset?.imageMap?.items) ? dataset.imageMap.items.length : 0;
+      const def = (n) => Array.from({ length: n }, (_, i) => i);
+      const nextSession = { freeform: def(ffLen), mcq: def(mcqLen), imageMap: def(imLen) };
+      setSession(nextSession);
+      saveSession(state.quizId, nextSession);
+      dispatch({ type: 'LOAD_PROGRESS', answers: initial.answers });
+      const firstSection = (meta.sections && meta.sections[0]) || (sectionsGuess[0] || 'freeform');
+      setMode(firstSection);
+      setIndex(0);
+      setFinished(false);
+    } catch (e) {
+      alert('Error al importar carpeta de cuestionario: ' + (e?.message || String(e)));
+    }
+  };
+  // Importar carpeta con imágenes y armar cuestionario de "image-map" en memoria
+  const onImportImagesFolder = (files) => {
+    try {
+      const all = Array.from(files || []).filter(f => f && typeof f.type === 'string' && f.type.startsWith('image/'));
+      if (!all.length) {
+        alert('No se encontraron imágenes en la carpeta seleccionada.');
+        return;
+      }
+      const labelFromName = (name) => {
+        const base = String(name || '').replace(/\.[^.]+$/, '');
+        return base.replace(/[_-]+/g, ' ').replace(/\s+/g, ' ').trim().toUpperCase();
+      };
+      const toSlug = (s) => String(s || '')
+        .normalize('NFD').replace(/[^\p{Letter}\p{Number}]+/gu, '-').replace(/^-+|-+$/g, '')
+        .toLowerCase();
+      const choices = Array.from(new Set(all.map(f => labelFromName(f.name)))).sort((a,b) => a.localeCompare(b));
+
+      // Crear Object URLs para las imágenes seleccionadas
+      const items = all.map((f, idx) => {
+        const label = labelFromName(f.name);
+        const url = URL.createObjectURL(f);
+        return {
+          id: `im-${idx}-${toSlug(label)}`,
+          image: url,
+          alt: label,
+          choices,
+          correct: label,
+        };
+      });
+
+      const dataset = {
+        metadata: { id: 'local-images', title: 'Imágenes desde carpeta', sections: ['image-map'] },
+        imageMap: { items },
+      };
+
+      // Cargar dataset en la app
+      setData(dataset);
+      const def = (n) => Array.from({ length: n }, (_, i) => i);
+      const nextSession = { freeform: [], mcq: [], imageMap: def(items.length) };
+      setSession(nextSession);
+      saveSession(state.quizId, nextSession);
+      dispatch({ type: 'LOAD_PROGRESS', answers: initial.answers });
+      setMode('image-map');
+      setIndex(0);
+      setFinished(false);
+    } catch (e) {
+      alert('Error al importar carpeta: ' + (e?.message || String(e)));
+    }
+  };
+
   const ModeButton = ({ id, label }) => (
     <button
       onClick={() => changeMode(id)}
@@ -381,10 +556,10 @@ export default function App(){
           <div style={{ position: 'fixed', inset: 0, zIndex: 30 }} onClick={() => setSidebarOpen(false)}>
             <div style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.4)' }} />
             <div style={{ position: 'absolute', top: 0, left: 0, bottom: 0, width: 280, background: '#0f0f0f', borderRight: '1px solid #2a2a2a', padding: 12, paddingTop: 60, overflowY: 'auto' }} onClick={e => e.stopPropagation()}>
-              <div style={{ display: 'grid', gap: 8, marginBottom: 12 }}>
-                <ModeButton id="freeform" label="Preguntas y respuestas" />
-                <ModeButton id="mcq" label="Múltiple opción" />
-                <ModeButton id="image-map" label="Imagen" />
+          <div style={{ display: 'grid', gap: 8, marginBottom: 12 }}>
+            <ModeButton id="freeform" label="Preguntas y respuestas" />
+            <ModeButton id="mcq" label="Múltiple opción" />
+            <ModeButton id="image-map" label="Imagen" />
                 <button onClick={() => setReview(prev => { const key = (mode === 'image-map') ? 'imageMap' : mode; return { ...prev, [key]: !prev[key] }; })} style={{ background: 'linear-gradient(135deg, #8b5cf6, #06b6d4)', color: 'white', border: '1px solid #7c3aed', borderRadius: 8, padding: '8px 12px' }}>
                   {(() => { const key = (mode === 'image-map') ? 'imageMap' : mode; return (review?.[key] ? 'Desactivar repaso' : 'Activar repaso'); })()}
                 </button>
@@ -410,6 +585,20 @@ export default function App(){
                     if (f) onImportQuiz(f);
                     e.target.value = '';
                   }}
+                />
+                <button onClick={() => importQuizFolderRef.current?.click()} style={{
+                  background: 'linear-gradient(135deg, #9333ea, #6366f1)',
+                  color: 'white', border: '1px solid #7c3aed', borderRadius: 8, padding: '8px 12px'
+                }}>Importar carpeta de cuestionario</button>
+                <input
+                  ref={importQuizFolderRef}
+                  type="file"
+                  multiple
+                  style={{ display: 'none' }}
+                  webkitdirectory="true"
+                  directory="true"
+                  accept=".json,image/*"
+                  onChange={(e) => { const fl = e.target.files; if (fl && fl.length) onImportQuizFolder(fl); e.target.value = ''; }}
                 />
               </div>
               <div style={{ fontWeight: 700, marginBottom: 8 }}>Navegar preguntas ({mode})</div>
@@ -447,6 +636,29 @@ export default function App(){
               <button onClick={onExport} style={{ background: 'linear-gradient(135deg, #3b82f6, #06b6d4)', color: 'white', border: '1px solid #0ea5e9', borderRadius: 8, padding: '8px 12px' }}>Exportar resultados</button>
               <button onClick={() => importInputRef.current?.click()} style={{ background: 'linear-gradient(135deg, #f59e0b, #f97316)', color: 'white', border: '1px solid #fb923c', borderRadius: 8, padding: '8px 12px' }}>Importar cuestionario</button>
               <input ref={importInputRef} type="file" accept=".json,application/json" style={{ display: 'none' }} onChange={(e) => { const f = e.target.files && e.target.files[0]; if (f) onImportQuiz(f); e.target.value = ''; }} />
+              <button onClick={() => importQuizFolderRef.current?.click()} style={{ background: 'linear-gradient(135deg, #9333ea, #6366f1)', color: 'white', border: '1px solid #7c3aed', borderRadius: 8, padding: '8px 12px' }}>Importar carpeta de cuestionario</button>
+              <input
+                ref={importQuizFolderRef}
+                type="file"
+                multiple
+                style={{ display: 'none' }}
+                webkitdirectory="true"
+                directory="true"
+                accept=".json,image/*"
+                onChange={(e) => { const fl = e.target.files; if (fl && fl.length) onImportQuizFolder(fl); e.target.value = ''; }}
+              />
+              <button onClick={() => importFolderRef.current?.click()} style={{ background: 'linear-gradient(135deg, #14b8a6, #06b6d4)', color: 'white', border: '1px solid #0ea5e9', borderRadius: 8, padding: '8px 12px' }}>Importar carpeta de imágenes</button>
+              <input
+                ref={importFolderRef}
+                type="file"
+                multiple
+                style={{ display: 'none' }}
+                // Atributos no estándar para permitir seleccionar carpetas en navegadores basados en Chromium
+                webkitdirectory="true"
+                directory="true"
+                accept="image/*"
+                onChange={(e) => { const fl = e.target.files; if (fl && fl.length) onImportImagesFolder(fl); e.target.value = ''; }}
+              />
             </div>
             <div style={{ fontWeight: 700, marginBottom: 8 }}>Navegar preguntas ({mode})</div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 8 }}>
